@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - آپلود فایل و عکس
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>آپلود فایل و عکس</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <p dir="rtl"><span style="font-size:14px"><span style="background:#f7dbf7 none repeat scroll 0% 0%; color:#c131e0; padding:1px 3px">یک فایل و یک تصویر را آپلود میکنیم و برای فایل آپلود شده لینک امن میسازیم</span></span></p>
+
+<p dir="rtl">1- در ویوی create فرمی را بصورت زیر قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"{{ route('files.store') }}"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span> <span class="hljs-attribute">enctype</span>=<span class="hljs-value">"multipart/form-data"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-horizontal alert alert-primary"</span>&gt;</span>
+    {!! csrf_field() !!}
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-center alert alert-warning"</span>&gt;</span>در این روش فایل را مستقیماً از طریق فرم آپلود میکنیم<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-group {{ $errors-&gt;first('title1') != null ? 'has-error' : '' }}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-left"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"title1"</span>&gt;</span>عنوان:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"title1"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"title1"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"عنوان مناسبی برای لینک بنویسید"</span> &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            {{ $errors-&gt;first('title1') }}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-group {{ $errors-&gt;has('file') ? 'has-error' : '' }}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-left"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"file"</span>&gt;</span>فایل فشرده:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"یک فایل انتخاب کنید..."</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            {{ $errors-&gt;first('file') }}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-group {{ $errors-&gt;has('image') ? 'has-error' : '' }}"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-left"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"image"</span>&gt;</span>تصویر:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"file"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"image"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"image"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"یک تصویر انتخاب کنید..."</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            {{ $errors-&gt;first('image') }}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-success btn-lg"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>ایجاد<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre>
+
+<p dir="rtl">2- در MainController متدهای زیر را قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-comment">/**
+ *<span class="hljs-phpdoc"> @param</span> type $file request file
+ *<span class="hljs-phpdoc"> @param</span> type $type Specify file type
+ *<span class="hljs-phpdoc"> @return</span> type An array of file properties
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">uploadFileReturnPath</span><span class="hljs-params">(<span class="hljs-variable">$file</span>, <span class="hljs-variable">$type</span> = <span class="hljs-string">'files'</span>)</span> {</span>
+
+    <span class="hljs-variable">$path</span> = <span class="hljs-string">"uploads/{$type}/"</span>;
+
+    <span class="hljs-variable">$fileName</span> = <span class="hljs-variable">$file</span>-&gt;getClientOriginalName();
+
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable">$type</span> == <span class="hljs-string">'image'</span> || <span class="hljs-variable">$type</span> == <span class="hljs-string">'images'</span>){
+        <span class="hljs-variable">$imageFile</span> = <span class="hljs-variable">$file</span>-&gt;move(public_path(<span class="hljs-variable">$path</span>), <span class="hljs-variable">$fileName</span>);
+        <span class="hljs-variable">$imageRealPath</span> = <span class="hljs-variable">$imageFile</span>-&gt;getRealPath();
+    }
+    <span class="hljs-keyword">else</span>{
+        <span class="hljs-variable">$file</span>-&gt;move(storage_path(<span class="hljs-variable">$path</span>), <span class="hljs-variable">$fileName</span>);
+    }
+
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'path'</span> =&gt; <span class="hljs-variable">$path</span>, 
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-variable">$fileName</span>,
+        <span class="hljs-string">'imageRealPath'</span> =&gt; <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$imageRealPath</span>) ? <span class="hljs-variable">$imageRealPath</span> : <span class="hljs-keyword">null</span>,
+    ];
+}
+
+<span class="hljs-comment">/**
+ *<span class="hljs-phpdoc"> @param</span> type $imageRealPath 
+ *<span class="hljs-phpdoc"> @param</span> type $path
+ *<span class="hljs-phpdoc"> @param</span> type $fileName
+ *<span class="hljs-phpdoc"> @param</span> type $sizes An array to resize the photo
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">imageSizes</span><span class="hljs-params">(<span class="hljs-variable">$imageRealPath</span>, <span class="hljs-variable">$path</span>, <span class="hljs-variable">$fileName</span>, <span class="hljs-variable">$sizes</span> = [<span class="hljs-number">320</span>])</span> {</span>
+
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$sizes</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$size</span>) {
+        Image::make(<span class="hljs-variable">$imageRealPath</span>)-&gt;resize(<span class="hljs-variable">$size</span>, <span class="hljs-keyword">null</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$constraint</span>)</span> {</span>
+            <span class="hljs-variable">$constraint</span>-&gt;aspectRatio();
+        })-&gt;save(<span class="hljs-variable">$path</span> . <span class="hljs-string">"{$size}-"</span> . <span class="hljs-variable">$fileName</span>);
+    }
+
+}</code></pre>
+
+<p dir="rtl">برای استفاده از Image::make و توابعش، باید <a class="text-info" href="http://image.intervention.io/getting_started/installation" target="_blank">Intervention Image</a> را در لاراول نصب کنیم.</p>
+
+<p dir="rtl">3- مایگریشن جدول files به این صورت خواهد بود:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-variable">$table</span>-&gt;increments(<span class="hljs-string">'id'</span>);
+
+<span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'title'</span>);
+<span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'file_name'</span>);
+<span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'file_path'</span>);
+<span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'image_name'</span>);
+<span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'image_path'</span>);
+<span class="hljs-variable">$table</span>-&gt;boolean(<span class="hljs-string">'active'</span>)-&gt;<span class="hljs-keyword">default</span>(<span class="hljs-keyword">false</span>);
+
+<span class="hljs-variable">$table</span>-&gt;timestamps();</code></pre>
+
+<p dir="rtl">4- مدل File به شکل زیر خواهد بود:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">File</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+{</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$fillable</span> = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'file_name'</span>, <span class="hljs-string">'file_path'</span>, <span class="hljs-string">'image_name'</span>, <span class="hljs-string">'image_path'</span>, <span class="hljs-string">'year'</span>, <span class="hljs-string">'month'</span>, <span class="hljs-string">'active'</span>];
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">download</span><span class="hljs-params">()</span> {</span>
+
+        <span class="hljs-variable">$time</span> = Carbon::now()-&gt;addHour(<span class="hljs-number">5</span>)-&gt;timestamp;
+        <span class="hljs-variable">$ip</span> = request()-&gt;ip();
+
+        <span class="hljs-variable">$strHash</span> = <span class="hljs-string">'CDE#$RFFVFR%TTGBHYT%%$#@WW#$$'</span> . <span class="hljs-variable">$this</span>-&gt;id . <span class="hljs-variable">$ip</span> . <span class="hljs-variable">$time</span>;
+
+        <span class="hljs-variable">$hash</span> = HasH::make(<span class="hljs-variable">$strHash</span>);
+
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'file'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;file_path . <span class="hljs-string">"$this-&gt;id?h=$hash&amp;t=$time"</span>,
+            <span class="hljs-string">'imagepath'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;image_path,
+            <span class="hljs-string">'imageName'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;image_name,
+        ];
+    }
+}</code></pre>
+
+<p dir="rtl">5- در متد store از FileController کدهای زیر را قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$request</span>-&gt;file)){
+    <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>,[
+        <span class="hljs-string">'title1'</span> =&gt; <span class="hljs-string">'required|min:3'</span>,
+        <span class="hljs-string">'file'</span> =&gt; <span class="hljs-string">'required|file|mimes:zip,rar|max:5120'</span>,
+        <span class="hljs-string">'image'</span> =&gt; <span class="hljs-string">'required|image|mimes:jpeg,png,jpg,gif|max:1024|dimensions:max_width=1100,max_height=850'</span>,
+<span class="hljs-comment">// یا یکی از دو مورد زیر برای کمترین ابعاد یا برای ابعاد فیکس</span>
+<span class="hljs-comment">//                'image' =&gt; 'required|image|mimes:jpeg,png,jpg,gif|max:1024|dimensions:min_width=200,min_height=150',</span>
+<span class="hljs-comment">//                'image' =&gt; 'required|image|mimes:jpeg,png,jpg,gif|max:1024|dimensions:width=1100,height=850',</span>
+    ]);
+
+<span class="hljs-variable">$fileInfo</span> = <span class="hljs-variable">$this</span>-&gt;uploadFileReturnPath(<span class="hljs-variable">$request</span>-&gt;file(<span class="hljs-string">'file'</span>));
+
+<span class="hljs-variable">$imageInfo</span> = <span class="hljs-variable">$this</span>-&gt;uploadFileReturnPath(<span class="hljs-variable">$request</span>-&gt;file(<span class="hljs-string">'image'</span>), <span class="hljs-string">'images'</span>);
+<span class="hljs-variable">$this</span>-&gt;imageSizes(
+        <span class="hljs-variable">$imageInfo</span>[<span class="hljs-string">'imageRealPath'</span>], 
+        <span class="hljs-variable">$imageInfo</span>[<span class="hljs-string">'path'</span>], 
+        <span class="hljs-variable">$imageInfo</span>[<span class="hljs-string">'name'</span>], 
+        [<span class="hljs-number">320</span>, <span class="hljs-number">500</span>]
+    );
+
+<span class="hljs-variable">$upload</span> = <span class="hljs-keyword">new</span> Upload();
+<span class="hljs-variable">$upload</span>-&gt;title = <span class="hljs-variable">$request</span>-&gt;title1;
+<span class="hljs-variable">$upload</span>-&gt;image_name = <span class="hljs-variable">$imageInfo</span>[<span class="hljs-string">'name'</span>];
+<span class="hljs-variable">$upload</span>-&gt;image_path = <span class="hljs-variable">$imageInfo</span>[<span class="hljs-string">'path'</span>];
+<span class="hljs-variable">$upload</span>-&gt;file_name = <span class="hljs-variable">$fileInfo</span>[<span class="hljs-string">'name'</span>];
+<span class="hljs-variable">$upload</span>-&gt;file_path = <span class="hljs-variable">$fileInfo</span>[<span class="hljs-string">'path'</span>];
+<span class="hljs-variable">$upload</span>-&gt;save();
+
+<span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'/files'</span>);</code></pre>
+
+<p dir="rtl">6- در ویوی index لینک فایل و تصویر آپلود شده را بصورت زیر نمایش میدهیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table-responsive"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-bordered table-striped text-center"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">thead</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg-light"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>عکس<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>اندازه 320<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>اندازه 500<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>اندازه اصلی<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>فایل<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+                @foreach($uploads as $upload)
+                <span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+                <span class="hljs-variable">$path</span> = <span class="hljs-variable">$upload</span>-&gt;download();
+                <span class="hljs-preprocessor">?&gt;</span></span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/{{ $path['imagePath'] . '320-' . $path['imageName'] }}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"{{ '320-' . $path['imageName'] }}"</span> &gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/{{ $path['imagePath'] . '320-' . $path['imageName'] }}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-info"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>مشاهده در اندازه 320<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/{{ $path['imagePath'] . '500-' . $path['imageName'] }}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-info"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>مشاهده در اندازه 500<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/{{ $path['imagePath'] . $path['imageName'] }}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-info"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>مشاهده در اندازه اصلی<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ $path['file'] }}"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-info"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>{{ $upload-&gt;title }}<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+                @endforeach
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p dir="rtl">7- روت مربوط به لینک فایل به شکل زیر در web.php نوشته میشود:</p>
+
+<pre><code class="language-0 hljs cs">Route::<span class="hljs-keyword">get</span>(<span class="hljs-string">'/download/{file}'</span>, <span class="hljs-string">'HomeController@downloadUploadedFile'</span>);</code></pre>
+
+<p dir="rtl">8- متد downloadUploadedFile را به شکل زیر مینویسیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">downloadUploadedFile</span><span class="hljs-params">(File <span class="hljs-variable">$file</span>)</span> {</span>
+
+    <span class="hljs-variable">$time</span> = request(<span class="hljs-string">'t'</span>);
+    <span class="hljs-variable">$h</span> = request(<span class="hljs-string">'h'</span>);
+    <span class="hljs-variable">$ip</span> = request()-&gt;ip();
+
+    <span class="hljs-variable">$strHash</span> = <span class="hljs-string">'CDE#$RFFVFR%TTGBHYT%%$#@WW#$$'</span> . <span class="hljs-variable">$file</span>-&gt;id . <span class="hljs-variable">$ip</span> . <span class="hljs-variable">$time</span>;
+
+    <span class="hljs-keyword">if</span>(Hash::check(<span class="hljs-variable">$strHash</span>, <span class="hljs-variable">$h</span>)){
+
+        <span class="hljs-variable">$filePath</span> = <span class="hljs-variable">$file</span>-&gt;file_path . <span class="hljs-variable">$file</span>-&gt;file_name;
+
+        <span class="hljs-variable">$realPathFile</span> = realpath(storage_path(<span class="hljs-variable">$filePath</span>));
+
+        <span class="hljs-variable">$fileName</span> = <span class="hljs-variable">$file</span>-&gt;file_name;
+
+        <span class="hljs-variable">$type</span> = [<span class="hljs-string">'Content-Type'</span> =&gt; \File::mimeType(<span class="hljs-variable">$realPathFile</span>)];
+
+        <span class="hljs-keyword">return</span> response()-&gt;download(<span class="hljs-variable">$realPathFile</span>, <span class="hljs-variable">$fileName</span>, <span class="hljs-variable">$type</span>);
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'link error'</span>;
+    }
+}</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<div class="alert-success p-3">
+<p dir="rtl">اگر در مایگریشن و جدول، فیلدی از نوع text داشته باشیم و 
+بخواهیم متنی بصورت آرایه php در آن قرار دهیم، در مدل مربوط به جدول یک 
+پراپرتی بصورت زیر باید وارد کنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">protected</span> <span class="hljs-variable">$casts</span> = [<span class="hljs-string">'images'</span> =&gt; <span class="hljs-string">'array'</span>];</code></pre>
+
+<p dir="rtl">در اینجا فیلد images را ازنوع array قرار میدهیم و مسیر 
+عکسها را در آن ذخیره میکنیم و موقع نمایش با یک foreach به آنها دسترسی 
+خواهیم داشت:</p>
+
+<pre><code class="language-0 hljs php">@<span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$model</span>-&gt;images <span class="hljs-keyword">as</span> <span class="hljs-variable">$image</span>)
+    <span class="hljs-comment">// codes</span>
+@<span class="hljs-keyword">endforeach</span></code></pre>
+</div>
+
+<p>&nbsp;</p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A2%D9%BE%D9%84%D9%88%D8%AF%20%D9%81%D8%A7%DB%8C%D9%84%20%D9%88%20%D8%B9%DA%A9%D8%B3_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

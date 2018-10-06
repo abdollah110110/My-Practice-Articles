@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - تنظیمات mysql برای پروژه لاراول
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>تنظیمات mysql برای پروژه لاراول</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <p dir="rtl">&nbsp;</p>
+
+<p dir="rtl">برای اینکه دستورات مایگریشن دچار ارور نشوند یکی از دو روش زیر را انجام میدهیم:</p>
+
+<p dir="rtl">&nbsp;</p>
+
+<ul dir="rtl">
+	<li>در این روش بصورت پیشفرض پشتیبانی از ایموجیها را لاراول در نظر گرفته است و تنظیمات mysql بصورت زیر است:</li>
+</ul>
+
+<pre><code class="language-0 hljs php"><span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8mb4'</span>,
+<span class="hljs-string">'collation'</span> =&gt; <span class="hljs-string">'utf8mb4_unicode_ci'</span>,</code></pre>
+
+<p dir="rtl">و کالیشن دیتابیسی که میسازیم را <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">utf8mb4_unicode_ci</span> قرار میدهیم و همچنین در فایل <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">AppServiceProvider.php</span> کد زیر را در متد <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">boot</span> قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Schema</span>;
+
+Schema::defaultStringLength(<span class="hljs-number">191</span>);</code></pre>
+
+<p>&nbsp;</p>
+
+<ul dir="rtl">
+	<li>در این روش تنظیمات mysql را به شکل زیر تغییر میدهیم:</li>
+</ul>
+
+<pre><code class="language-0 hljs php"><span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+<span class="hljs-string">'collation'</span> =&gt; <span class="hljs-string">'utf8_persian_ci'</span>,</code></pre>
+
+<p dir="rtl">و کالیشن دیتابیسی که ساختیم را <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">utf8_persian_ci</span> قرار میدهیم.</p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AA%D9%86%D8%B8%DB%8C%D9%85%D8%A7%D8%AA%20mysql%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="http://samaiweb.com/images/icon-logo.png">
+
+        
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>سمعی وب - سایت شخصی عبدالله سمعی طراح و برنامه نویس | احراز هویت یا Authentication در laravel</title>
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap_002.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/font-awesome.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/parsley.htm">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/style.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap-submenu-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/comments-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/transition.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/vs.css">
+
+
+                <style type="text/css">
+            #main{
+                padding-top: 85px;
+            }
+        </style>
+        
+
+        
+    </head>
+    <body>
+
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <a href="http://samaiweb.com/" class="navbar-brand h2" title="" data-toggle="tooltip" data-original-title="وب سایت شخصی عبدالله سمعی">سمعی وب</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="navbar-nav" class="nav navbar-nav">
+                        <li class="">
+                            <a href="http://samaiweb.com/">صفحه اصلی</a>
+                        </li>
+                                                <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">موضوعات <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                برنامه نویسی سمت سرور <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/1">
+                                                            PHP <span class="pull-left badge">0</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/2">
+                                                            laravel <span class="pull-left badge">8</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/9">
+                                                            Mysql <span class="pull-left badge">1</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                طراحی وب سایت <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/8">
+                                                            Jquery and Javascript <span class="pull-left badge">3</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/about">درباره ما</a>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/contact">تماس با ما</a>
+                        </li>
+                                                    <li>
+                                <a href="http://samaiweb.com/admin">مدیریت</a>
+                            </li>
+                            <li>
+                                <a href="http://samaiweb.com/logout">خروج</a>
+                            </li>
+                                            </ul>
+                    <form action="http://samaiweb.com/search" method="POST" class="navbar-form navbar-left hidden-xs hidden-sm">
+                        <input name="_token" value="lPqq7G0XrI29isG3XA6FMU1RwWvFRh7awqZUckdn" type="hidden">
+                        <div class="form-group">
+                            <input name="search" placeholder="جستجو" type="text">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav><!-- End of navbar -->
+
+        
+        <div class="row">
+            <div id="main" class="container-fluid">
+                <div class="container">
+                    <div id="sidebar" class="col-xs-12 col-md-3">
+                        <div id="xs-search" class="sidebar-head hidden-md hidden-lg">
+                            <div class="sidbar-main">
+                                <div class="sidebar-content alert-info">
+                                    <form action="http://samaiweb.com/search" method="POST">
+                                        <input name="_token" value="lPqq7G0XrI29isG3XA6FMU1RwWvFRh7awqZUckdn" type="hidden">
+                                        <input name="search" class="form-group form-control" placeholder="جستجو در مطالب ..." type="text">
+                                        <button type="submit" class="btn btn-default btn-lg">جستجو</button>
+                                    </form>
+                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                        <div class="sidebar-head">
+                            <h3>موضوعات</h3>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>برنامه نویسی سمت سرور<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/1">
+                                                                    PHP <span class="pull-left badge">0</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/2">
+                                                                    laravel <span class="pull-left badge">8</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/9">
+                                                                    Mysql <span class="pull-left badge">1</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>طراحی وب سایت<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/8">
+                                                                    Jquery and Javascript <span class="pull-left badge">3</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                    </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="col-xs-12 col-md-9">
+                                                <div class="row">
+    <div class="col-xs-12">
+            <div class="thumbnail post">
+                <h1><span class="fa fa-arrow-left"></span> احراز هویت یا Authentication در laravel</h1>
+                <div class="alert"><p><span dir="rtl">لاراول یک سیستم 
+احرازهویت را به طور پیش فرض پیاده سازی کرده است که می توانیم از آن 
+استفاده کنیم و در صورت نیاز آن را ویرایش کنیم. </span></p>
+
+<p><span dir="rtl">اگر به فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">auth.php</code> در دایرکتوری <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Config</code> بروید می توانید تنظیمات مربوط به کار با احرازهویت را تغییر دهیم مثلا اگر بخواهیم از احرازهویت چندگانه استفاده کنیم می توانیم <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">guard</code> اضافه کنیم و همچنین برای هر guard می توانیم نوع درایور و نام مدل یا جدول متناظر با آن را مشخص کنیم .</span></p>
+
+<p>&nbsp;</p>
+
+<h3>ایجاد بخش احراز هویت</h3>
+
+<p><span dir="rtl">با استفاده از فرمان زیر تمامی ویوها و فایلهای موردنیاز برای احرازهویت را ایجاد می کنیم: </span></p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:auth</span></code></pre>
+
+<p><span dir="rtl">بعد از اجرای دستور بالا تمامی ویو های مربوط به احراز هویت در دایرکتوری <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/views/auth</code> با layout شان که در دایرکتوری <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/views/layout</code> به نام <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">app.blade.php</code> ایجاد خواهد شد و همچنین route های آن در فایل&nbsp; <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">outes\web.php</code> به روزرسانی خواهد شد. این <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">route</code> ها با استفاده از تابع زیر ایجاد می شوند: </span></p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-tag">Auth</span><span class="hljs-pseudo">::routes()</span>;</code></pre>
+
+<p><span dir="rtl">که در واقع تمامی route ها در این تابع نوشته شده اند 
+در صورتی که نیاز به ویرایش این route ها دارید می توانید آنها را به صورت 
+زیر بنویسید تا بتوانید هرکدام را که نیاز دارید تغییر دهید: </span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-attribute">Route</span>::group(
+    [
+        <span class="hljs-string">'namespace'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'Auth'</span>,
+        <span class="hljs-string">'prefix'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'Auth'</span>,
+    ],
+    <span class="hljs-reserved">function</span>(){
+        <span class="hljs-regexp">//</span> Authentication Routes...
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'login'</span>, <span class="hljs-string">'LoginController@showLoginForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'login'</span>);
+        <span class="hljs-attribute">Route</span>::post(<span class="hljs-string">'login'</span>, <span class="hljs-string">'LoginController@login'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'logout'</span>, <span class="hljs-string">'LoginController@logout'</span>)</span>-&gt;</span>name(<span class="hljs-string">'logout'</span>);
+
+        <span class="hljs-regexp">//</span> Registration Routes...
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'register'</span>, <span class="hljs-string">'RegisterController@showRegistrationForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'register'</span>);
+        <span class="hljs-attribute">Route</span>::post(<span class="hljs-string">'register'</span>, <span class="hljs-string">'RegisterController@register'</span>);
+
+        <span class="hljs-regexp">//</span> Password Reset Routes...
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'password/reset'</span>, <span class="hljs-string">'ForgotPasswordController@showLinkRequestForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.request'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'password/email'</span>, <span class="hljs-string">'ForgotPasswordController@sendResetLinkEmail'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.email'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'password/reset/{token}'</span>, <span class="hljs-string">'ResetPasswordController@showResetForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.reset'</span>);
+        <span class="hljs-attribute">Route</span>::post(<span class="hljs-string">'password/reset'</span>, <span class="hljs-string">'ResetPasswordController@reset'</span>);
+    }
+
+);</code></pre>
+
+<p><span dir="rtl">در فولدر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Auth</code> چهارتا کنترلر وجود دارد که هرکدام کار خاصی را انجام می دهد. <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">LoginController</code> عملیات مرتبط به لاگین و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">RegisterController</code> عملیات ثبت نام و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">ForgotController</code> &nbsp;برای فراموشی کلمه عبور و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">ResetPasswordController</code> &nbsp;هم برای ریست کردن کلمه عبور کاربران مورد استفاده قرار می گیرد.</span></p>
+
+<p><span dir="rtl">اگر به مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">http://localhost:8000/register</code> برویم می توانیم یک کاربر جدید ثبت نام کنیم. اگر می خواهید قوانین اعتبارسنجی ثبت نام کاربر را ویرایش کنید کافیه در کنترلر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">RegisterController</code> متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">validator</code>
+ را ویرایش کنید. همچنین اگر می خواهید یک یا چند ستون دیگر به جدول users 
+اضافه کنید ابتدا باید فایل مایگریشن مرتبط به جدول Users را ویرایش کنید و
+ آن را Migrate کنید و سپس در فرم ثبت نام که در ویو <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/views/auth/register.blade.php</code>
+ قرار دارد ستون هایی که نیاز هست توسط کاربر مقداردهی شود به فرم اضافه 
+کنید و سپس برای ثبت آنها در جدول نیاز دارید متد create کنترلر 
+RegisterController مقادیر ورودی های جدید اضافه شده به فرم را به آن اضافه
+ کنید.</span></p>
+
+<p><span dir="rtl">بعد از اینکه یک کاربر اضافه کردیم می توانیم با مراجعه به فرم لاگین در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">http://localhost:8000/login</code> و با وارد کردن ایمیل و کلمه عبور کاربر احراز هویت شده و به صفحاتی که برای دسترسی نیاز به احرازهویت دارند وارد شویم.<br>
+<br>
+اگر می خواهید به جای ایمیل از ستون دیگری در جدول users همانند username برای احرازهویت استفاده کنید کافی است متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">username</code> را در کنترلر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">LoginController</code> در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">app/Http/Controllers/Auth</code> به این صورت اضافه کنید و نام ستون موردنظر را return کنید:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">username</span><span class="hljs-params">()</span>
+{</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'username'</span>;
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">به طور پیش فرض بعد از لاگین به صفحه خانه هدایت می 
+شویم برای تغییر ان می توانیم در کنترلر LoginController پراپرتی زیر را به
+ مسیر موردنظرمان (در مثال زیر به مسیر home تغییر دادیم) ویرایش کنیم:</span></p>
+
+<pre><code class="language-0 hljs cs"><span class="hljs-keyword">protected</span> $redirectTo = <span class="hljs-string">'/home'</span>;</code></pre>
+
+<p><span dir="rtl">همچنین می توانید این پراپرتی را در کنترلرهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">RegisterController</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">ResetPasswordController</code> نیز به همان صورت بالا تغییر دهید.</span></p>
+
+<p><span dir="rtl">برای Logout کردن کاربر کافی هست متد logout از کلاس Auth را اجرا کنیم:</span></p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-tag">Auth</span><span class="hljs-pseudo">::logout()</span>;</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">برای اینکه دکمه logout را در برنامه تان بسازید باید 
+توجه داشته باشید که route برای logout کردن در لاراول 5.3 به بعد به خاطر 
+موارد امنیتی صورت <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">post</code> در آمده است بنابراین باید به صورت متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">POST</code> و همراه با <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">csrf token</code> آن را ارسال کنید تا به درستی کار کند. مثالی از ایجاد لینک Logout کردن کاربر را در زیر می بینید:</span></p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"{{ route('logout') }}"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span>&gt;</span>
+    {{ csrf_field() }}
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-info"</span>&gt;</span>خروج<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">بعد از آنکه کاربر لاگین کرد می توانیم با استفاده از Facade کلاس <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Auth</code> یا تابع کمکی <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">auth</code> به اطلاعات کاربر احرازهویت شده دسترسی داشته باشیم به طور مثال: </span></p>
+
+<pre><code class="language-0 hljs coffeescript">{{ <span class="hljs-attribute">Auth</span>::user<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>name }}
+<span class="hljs-regexp">//</span>OR
+{{ auth-&gt;user<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>name }}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">حالا باید route هایی که نیاز داریم فقط کاربران احرازهویت شده به آنها دسترسی داشته باشند رو محافظت کنیم باید از <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">middleware</code> به نام auth که به طور پیش فرض در لاراول از پیش ساخته شده است و در فولدر Middleware به نام <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Authenticate</code> قرار داده شده است در route هامون استفاده می کنیم.<br>
+برای اینکار دو روش وجود داره یکی اینکه در خود route ها با استفاده از متد
+ middleware که انتهای route اضافه می کنیم این middleware رو بهش معرفی 
+کنیم : </span></p>
+
+<pre><code class="language-0 hljs javascript">Route::get(<span class="hljs-string">'profile'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-comment">// Only authenticated users may enter...</span>
+})-&gt;middleware(<span class="hljs-string">'auth'</span>);</code></pre>
+
+<p><span dir="rtl">و همچنین می توانیم با استفاده از <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Route group</code> تمام route هایی که نیاز به محافظت دارند را داخل آن بنویسیم : </span></p>
+
+<pre><code class="language-0 hljs php">Route::group([<span class="hljs-string">'middleware'</span> =&gt; <span class="hljs-string">'auth'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+   Route::get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span>    {</span>
+       <span class="hljs-comment">// Uses Auth Middleware</span>
+   });
+ 
+   Route::get(<span class="hljs-string">'user/profile'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+       <span class="hljs-comment">// Uses Auth Middleware</span>
+   });
+});</code></pre>
+
+<p><span dir="rtl">روش دوم استفاده از متد middleware کنترلر هست که آن را در متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">construct__</code> کنترلر صدا می زنیم و middleware auth رو بهش معرفی می کنیم: </span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+{</span>
+   <span class="hljs-variable">$this</span>-&gt;middleware(<span class="hljs-string">'auth'</span>);
+}</code></pre>
+
+<p><span dir="rtl">در مثال بالا تمامی route هایی که به اکشن های این 
+کنترلر هدایت شوند باید از middleware auth عبور کنند. در صورتی که می 
+خواهید فقط بعضی از اکشن ها نیاز به چک کردن احرازهویت داشته باشند کافیه 
+به متد middleware &nbsp;پارامتر دومی به عنوان آرایه بدهیم که کلید این 
+آرایه نامش only هست و نام اکشن هایی که نیاز داریم محافظت شوند را به <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">only</code> در قالب یک آرایه دیگر می دهیم: </span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-variable">$this</span>-&gt;middleware(<span class="hljs-string">'auth'</span>, [<span class="hljs-string">'only'</span> =&gt; [
+            <span class="hljs-string">'store'</span>,
+            <span class="hljs-string">'update'</span>,
+        ]]);</code></pre>
+
+<p><span dir="rtl">در مثال بالا فقط اکشن های store و update نیاز به احرازهویت خواهند داشت. حالت برعکسش هم جود داره که با استفاده از کلید <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">except</code> نام اکشن هایی که نمی خواهیم احرازهویت شوند را بهش می دهیم: </span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-variable">$this</span>-&gt;middleware(<span class="hljs-string">'auth'</span>, [<span class="hljs-string">'except'</span> =&gt; [
+            <span class="hljs-string">'index'</span>,
+            <span class="hljs-string">'show'</span>,
+        ]]);</code></pre>
+
+<p><span dir="rtl">در مثال بالا اکشن های index و show نیاز به احراز هویت نخواهند داشت. </span></p>
+
+<p>&nbsp;</p>
+
+<hr>
+<p>&nbsp;</p>
+
+<h3><span dir="rtl">تعیین admin یا user</span></h3>
+
+<p><span dir="rtl">برای تعیین <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">admin</code> یا <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">user</code> بودن کاربر، مراحل زیر رو انجام میدیم:</span></p>
+
+<p><span dir="rtl">1- دستور زیر را در خط فرمان وارد میکنیم:</span></p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:middleware</span> <span class="hljs-tag">CheckAdminOrUser</span></code></pre>
+
+<p><span dir="rtl">2- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">app/Http/Middleware</code> فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">ChechAdminOrUser.php</code> رو باز میکنیم و کدهای زیر رو در آن مینویسیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Middleware</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Closure</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChechAdminOrUser</span>
+{</span>
+    <span class="hljs-comment">/**
+     * Handle an incoming request.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-phpdoc"> @param</span>  \Closure  $next
+     *<span class="hljs-phpdoc"> @return</span> mixed
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">(<span class="hljs-variable">$request</span>, Closure <span class="hljs-variable">$next</span>)</span>
+    {</span>
+        <span class="hljs-keyword">if</span>(auth()-&gt;check() &amp;&amp; auth()-&gt;user()-&gt;isAdmin()){
+            <span class="hljs-comment">// دسترسی به یو آر ال درخواست شده</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$next</span>(<span class="hljs-variable">$request</span>);
+        }
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'/'</span>);
+    }
+}
+</code></pre>
+
+<p><span dir="rtl">3- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">app/Http</code> در فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">kernel.php</code>، در پراپرتی <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">$routeMiddleware</code>، نام و مسیر میدلور رو اضافه میکنیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript">protected $routeMiddleware = [
+    <span class="hljs-string">'auth'</span><span class="hljs-function"> =&gt;</span> \Illuminate\Auth\Middleware\<span class="hljs-attribute">Authenticate</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+    <span class="hljs-string">'auth.basic'</span><span class="hljs-function"> =&gt;</span> \Illuminate\Auth\Middleware\<span class="hljs-attribute">AuthenticateWithBasicAuth</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+    <span class="hljs-string">'bindings'</span><span class="hljs-function"> =&gt;</span> \Illuminate\Routing\Middleware\<span class="hljs-attribute">SubstituteBindings</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+    <span class="hljs-string">'can'</span><span class="hljs-function"> =&gt;</span> \Illuminate\Auth\Middleware\<span class="hljs-attribute">Authorize</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+    <span class="hljs-string">'guest'</span><span class="hljs-function"> =&gt;</span> \App\Http\Middleware\<span class="hljs-attribute">RedirectIfAuthenticated</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+    <span class="hljs-string">'throttle'</span><span class="hljs-function"> =&gt;</span> \Illuminate\Routing\Middleware\<span class="hljs-attribute">ThrottleRequests</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+
+<span class="hljs-regexp">//</span> <span class="hljs-keyword">new</span> middleware
+    <span class="hljs-string">'checkAdmin'</span><span class="hljs-function"> =&gt;</span> \App\Http\Middleware\<span class="hljs-attribute">ChechAdminOrUser</span>::<span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+
+];</code></pre>
+
+<p><span dir="rtl">4- حالا در مدل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">User</code> متد زیر را اضافه میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isAdmin</span><span class="hljs-params">()</span>
+{</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;level == <span class="hljs-string">'admin'</span> ? <span class="hljs-keyword">true</span> : <span class="hljs-keyword">false</span>;
+}</code></pre>
+
+<p><span dir="rtl">5- روتهایی که مربوط به بخش <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">admin</code> است رو در یک <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Route::group</code> قرار میدهیم:</span></p>
+
+<pre><code class="language-0 hljs php">Route::group(
+    [
+        <span class="hljs-string">'namespace'</span> =&gt; <span class="hljs-string">'Admin'</span>,
+        <span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-string">'Admin'</span>,
+        <span class="hljs-string">'middleware'</span> =&gt; [<span class="hljs-string">'checkAdmin'</span>],
+    ],
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    Route::get(<span class="hljs-string">'/articles/index'</span>, <span class="hljs-string">'ArticlesController@index'</span>)-&gt;name(<span class="hljs-string">'admin-article.index'</span>);       
+  <span class="hljs-comment">// دیگر روتهای بخش ادمین       </span>
+});</code></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+<p>&nbsp;</p>
+
+<h3>احراز هویت دستی</h3>
+
+<p><span dir="rtl">بعضی جاها ممکنه به طور دستی بخواهیم احرازهویت کاربر رو بررسی کنیم که برای اینکار از facade کلاس &nbsp;Auth و متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">check</code> استفاده می کنیم به طور مثال در صفحه قالب master.blade.php در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/views/layouts</code> برنامه مان می خواهیم منوهایی را برای کاربران ثبت نام شده اضافه کنیم به این صورت عمل می کنیم:</span></p>
+
+<pre><code class="language-0 hljs bash">@<span class="hljs-keyword">if</span> (Auth::check())
+    &lt;li class=<span class="hljs-string">"dropdown"</span>&gt;
+        &lt;a href=<span class="hljs-string">"#"</span> class=<span class="hljs-string">"dropdown-toggle"</span> data-toggle=<span class="hljs-string">"dropdown"</span> role=<span class="hljs-string">"button"</span> aria-expanded=<span class="hljs-string">"false"</span>&gt;
+            {{ Auth::user()-&gt;name }} &lt;span class=<span class="hljs-string">"caret"</span>&gt;&lt;/span&gt;
+        &lt;/a&gt;
+ 
+        &lt;ul class=<span class="hljs-string">"dropdown-menu"</span> role=<span class="hljs-string">"menu"</span>&gt;
+            &lt;li&gt;
+                &lt;a href=<span class="hljs-string">"{{ route('logout') }}"</span>
+                   o&lt;strong&gt;&lt;/strong&gt;nclick=<span class="hljs-string">"event.preventDefault();
+     document.getElementById('logout-form').submit();"</span>&gt;
+                    Logout
+                &lt;/a&gt;
+ 
+                &lt;form id=<span class="hljs-string">"logout-form"</span> action=<span class="hljs-string">"{{ route('logout') }}"</span> method=<span class="hljs-string">"POST"</span> style=<span class="hljs-string">"display: none;"</span>&gt;
+                    {{ csrf_field() }}
+                &lt;/form&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+@<span class="hljs-keyword">else</span>
+    &lt;li&gt;&lt;a href=<span class="hljs-string">"{{ route('login') }}"</span>&gt;Login&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=<span class="hljs-string">"{{ route('register') }}"</span>&gt;Register&lt;/a&gt;&lt;/li&gt;
+@endif</code></pre>
+
+<p><span dir="rtl">همانطور که مشاهده می کنید اگر کاربر احرازهویت شده بود
+ در منوی سایت نام کاربر و لینک خروج نمایش داده شود و آن به مسیر logout 
+هدایت می کند تا کاربر از سایت خارج شود و همچنین اگر کاربر احرازهویت نشده
+ بود به او لینک ورود به سایت که به صفحه <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">auth/login</code>
+ لینک می شود و صفحه لاگین به او نشان داده می شود. همانطور که در پست قبلی
+ هم ذکر کردم مسیر logout به صورت post می باشد و با راهکار بالا که از 
+جاوا اسکریپت استفاده شده لینک را به صورت post ارسال می کنیم.<br>
+<br>
+هنگامی که کاربر روی &nbsp;آیتم خروج کلیک کند به متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">()logout</code> هدایت می شود که در آن توسط دستور زیر سشن کاربر از بین خواهد رفت :</span></p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-tag">Auth</span><span class="hljs-pseudo">::logout()</span>;</code></pre>
+
+<p><span dir="rtl">همچنین متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">guest</code>
+ برعکس متد check روی کلاس Auth عمل می کند به صورتی که در متد guest زمانی
+ مقدار true بر میگرداند که کاربر احرازهویت نشده ولی متد check زمانی true
+ می دهد که کاربر احرازهویت شده است که در صورت نیاز میتوانید از هرکدام 
+استفاده کنید.</span></p>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">لاراول داخل کنترلر LoginController از یک trait به نام <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">ThrottlesLogins</code>
+ استفاده کرده است که اگر تعداد تلاش های ناموفق کاربر برای لاگین کردن 
+بیشتر از 5 بار بود به مدت 60 ثانیه به آن اجازه لاگین را نخواهد داد که در
+ صورتی که نیاز به تغییر رفتار آن دارید می توانید در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Illuminate\Foundation\Auth\ThrottlesLogins</code> این trait را ویرایش کنید. متد شناسایی کاربران در این روش &nbsp;نام کاربری و آدرس IP کاربر می باشد.</span></p>
+
+<p>&nbsp;</p>
+
+<hr>
+<h3>&nbsp;</h3>
+
+<h3><span style="color:#00aaff"><span dir="rtl">روش دستی برای لاگین</span></span></h3>
+
+<p><span dir="rtl">در صورتی که بخواهیم به صورت دستی لاگین رو انجام بدهیم
+ و نخواهیم از لاگین پیش فرض لاراول استفاده کنیم می توانیم از متد attempt
+ کلاس Auth استفاده کنیم :</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">authenticate</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+{</span>
+   <span class="hljs-keyword">if</span> (Auth::attempt([<span class="hljs-string">'email'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;email, <span class="hljs-string">'password'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;password])) {
+       <span class="hljs-comment">// Authentication passed...</span>
+       <span class="hljs-keyword">return</span> redirect()-&gt;intended(<span class="hljs-string">'dashboard'</span>);
+   }
+}</code></pre>
+
+<p><span dir="rtl">همانظور که مشاهده می کنید به متد attempt یک آرایه 
+دادیم که کلید های آرایه ستون های email و password در جدول users می باشد و
+ مقادیر آن هم مقادیری است که کاربر در فرم لاگین وارد می کنید و این متد 
+کلمه عبور را هش خواهد کرد و با مقدار داخل دیتابیس چک و همچنین ایمیل را 
+هم چک خواهد کرد و اگر مقادیر وارد شده صحت داشته باشند کاربر لاگین خواهد 
+شد. همینطور که در مثال بالا می بینید از متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">intended</code>
+ &nbsp;برای ریدایرکت کردن استفاده کردیم این متد در واقع کاربردش به این 
+صورت هست که اگر شما &nbsp;یک صفحه ای رو درخواست کرده باشید که نیاز به 
+احرازهویت داشته باشد و شما به صفحه لاگین هدایت شدید بعد اینکه احراز هویت
+ شدید به همان صفحه دوباره ریدایرکت خواهید شد در غیر انصورت به صفحه 
+dashboard هدایت خواهید شد (همان مسیری که داخل تابع intended می نویسیم).<br>
+<br>
+همچنین می توانیم ستون های دیگری رو هم در هنگام لاگین کردن چک کنیم کافیه در متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">attempt</code>
+ آن ستون &nbsp;را هم به آرایه اضافه کنیم به طور مثال ستون active رو هم 
+برای کاربران چک خواهیم کرد و حتما باید مقدارش 1 یا true باشد:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">if</span> (Auth::attempt([<span class="hljs-string">'email'</span> =&gt; <span class="hljs-variable">$email</span>, <span class="hljs-string">'password'</span> =&gt; <span class="hljs-variable">$password</span>, <span class="hljs-string">'active'</span> =&gt; <span class="hljs-number">1</span>])) {
+   <span class="hljs-comment">// The user is active, not suspended, and exists.</span>
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">اگر هم بخواهیم درهنگام لاگین از چک باکس remember هم 
+استفاده کنیم تا کاربر را به خاطر بسپاریم و در مراحل بعدی که به وبسایت 
+مراجعه می کند نیازی به لاگین کردن نداشته باشد به متد attempt مقدار ورودی
+ remember را به عنوان پارامتر دوم پاس می دهیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-keyword">if</span> (\<span class="hljs-attribute">Auth</span>::attempt($request-&gt;only([<span class="hljs-string">'username'</span>, <span class="hljs-string">'password'</span>]), $request-&gt;has(<span class="hljs-string">'remember'</span>))) {
+   <span class="hljs-keyword">return</span> redirect<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>intended(<span class="hljs-string">'/post'</span>);
+}</code></pre>
+
+<p><span dir="rtl">در مثال بالا از <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">has</code> روی کلاس <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Request</code>
+ استفاده کردیم چون فقط مقدار true یا false مدنظرمان است و در جدول users 
+باید یک ستون از نوع varchar به نام remember_token وجود داشته باشد که 
+لاراول با توجه به کوکی که در سیستم کاربر ایجاد کرده یک توکن هم داخل این 
+ستون ذخیره می کند و در مراجعات بعدی کاربر از روی همین توکن کاربر را 
+شناسایی و نیازی به لاگین نخواهد داشت.<br>
+در این صورت برای بررسی اینکه کاربر احرازهویت شده است به جای متد check از <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">viaRemember</code> استفاده می کنیم: </span></p>
+
+<pre><code class="language-0 hljs cs"><span class="hljs-keyword">if</span> (Auth::viaRemember()) {
+   <span class="hljs-comment">//</span>
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">در صورتی که می خواهید اعتبارسنجی فرم لاگین را ویرایش کنید می توانید متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">validateLogin</code> را در کنترلر LoginController را <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">override</code> کنید و آن را به دلخواهتان ویرایش کنید: </span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateLogin</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+{</span>
+    <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>, [
+        <span class="hljs-variable">$this</span>-&gt;username() =&gt; <span class="hljs-string">'required'</span>, <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'required'</span>,
+    ]);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">در صورتی که می خواهید ستون هایی که در هنگام لاگین 
+کردن بررسی می شوند را ویرایش کنید و به طور مثال ستون active کاربر را هم 
+چک کنید که حتما کاربر active باشد متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">credentials</code> را در کنترلر LoginController را override کنید: </span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">credentials</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+{</span>
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;email,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;password,
+        <span class="hljs-string">'active'</span> =&gt; <span class="hljs-number">1</span>
+    ];
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<div class="row" style="background-color:#d4e1e9; margin-top:30px; padding:10px"><span dir="rtl"><strong>منبع: </strong><a href="http://forum.ncis.ir/Thread-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-Laravel?pid=5601#pid5601" target="_blank"> <strong>احراز هویت</strong></a>&nbsp; <strong>و <a href="http://forum.ncis.ir/Thread-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-Laravel?pid=5656#pid5656" target="_blank">مطالب تکمیلی</a></strong></span></div>
+</div>
+                <div id="date-row" class="row">
+                    <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-lg-offset-7 col-lg-5">
+                        <div class="post-date">
+                            <strong>نوشته شده در تاریخ: </strong>
+                            <span>سه شنبه ۱۳۹۶/۰۲/۱۲ ساعت ۱۲:۲۲ ب.ظ</span>
+                        </div>
+                    </div>
+                </div>
+                                                        <div class="row">
+                        <div class="col-xs-12">
+                            <div class="post-tag-row">
+                                <strong class="text-info">برچسب ها: </strong>
+                                <span class="text-success">
+                                                                            <a href="http://samaiweb.com/tags/1" target="_blank">framework</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/9" target="_blank">خط فرمان</a>
+                                                                                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                            
+                <div class="form-box alert-info text-left">
+                    <div class="row fa-close-row">
+                        <span class="fa fa-close fa-2x" title="" data-toggle="tooltip" data-original-title="جواب نمیدهم" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div id="success-error" class="col-xs-12 col-sm-offset-3 col-sm-5" style="display: none;"></div>
+                        
+                        <form method="POST" action="http://samaiweb.com/comments" accept-charset="UTF-8" id="create-comment"><input name="_token" value="lPqq7G0XrI29isG3XA6FMU1RwWvFRh7awqZUckdn" type="hidden">
+                        <input name="_token" value="lPqq7G0XrI29isG3XA6FMU1RwWvFRh7awqZUckdn" type="hidden">
+
+                        <input id="post_id" name="post_id" value="12" type="hidden">
+                        <input id="parent_id" name="parent_id" value="0" type="hidden">
+
+                        <div id="username" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="username">نام</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="نام و نام خانوادگی" name="username" id="username" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="url" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="url">سایت</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="لینک سایت شما: http://example.com" name="url" id="url" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="email" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="email">ایمیل</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="ایمیل شما: example@example.com" name="email" id="email" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="captcha" class="form-group ">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3">
+                                    <label for="captcha" class="control-label">کد امنیتی</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-5">
+                                    <input class="form-control" placeholder="کد امنیتی" name="captcha" id="captcha" type="text">
+                                                                    </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-xs-1 col-sm-1">
+                                    <button type="button" id="refresh" class="btn btn-sm btn-info" title="" data-toggle="tooltip" data-original-title="تغییر کد امنیتی">
+                                        <i class="glyphicon glyphicon-refresh"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-11 col-sm-4" id="captcha-div">
+                                    <img src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/flat.png" alt="captcha" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="body" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="body">نظر</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <textarea id="body" name="body" rows="10" style="resize:none;" class="form-control" placeholder="نظر شما در مورد این مطلب"></textarea>
+                                                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-offset-3 col-sm-5 text-center">
+                                <input class="btn btn-lg btn-info" value="ارسال" type="submit">
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scrol-to-top">
+            <div class="scrollup" style="display: none;">
+                <i class="fa fa-angle-double-up"></i>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>بازدیدهای سایت</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><strong>افراد آنلاین:</strong> 1</p><p><strong>بازدید امروز:</strong> 5</p><p><strong>بازدید دیروز:</strong> 14</p><p><strong>بازدید کل:</strong> 5597</p>                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>پیوندها</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><a href="https://secure.php.net/docs.php" target="_blank">مستندات php</a></p><p><a href="http://www.w3schools.com/php/" target="_blank">PHP Tutorial</a></p><p><a href="https://laravel.com/docs/5.3" target="_blank">مستندات laravel</a></p><p><a href="http://forum.ncis.ir/" target="_blank">تالار گفتمان ncis</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <ul id="icons">
+                                <li>
+                                    <a href="https://www.facebook.com/topalternatives" target="_blank" rel="nofollow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/topalt" target="_blank" rel="nofollow">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://topalternatives.com/feed/" target="_blank" rel="nofollow">
+                                        <i class="fa fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/u/0/b/101188387378944618683/101188387378944618683" target="_blank" rel="nofollow">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCBuEJnRY2jGO0FY9SmlhfjA" target="_blank" rel="nofollow">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="pull-right">© کلیه حقوق این سایت متعلق به <a href="http://samaiweb.com/">وب سایت شخصی عبدالله سمعی</a> میباشد.</p>
+                        <p class="pull-left">قدرت گرفته از فریمورک Laravel</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/jquery.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap_003.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap_002.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/bootstrap-submenu-script.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/scripts.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/transition.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/highlight.js"></script>
+
+
+        
+    <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20Authentication_files/show-comment.js"></script>
+
+
+
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    
+</body></html>

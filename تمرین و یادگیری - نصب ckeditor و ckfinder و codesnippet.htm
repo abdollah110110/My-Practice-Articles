@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - نصب ckeditor و ckfinder و codesnippet
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>نصب ckeditor و ckfinder و codesnippet</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <p dir="rtl">1- ckeditor full package و ckfinder و codesnippet را دانلود میکنیم.</p>
+
+<p dir="rtl">2- ckfinder را در داخل پوشه ckeditor قرار میدهیم.</p>
+
+<p dir="rtl">3- codeSnippet را در مسیر ckeditor/plugins قرار میدهیم.</p>
+
+<p dir="rtl">4- فایل ckeditor/config.js را باز کرده و کدهای زیر را در آن قرار میدهیم:</p>
+
+<pre><code class="language-1 hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">config_codesnippet</span><span class="hljs-params">(textarea_id)</span> {</span>
+
+    CKEDITOR.disableAutoInline = <span class="hljs-literal">true</span>;
+
+    <span class="hljs-keyword">var</span> config = {
+        toolbar: [
+            [<span class="hljs-string">'Save'</span>, <span class="hljs-string">'NewPage'</span>, <span class="hljs-string">'Preview'</span>, <span class="hljs-string">'Print'</span>, <span class="hljs-string">'-'</span>, <span class="hljs-string">'Templates'</span>],
+            [<span class="hljs-string">'Cut'</span>, <span class="hljs-string">'Copy'</span>, <span class="hljs-string">'Paste'</span>, <span class="hljs-string">'PasteText'</span>, <span class="hljs-string">'PasteFromWord'</span>],
+            [<span class="hljs-string">'Undo'</span>, <span class="hljs-string">'Redo'</span>],
+            [<span class="hljs-string">'Find'</span>,<span class="hljs-string">'Replace'</span>],
+            [<span class="hljs-string">'Maximize'</span>],
+            <span class="hljs-string">'/'</span>,
+            [<span class="hljs-string">'CodeSnippet'</span>],
+            [<span class="hljs-string">'Source'</span>],
+            [<span class="hljs-string">'Bold'</span>, <span class="hljs-string">'Italic'</span>, <span class="hljs-string">'Strike'</span>, <span class="hljs-string">'RemoveFormat'</span>],
+            [<span class="hljs-string">'NumberedList'</span>, <span class="hljs-string">'BulletedList'</span>, <span class="hljs-string">'Outdent'</span>],
+            [<span class="hljs-string">'Indent'</span>, <span class="hljs-string">'Blockquote'</span>, <span class="hljs-string">'CreateDiv'</span>],
+            [<span class="hljs-string">'JustifyLeft'</span>,<span class="hljs-string">'JustifyCenter'</span>,<span class="hljs-string">'JustifyRight'</span>,<span class="hljs-string">'JustifyBlock'</span>],
+            [<span class="hljs-string">'JustifyBlock'</span>,<span class="hljs-string">'BidiLtr'</span>,<span class="hljs-string">'BidiRtl'</span>],
+            [<span class="hljs-string">'Image'</span>, <span class="hljs-string">'Link'</span>, <span class="hljs-string">'Unlink'</span>, <span class="hljs-string">'Table'</span>, <span class="hljs-string">'HorizontalRule'</span>, <span class="hljs-string">'SpecialChar'</span>],
+            [<span class="hljs-string">'Styles'</span>, <span class="hljs-string">'Format'</span>,<span class="hljs-string">'Font'</span>,<span class="hljs-string">'FontSize'</span>],
+        ],
+        extraPlugins : <span class="hljs-string">'codesnippet'</span>,
+        codeSnippet_theme: <span class="hljs-string">'monokai_sublime'</span>,
+        codeSnippet_languages: [
+            <span class="hljs-string">'PHP'</span>,
+            <span class="hljs-string">'JAVASCRIPT'</span>,
+            <span class="hljs-string">'MYSQL'</span>,
+            <span class="hljs-string">'JQUERY'</span>,
+            <span class="hljs-string">'HTML'</span>,
+            <span class="hljs-string">'CSS'</span>,
+        ],
+        filebrowserBrowseUrl : <span class="hljs-string">'/ckeditor/ckfinder/ckfinder.html'</span>,
+        filebrowserUploadUrl : <span class="hljs-string">'/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&amp;type=Files'</span>,
+        filebrowserImageBrowseUrl : <span class="hljs-string">'/ckeditor/ckfinder/ckfinder.html?type=Images'</span>,
+        filebrowserFlashBrowseUrl : <span class="hljs-string">'/ckeditor/ckfinder/ckfinder.html?type=Flash'</span>,
+        filebrowserImageUploadUrl : <span class="hljs-string">'/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&amp;type=Images'</span>,
+        filebrowserFlashUploadUrl : <span class="hljs-string">'/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&amp;type=Flash'</span>,
+<span class="hljs-comment">//        height: 400,</span>
+<span class="hljs-comment">//        uiColor: '#ffaaaa',</span>
+        stylesSet: [
+            { 
+                name: <span class="hljs-string">'My Custom Block 1'</span>, 
+                element: <span class="hljs-string">'span'</span>, 
+                styles: { color:<span class="hljs-string">'#c131e0'</span>, background:<span class="hljs-string">'#f7dbf7'</span>, padding:<span class="hljs-string">'1px 3px'</span>} 
+            },
+            { 
+                name: <span class="hljs-string">'text-muted class'</span>, 
+                element: <span class="hljs-string">'span'</span>, 
+                attributes: { <span class="hljs-string">'class'</span>: <span class="hljs-string">'text-muted'</span>} 
+            }
+        ],
+    };
+
+    <span class="hljs-comment">/**
+     * آیدی تکست آرآها رو در یک آرایه قرار میدیم
+     * اینطوری کداسنیپت رو به همشون اعمال میکنیم با قرار دادن کدها در حلقه
+     * تعداد خانه های آرایه رو هم برای استفاده در حلقه ها بدست میاریم
+     * تا اگه کدمون تغییر کرد فقط عناصر آرایه رو کم یا زیاد کنیم
+     */</span>
+    <span class="hljs-keyword">var</span> editor = textarea_id;
+    <span class="hljs-keyword">var</span> editor_len = editor.length;
+
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; editor_len; i++) {
+        CKEDITOR.replace(editor[i], config);
+    }
+
+
+    CKEDITOR.inline(<span class="hljs-string">'editable'</span>, CKEDITOR.tools.extend({}, config, {
+        extraPlugins: <span class="hljs-string">'codesnippet'</span>
+    }, <span class="hljs-literal">true</span>));
+
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; editor_len; i++) {
+        initThemeChange(editor[i]);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initThemeChange</span><span class="hljs-params">(editor)</span> {</span>
+        <span class="hljs-keyword">var</span> templates = [
+            <span class="hljs-string">'monokai_sublime'</span>, <span class="hljs-string">'default'</span>, <span class="hljs-string">'arta'</span>,
+            <span class="hljs-string">'ascetic'</span>, <span class="hljs-string">'atelier-dune.dark'</span>,
+            <span class="hljs-string">'atelier-dune.light'</span>, <span class="hljs-string">'atelier-forest.dark'</span>,
+            <span class="hljs-string">'atelier-forest.light'</span>, <span class="hljs-string">'atelier-heath.dark'</span>,
+            <span class="hljs-string">'atelier-heath.light'</span>, <span class="hljs-string">'atelier-lakeside.dark'</span>,
+            <span class="hljs-string">'atelier-lakeside.light'</span>, <span class="hljs-string">'atelier-seaside.dark'</span>,
+            <span class="hljs-string">'atelier-seaside.light'</span>, <span class="hljs-string">'brown_paper'</span>,
+            <span class="hljs-string">'dark'</span>, <span class="hljs-string">'docco'</span>, <span class="hljs-string">'far'</span>, <span class="hljs-string">'foundation'</span>,
+            <span class="hljs-string">'github'</span>, <span class="hljs-string">'googlecode'</span>, <span class="hljs-string">'idea'</span>, <span class="hljs-string">'ir_black'</span>,
+            <span class="hljs-string">'magula'</span>, <span class="hljs-string">'mono-blue'</span>, <span class="hljs-string">'monokai'</span>, <span class="hljs-string">'obsidian'</span>,
+            <span class="hljs-string">'paraiso.dark'</span>, <span class="hljs-string">'paraiso.light'</span>, <span class="hljs-string">'pojoaque'</span>,
+            <span class="hljs-string">'railscasts'</span>, <span class="hljs-string">'rainbow'</span>, <span class="hljs-string">'school_book'</span>,
+            <span class="hljs-string">'solarized_dark'</span>, <span class="hljs-string">'solarized_light'</span>,
+            <span class="hljs-string">'sunburst'</span>, <span class="hljs-string">'tomorrow-night-blue'</span>,
+            <span class="hljs-string">'tomorrow-night-bright'</span>, <span class="hljs-string">'tomorrow-night-eighties'</span>,
+            <span class="hljs-string">'tomorrow-night'</span>, <span class="hljs-string">'tomorrow'</span>, <span class="hljs-string">'vs'</span>,
+            <span class="hljs-string">'xcode'</span>, <span class="hljs-string">'zenburn'</span>
+        ],
+                pre = CKEDITOR.document.getById(<span class="hljs-string">'sampleConfig'</span>),
+                select = CKEDITOR.document.getById(<span class="hljs-string">'select'</span>),
+                codeTemplate = <span class="hljs-string">'CKEDITOR.replace( \''</span> + editor + <span class="hljs-string">'\', {\n'</span> +
+                <span class="hljs-string">'	&lt;strong&gt;extraPlugins: \'codesnippet\',&lt;/strong&gt;\n'</span> +
+                <span class="hljs-string">'	codeSnippet_theme: \'{tpl}\'\n'</span> +
+                <span class="hljs-string">'} );'</span>,
+                name, option;
+
+        <span class="hljs-keyword">while</span> ((name = templates.shift())) {
+            option = CKEDITOR.document.createElement(<span class="hljs-string">'option'</span>, {
+                attributes: {
+                    value: name
+                }
+            });
+
+            option.setText(name);
+            select.append(option);
+        }
+
+        select.$.onchange = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">if</span> (CKEDITOR.instances.editor1)
+                CKEDITOR.instances.editor1.destroy();
+
+        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; editor_len; i++) {
+            CKEDITOR.replace(editor[i], CKEDITOR.tools.extend({}, config, {
+                codeSnippet_theme: <span class="hljs-keyword">this</span>.value
+            }, <span class="hljs-literal">true</span>));
+        }
+
+            pre.setHtml(codeTemplate.replace(<span class="hljs-string">'{tpl}'</span>, <span class="hljs-keyword">this</span>.value));
+        };
+    }
+
+    <span class="hljs-keyword">if</span> (CKEDITOR.env.ie &amp;&amp; CKEDITOR.env.version == <span class="hljs-number">8</span>)
+        CKEDITOR.document.getById(<span class="hljs-string">'ie8-warning'</span>).addClass(<span class="hljs-string">'warning'</span>);
+}
+
+$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+
+    <span class="hljs-comment">// متغیری برای نگهداشتن آیدیهای تکست آرآ</span>
+    <span class="hljs-keyword">var</span> textarea_ids = [];
+    <span class="hljs-comment">// متغیری برای نگهداشتن تعداد تکست آرآها</span>
+    <span class="hljs-keyword">var</span> len = ($(<span class="hljs-string">'textarea'</span>).length);
+
+    $(<span class="hljs-string">'textarea'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+        <span class="hljs-comment">// آرایه ایدیها را از صفر شروع میکند</span>
+        len--;
+        textarea_ids[len] = $(<span class="hljs-keyword">this</span>).attr(<span class="hljs-string">'id'</span>);
+    });
+
+    config_codesnippet(textarea_ids);
+
+});</code></pre>
+
+<p dir="rtl">5- کدهای زیر را در صفحه لود میکنیم( <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">در موقع کار با لاراول، این کدها را در سکشن اسکریپت قرار میدهیم</span> ):</p>
+
+<pre><code class="language-4 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">'/ckeditor/ckeditor.js'</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">'/ckeditor/ckfinder/ckfinder.js'</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">'/ckeditor/config.js'</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p dir="rtl">6- در فایل config.php از ckfinder موارد کدهای زیر باید به این شکل باشد:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-variable">$config</span>[<span class="hljs-string">'authentication'</span>] = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+};
+
+<span class="hljs-variable">$config</span>[<span class="hljs-string">'backends'</span>][] = <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">'name'</span>         =&gt; <span class="hljs-string">'default'</span>,
+    <span class="hljs-string">'adapter'</span>      =&gt; <span class="hljs-string">'local'</span>,
+    <span class="hljs-string">'baseUrl'</span>      =&gt; <span class="hljs-string">'/uploads'</span>,
+    <span class="hljs-string">'chmodFiles'</span>   =&gt; <span class="hljs-number">0777</span>,
+    <span class="hljs-string">'chmodFolders'</span> =&gt; <span class="hljs-number">0755</span>,
+    <span class="hljs-string">'filesystemEncoding'</span> =&gt; <span class="hljs-string">'UTF-8'</span>,
+<span class="hljs-comment">//  'root'         =&gt; '', // Can be used to explicitly set the CKFinder user files directory.</span>
+);</code></pre>
+
+<p dir="rtl">7- برای اینکه کدها بصورت هایلات شده نشان داده شوند کدهای 
+زیر را در صفحه هایی که ادیتور وجود دارد و همینطور صفحه هایی که کدها باید
+ نشان داده شوند، این فایلها را لود میکنیم. دو فایل زیر را در هدر صفحه 
+قرار میدهیم( <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">در موقع کار با لاراول این کدها را در لیوت قرار میدهیم</span> ):</p>
+
+<pre><code class="language-4 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/ckeditor/plugins/codesnippet/lib/highlight/styles/vs.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p dir="rtl">و کد زیر را در انتهای تگ body قرار میدهیم:</p>
+
+<pre><code class="language-4 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">hljs.initHighlightingOnLoad();</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<ul dir="rtl">
+	<li>در موقع کار با php و در صفحه edit، در فرمی که textarea قرار دارد 
+برای اینکه مشکلی در نمایش کدها بوجود نیاید بصورت زیر عمل میکنیم:</li>
+</ul>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"body"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"body"</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">"6"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"متن کامل مقاله را بنویسید..."</span>&gt;</span><span class="php"><span class="hljs-preprocessor">&lt;?</span>= htmlentities(<span class="hljs-variable">$article</span>-&gt;body) <span class="hljs-preprocessor">?&gt;</span></span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span></code></pre>
+
+<p><a href="http://localhost:8000/uploads/images/ckeditor-image.jpg" target="_blank"><img alt="ckeditor" class="img-p" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/ckeditor-image.jpg"></a></p>
+
+<p><a href="http://localhost:8000/uploads/images/ckfinder-image.jpg" target="_blank"><img alt="ckfinder image" class="img-p" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/ckfinder-image.jpg"></a></p>
+
+<p><a href="http://localhost:8000/uploads/images/codesnippet-image.jpg" target="_blank"><img alt="codesnippet image" class="img-p" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/codesnippet-image.jpg"></a></p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20ckeditor%20%D9%88%20ckfinder%20%D9%88%20codesnippet_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

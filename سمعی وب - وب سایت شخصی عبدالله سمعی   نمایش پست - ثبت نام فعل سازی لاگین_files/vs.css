@@ -1,0 +1,162 @@
+/*
+
+Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block; padding: 0.5em;
+  background: #013; color: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-template_comment,
+.hljs-javadoc {
+  color: #926d9e;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.ruby .hljs-function .hljs-keyword,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #FF4B00;
+  font-weight: bold;
+}
+
+.hljs-function .hljs-keyword,
+.hljs-sub .hljs-keyword,
+.method,
+.hljs-list .hljs-title {
+  color: #93FF02;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.apache .hljs-cbracket,
+.hljs-date,
+.tex .hljs-command,
+.coffeescript .hljs-attribute {
+  color: #03FF0F;
+}
+
+.hljs-subst {
+  color: #DAEFA3;
+}
+
+.hljs-regexp {
+  color: #9176B3;
+}
+
+.hljs-title,
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.hljs-tag,
+.hljs-tag .hljs-keyword,
+.hljs-decorator,
+.hljs-shebang,
+.hljs-prompt {
+  color: #ffb569;
+  font-weight: bold;
+}
+
+.hljs-class .hljs-title,
+.haskell .hljs-type,
+.smalltalk .hljs-class,
+.hljs-javadoctag,
+.hljs-yardoctag,
+.hljs-phpdoc {
+  text-decoration: none;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-number {
+  color: #3387CC;
+}
+
+.hljs-params,
+.hljs-variable,
+.clojure .hljs-attribute {
+  color: #02B7FF;
+}
+
+.css .hljs-tag,
+.hljs-rules .hljs-property,
+.hljs-pseudo,
+.tex .hljs-special {
+  color: #FEEA02;
+}
+
+.css .hljs-class {
+  color: #9B703F;
+}
+
+.hljs-rules .hljs-keyword {
+  color: #C5AF75;
+}
+
+.hljs-rules .hljs-value {
+  color: #00FF15;
+}
+
+.css .hljs-id {
+  color: #8B98AB;
+}
+
+.hljs-annotation,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in {
+  color: #9B859D;
+}
+
+.hljs-preprocessor,
+.hljs-pragma {
+  color: #8996A8;
+}
+
+.hljs-hexcolor,
+.css .hljs-value .hljs-number {
+  color: #00FF15;
+}
+
+.css .hljs-function {
+  color: #DAD085;
+}
+
+.diff .hljs-header,
+.hljs-chunk,
+.tex .hljs-formula {
+  background-color: #0E2231;
+  color: #F8F8F8;
+  font-style: italic;
+}
+
+.diff .hljs-change {
+  background-color: #4A410D;
+  color: #F8F8F8;
+}
+
+.hljs-addition {
+  background-color: #253B22;
+  color: #F8F8F8;
+}
+
+.hljs-deletion {
+  background-color: #420E09;
+  color: #F8F8F8;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}

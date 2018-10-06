@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="http://samaiweb.com/images/icon-logo.png">
+
+        
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>سمعی وب - سایت شخصی عبدالله سمعی طراح و برنامه نویس | سطح بندی کاربران در laravel</title>
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap_002.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/font-awesome.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/parsley.htm">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/style.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap-submenu-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/comments-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/transition.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/vs.css">
+
+
+                <style type="text/css">
+            #main{
+                padding-top: 85px;
+            }
+        </style>
+        
+
+        
+    </head>
+    <body>
+
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <a href="http://samaiweb.com/" class="navbar-brand h2" title="" data-toggle="tooltip" data-original-title="وب سایت شخصی عبدالله سمعی">سمعی وب</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="navbar-nav" class="nav navbar-nav">
+                        <li class="">
+                            <a href="http://samaiweb.com/">صفحه اصلی</a>
+                        </li>
+                                                <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">موضوعات <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                برنامه نویسی سمت سرور <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/1">
+                                                            PHP <span class="pull-left badge">0</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/2">
+                                                            laravel <span class="pull-left badge">8</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/9">
+                                                            Mysql <span class="pull-left badge">1</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                طراحی وب سایت <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/8">
+                                                            Jquery and Javascript <span class="pull-left badge">3</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/about">درباره ما</a>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/contact">تماس با ما</a>
+                        </li>
+                                                    <li>
+                                <a href="http://samaiweb.com/admin">مدیریت</a>
+                            </li>
+                            <li>
+                                <a href="http://samaiweb.com/logout">خروج</a>
+                            </li>
+                                            </ul>
+                    <form action="http://samaiweb.com/search" method="POST" class="navbar-form navbar-left hidden-xs hidden-sm">
+                        <input name="_token" value="yqneoz2lMe4oHWCQQRd2OnHDtWHvJu2R9MdpAfNi" type="hidden">
+                        <div class="form-group">
+                            <input name="search" placeholder="جستجو" type="text">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav><!-- End of navbar -->
+
+        
+        <div class="row">
+            <div id="main" class="container-fluid">
+                <div class="container">
+                    <div id="sidebar" class="col-xs-12 col-md-3">
+                        <div id="xs-search" class="sidebar-head hidden-md hidden-lg">
+                            <div class="sidbar-main">
+                                <div class="sidebar-content alert-info">
+                                    <form action="http://samaiweb.com/search" method="POST">
+                                        <input name="_token" value="yqneoz2lMe4oHWCQQRd2OnHDtWHvJu2R9MdpAfNi" type="hidden">
+                                        <input name="search" class="form-group form-control" placeholder="جستجو در مطالب ..." type="text">
+                                        <button type="submit" class="btn btn-default btn-lg">جستجو</button>
+                                    </form>
+                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                        <div class="sidebar-head">
+                            <h3>موضوعات</h3>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>برنامه نویسی سمت سرور<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/1">
+                                                                    PHP <span class="pull-left badge">0</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/2">
+                                                                    laravel <span class="pull-left badge">8</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/9">
+                                                                    Mysql <span class="pull-left badge">1</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>طراحی وب سایت<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/8">
+                                                                    Jquery and Javascript <span class="pull-left badge">3</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                    </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="col-xs-12 col-md-9">
+                                                <div class="row">
+    <div class="col-xs-12">
+            <div class="thumbnail post">
+                <h1><span class="fa fa-arrow-left"></span> سطح بندی کاربران در laravel</h1>
+                <div class="alert"><p><span dir="rtl">برای سطح بندی کاربران باید چهار جدول ایجاد کنیم که در خط فرمان دستور مایگریشن هر کدام را بصورت زیر وارد میکنیم:</span></p>
+
+<pre><code class=" hljs sql">php artisan make:migration create_role_table <span class="hljs-comment">--create=role</span>
+
+php artisan make:migration create_permission_table <span class="hljs-comment">--create=permission</span>
+
+php artisan make:migration create_permission_role_table <span class="hljs-comment">--create=permission_role</span>
+
+php artisan make:migration create_role_user_table <span class="hljs-comment">--create=role_user</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">برای ایجاد و حذف جدول <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">roles</code>، متدهای زیر را در فایل مایگریشن مربوط به آن مینویسیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+{</span>
+    Schema::create(<span class="hljs-string">'roles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint <span class="hljs-variable">$table</span>)</span> {</span>
+        <span class="hljs-variable">$table</span>-&gt;increments(<span class="hljs-string">'id'</span>);
+        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'name'</span>);
+        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'label'</span>)-&gt;nullable();
+        <span class="hljs-variable">$table</span>-&gt;timestamps();
+    });
+
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+{</span>
+    Schema::dropIfExists(<span class="hljs-string">'roles'</span>);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">برای ایجاد و حذف جدول <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">permissions</code>، متدهای زیر را در فایل مایگریشن مربوط به آن مینویسیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+{</span>
+    Schema::create(<span class="hljs-string">'permissions'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint <span class="hljs-variable">$table</span>)</span> {</span>
+        <span class="hljs-variable">$table</span>-&gt;increments(<span class="hljs-string">'id'</span>);
+        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'name'</span>);
+        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'label'</span>)-&gt;nullable();
+        <span class="hljs-variable">$table</span>-&gt;timestamps();
+    });
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+{</span>
+    Schema::dropIfExists(<span class="hljs-string">'permissions'</span>);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">برای ایجاد رابطه چند به چند جدولهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">roles</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">permissions</code>، متدهای زیر را در فایل مایگریشن مربوط به آن مینویسیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript">public <span class="hljs-reserved">function</span> up()
+{
+    <span class="hljs-attribute">Schema</span>::create(<span class="hljs-string">'permission_role'</span>, <span class="hljs-reserved">function</span> (Blueprint $table) {
+
+        $table-&gt;integer<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'role_id'</span>)</span>-&gt;</span>unsigned();
+        $table-&gt;foreign<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'role_id'</span>)</span>-&gt;</span>references<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id'</span>)</span>-&gt;</span><span class="hljs-literal">on</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'roles'</span>)</span>-&gt;</span>onDelete(<span class="hljs-string">'cascade'</span>);
+
+        $table-&gt;integer<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'permission_id'</span>)</span>-&gt;</span>unsigned();
+        $table-&gt;foreign<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'permission_id'</span>)</span>-&gt;</span>references<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id'</span>)</span>-&gt;</span><span class="hljs-literal">on</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'permissions'</span>)</span>-&gt;</span>onDelete(<span class="hljs-string">'cascade'</span>);
+
+        $table-&gt;primary([<span class="hljs-string">'role_id'</span>, <span class="hljs-string">'permission_id'</span>]);
+    });
+}
+
+public <span class="hljs-reserved">function</span> down()
+{
+    <span class="hljs-attribute">Schema</span>::dropIfExists(<span class="hljs-string">'permission_role'</span>);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">برای ایجاد رابطه چند به چند جدولهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">roles</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">users</code>، متدهای زیر را در فایل مایگریشن مربوط به آن مینویسیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript">public <span class="hljs-reserved">function</span> up()
+{
+    <span class="hljs-attribute">Schema</span>::create(<span class="hljs-string">'role_user'</span>, <span class="hljs-reserved">function</span> (Blueprint $table) {
+
+        $table-&gt;integer<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'role_id'</span>)</span>-&gt;</span>unsigned();
+        $table-&gt;foreign<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'role_id'</span>)</span>-&gt;</span>references<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id'</span>)</span>-&gt;</span><span class="hljs-literal">on</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'roles'</span>)</span>-&gt;</span>onDelete(<span class="hljs-string">'cascade'</span>);
+
+        $table-&gt;integer<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'user_id'</span>)</span>-&gt;</span>unsigned();
+        $table-&gt;foreign<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'user_id'</span>)</span>-&gt;</span>references<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id'</span>)</span>-&gt;</span><span class="hljs-literal">on</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'users'</span>)</span>-&gt;</span>onDelete(<span class="hljs-string">'cascade'</span>);
+
+        $table-&gt;primary([<span class="hljs-string">'role_id'</span>, <span class="hljs-string">'user_id'</span>]);
+    });
+}
+
+public <span class="hljs-reserved">function</span> down()
+{
+    <span class="hljs-attribute">Schema</span>::dropIfExists(<span class="hljs-string">'role_user'</span>);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">با وارد کردن دستورات زیر در خط فرمان، مدلهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Role</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Permission</code> را ایجاد میکنیم:</span></p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:model</span> <span class="hljs-tag">Role</span>
+
+<span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:model</span> <span class="hljs-tag">Permission</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">در این مرحله برای ایجاد روابط بین دو جدول <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">users</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">roles</code>، دو متد زیر را به ترتیب در مدلهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">User</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Role</code> وارد میکنیم:</span></p>
+
+<pre><code class="language-0 hljs cs"><span class="hljs-comment">// User Model</span>
+<span class="hljs-keyword">public</span> function <span class="hljs-title">roles</span>()
+{
+    <span class="hljs-keyword">return</span> $<span class="hljs-keyword">this</span>-&gt;belongsToMany(Role::class);
+}
+
+
+<span class="hljs-comment">// Role Model</span>
+<span class="hljs-keyword">protected</span> $fillable = [<span class="hljs-string">'name'</span>, <span class="hljs-string">'label'</span>];
+
+<span class="hljs-keyword">public</span> function <span class="hljs-title">users</span>(){
+    <span class="hljs-keyword">return</span> $<span class="hljs-keyword">this</span>-&gt;belongsToMany(User::class);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">و بعد برای ایجاد روابط بین دو جدول <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">permissions</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">roles</code>، دو متد زیر را به ترتیب در مدلهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Role</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Permission</code> وارد میکنیم:</span></p>
+
+<pre><code class="language-0 hljs cs"><span class="hljs-comment">// Role Model</span>
+<span class="hljs-keyword">public</span> function <span class="hljs-title">permissions</span>()
+{
+    <span class="hljs-keyword">return</span> $<span class="hljs-keyword">this</span>-&gt;belongsToMany(Permission::class);
+}
+
+<span class="hljs-comment">// Permission Model</span>
+<span class="hljs-keyword">protected</span> $fillable = [<span class="hljs-string">'name'</span>, <span class="hljs-string">'label'</span>];
+
+<span class="hljs-keyword">public</span> function <span class="hljs-title">roles</span>()
+{
+    <span class="hljs-keyword">return</span> $<span class="hljs-keyword">this</span>-&gt;belongsToMany(Role::class);
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+<h3>&nbsp;</h3>
+
+<h3><span dir="rtl">مشاهده نحوه کار role ها</span></h3>
+
+<p><span dir="rtl">1- رکوردهایی را در جدول <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">roles</code> درج میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">return</span> Role::create([
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'manager'</span>,
+    <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'مدیر اصلی سایت'</span>,
+]);
+<span class="hljs-comment">// خروجی</span>
+<span class="hljs-comment">// name	"manager"</span>
+<span class="hljs-comment">// label	"مدیر اصلی سایت"</span>
+<span class="hljs-comment">// updated_at	"2017-11-04 19:35:19"</span>
+<span class="hljs-comment">// created_at	"2017-11-04 19:35:19"</span>
+<span class="hljs-comment">// id	1</span>
+
+<span class="hljs-keyword">return</span> Role::create([
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'writer'</span>,
+    <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'نویسنده مقالات'</span>,
+]);
+<span class="hljs-comment">// خروجی</span>
+<span class="hljs-comment">// name	"writer"</span>
+<span class="hljs-comment">// label	"نویسنده مقالات"</span>
+<span class="hljs-comment">// updated_at	"2017-11-04 19:46:50"</span>
+<span class="hljs-comment">// created_at	"2017-11-04 19:46:50"</span>
+<span class="hljs-comment">// id	2</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">با دستور زیر میتوان <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">user</code> دارای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">id</code> مورد نظر را بصورت لاگین شده درآورد:</span></p>
+
+<pre><code class="language-0 hljs coffeescript">auth<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>loginUsingId(<span class="hljs-number">1</span>);</code></pre>
+
+<p><span dir="rtl">با دستور زیر میتوانیم مشخصات <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">user</code> لاگین کرده رو ببینیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-keyword">return</span> auth<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>user();</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">2- <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">role</code> دارای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">id</code> یک رو به <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">user</code> لاگین کرده وصل میکنیم.</span></p>
+
+<pre><code class="language-0 hljs coffeescript">auth<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>user<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>roles<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>sync(<span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">return</span> auth<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>user<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>roles<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>get();
+
+<span class="hljs-regexp">//</span> پیدا کردن کاربر براساس ایمیل
+<span class="hljs-keyword">return</span> <span class="hljs-attribute">User</span>::whereEmail<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'dario99@example.net'</span>)</span>-&gt;</span>first<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>roles<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>get();</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">3- رکوردهایی را در جدول <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">permissions</code> درج میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">return</span> Permission::create([
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'edit-article'</span>,
+    <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'ویرایش مقاله'</span>,
+]);
+<span class="hljs-comment">// خروجی</span>
+<span class="hljs-comment">// name	"edit-article"</span>
+<span class="hljs-comment">// label	"ویرایش مقاله"</span>
+<span class="hljs-comment">// updated_at	"2017-11-05 15:20:30"</span>
+<span class="hljs-comment">// created_at	"2017-11-05 15:20:30"</span>
+<span class="hljs-comment">// id	1</span>
+
+<span class="hljs-keyword">return</span> Permission::create([
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'show-comments'</span>,
+    <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'مشاهده نظرات'</span>,
+]);
+<span class="hljs-comment">// خروجی</span>
+<span class="hljs-comment">// name	"show-comments"</span>
+<span class="hljs-comment">// label	"مشاهده نظرات"</span>
+<span class="hljs-comment">// updated_at	"2017-11-05 15:27:56"</span>
+<span class="hljs-comment">// created_at	"2017-11-05 15:27:56"</span>
+<span class="hljs-comment">// id	2</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">4- <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">permission</code> های ایجاد شده را به <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">role</code> مورد نظرمون اختصاص میدیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-attribute">Role</span>::whereName<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'manager'</span>)</span>-&gt;</span>first<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>permissions<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>sync([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]);
+
+<span class="hljs-keyword">return</span> <span class="hljs-attribute">Role</span>::whereName<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'manager'</span>)</span>-&gt;</span>first<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>permissions<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>get();</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">5- برای گرفتن یه مقام یا سطح خاص از کاربران کد زیر را وارد میکنیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript">$role-&gt;users<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>detach();</code></pre>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<hr>
+<h3>&nbsp;</h3>
+
+<h3><span dir="rtl">استفاده از role ها و permission ها برای سطح بندی</span></h3>
+
+<p><span dir="rtl">1- در مدل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">User</code> متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">hasRole</code> را اضافه میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasRole</span><span class="hljs-params">(<span class="hljs-variable">$role</span>)</span>
+{</span>
+    <span class="hljs-keyword">if</span>(is_string(<span class="hljs-variable">$role</span>)){
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;roles-&gt;contains(<span class="hljs-string">'name'</span>, <span class="hljs-variable">$role</span>);
+    }
+
+    <span class="hljs-keyword">return</span> !!<span class="hljs-variable">$role</span>-&gt;intersect(<span class="hljs-variable">$this</span>-&gt;roles)-&gt;count();
+}</code></pre>
+
+<p><br>
+<span dir="rtl">2- در فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">AuthServiceProvider</code> و در متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">boot</code> کد زیر و متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">getPermissions</code> رو اضافه میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boot</span><span class="hljs-params">()</span>
+{</span>
+    <span class="hljs-variable">$this</span>-&gt;registerPolicies();
+
+    <span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$this</span>-&gt;getPermissions() <span class="hljs-keyword">as</span> <span class="hljs-variable">$permission</span>)
+    {
+        Gate::define(<span class="hljs-variable">$permission</span>-&gt;name, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$user</span>)</span> <span class="hljs-title">use</span><span class="hljs-params">(<span class="hljs-variable">$permission</span>)</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$user</span>-&gt;hasRole(<span class="hljs-variable">$permission</span>-&gt;roles);
+        });
+    }
+}
+
+<span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPermissions</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">return</span> Permission::with(<span class="hljs-string">'roles'</span>)-&gt;get();
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">3- حالا در یک ویوی خاص مثلا <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">index.blade.php</code> وجود پرمیشن <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">edit-article</code> رو بصورت زیر با استفاده از <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">can</code> بررسی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs xml">@can('edit-article')
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ route('admin_article.edit', ['article' =&gt; $article-&gt;slug]) }}"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-sm btn-warning btn-block"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"glyphicon glyphicon-pencil"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+@endcan</code></pre>
+
+<p><span dir="rtl">یعنی کاربر وقتی میتونه به لینک <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">edit</code> دسترسی داشته باشه که پرمیشن <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">edit-article</code> رو داشته باشه.</span></p>
+
+<p><span dir="rtl">میتوانیم در کنترلرها بصورت زیر از متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">hasRole</code> استفاده کنیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript">auth<span class="hljs-function"><span class="hljs-params">()</span>-&gt;</span>loginUsingId(<span class="hljs-number">1</span>);
+
+dd<span class="hljs-function"><span class="hljs-params">(auth()-&gt;user()-&gt;hasRole(<span class="hljs-string">'manager'</span>))</span>;
+// <span class="hljs-title">true</span>
+
+// ارسال آبجکت
+<span class="hljs-title">dd</span><span class="hljs-params">(auth()-&gt;user()-&gt;hasRole(Permission::whereName(<span class="hljs-string">'edit-article'</span>)-&gt;first()-&gt;roles))</span>;
+// <span class="hljs-title">true</span></span></code></pre>
+
+<p>&nbsp;</p>
+
+<hr>
+<p>&nbsp;</p>
+
+<h3><span dir="rtl">کنترلرهای مورد نیاز برای انجام CRUD</span></h3>
+
+<p><span dir="rtl">برای انجام عملیات <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">CRUD</code>، متدهای مورد نیاز را در کنترلرهای زیر به ترتیب ایجاد میکنیم:</span></p>
+
+<p><span dir="rtl">1- کنترلر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">PermissionController</code>:</span></p>
+
+<pre><code class="language-0 hljs java">&lt;?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Permission;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class PermissionController extends Controller
+{
+    <span class="hljs-javadoc">/**
+     * Display a listing of the resource.
+     *
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">index</span>()
+    {
+        $permissions = Permission::latest()-&gt;paginate(<span class="hljs-number">50</span>);
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.permissions.index'</span>, compact(<span class="hljs-string">'permissions'</span>));
+    }
+
+    <span class="hljs-javadoc">/**
+     * Show the form for creating a new resource.
+     *
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">create</span>()
+    {
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.permissions.create'</span>);
+    }
+
+    <span class="hljs-javadoc">/**
+     * Store a newly created resource in storage.
+     *
+     *<span class="hljs-javadoctag"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">store</span>(Request $request)
+    {
+        $<span class="hljs-keyword">this</span>-&gt;validate($request,[
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+        ]);
+
+        Permission::create([
+            <span class="hljs-string">'name'</span> =&gt; $request-&gt;name,
+            <span class="hljs-string">'label'</span> =&gt; $request-&gt;label,
+        ]);
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'مجوز '</span> . $request-&gt;label . <span class="hljs-string">' با موفقیت ایجاد شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/permissions/index'</span>);
+    }
+
+    <span class="hljs-javadoc">/**
+     * Display the specified resource.
+     *
+     *<span class="hljs-javadoctag"> @param</span>  \App\Permission  $permission
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">show</span>(Permission $permission)
+    {
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.permissions.show'</span>, compact(<span class="hljs-string">'permission'</span>));
+    }
+
+    <span class="hljs-javadoc">/**
+     * Show the form for editing the specified resource.
+     *
+     *<span class="hljs-javadoctag"> @param</span>  \App\Permission  $permission
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">edit</span>(Permission $permission)
+    {
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.permissions.edit'</span>, compact(<span class="hljs-string">'permission'</span>));
+    }
+
+    <span class="hljs-javadoc">/**
+     * Update the specified resource in storage.
+     *
+     *<span class="hljs-javadoctag"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-javadoctag"> @param</span>  \App\Permission  $permission
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">update</span>(Request $request, Permission $permission)
+    {
+        $<span class="hljs-keyword">this</span>-&gt;validate($request,[
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+        ]);
+
+        $permission-&gt;name = $request-&gt;name;
+        $permission-&gt;label = $request-&gt;label;
+        $permission-&gt;save();
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'مجوز '</span> . $permission-&gt;label . <span class="hljs-string">' با موفقیت ویرایش شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/permissions/index'</span>);
+    }
+
+    <span class="hljs-javadoc">/**
+     * Remove the specified resource from storage.
+     *
+     *<span class="hljs-javadoctag"> @param</span>  \App\Permission  $permission
+     *<span class="hljs-javadoctag"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> function <span class="hljs-title">destroy</span>(Permission $permission)
+    {
+		$permission-&gt;roles()-&gt;detach();
+		
+        $permission-&gt;delete();
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'مجوز '</span> . $permission-&gt;label . <span class="hljs-string">' با موفقیت حذف شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/permissions/index'</span>);
+    }
+}
+</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">2- کنترلر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">RoleController</code>:</span></p>
+
+<pre><code class="language-0 hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Admin</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Role</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Permission</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RoleController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+{</span>
+    <span class="hljs-comment">/**
+     * Display a listing of the resource.
+     *
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-variable">$roles</span> = Role::latest()-&gt;paginate(<span class="hljs-number">50</span>);
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.roles.index'</span>, compact(<span class="hljs-string">'roles'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Show the form for creating a new resource.
+     *
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-variable">$permissions</span> = Permission::all();
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.roles.create'</span>, compact(<span class="hljs-string">'permissions'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Store a newly created resource in storage.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">store</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>, [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+            <span class="hljs-string">'permissions_id'</span> =&gt; <span class="hljs-string">'required'</span>,
+        ]);
+
+        <span class="hljs-variable">$role</span> = Role::create([
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;name,
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-variable">$request</span>-&gt;label,
+        ]);
+
+        <span class="hljs-variable">$role</span>-&gt;permissions()-&gt;sync(<span class="hljs-variable">$request</span>-&gt;input(<span class="hljs-string">'permissions_id'</span>));
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'مقام '</span> . <span class="hljs-variable">$request</span>-&gt;label . <span class="hljs-string">' با موفقیت ایجاد شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/roles/index'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Display the specified resource.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \App\Role  $role
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">show</span><span class="hljs-params">(Role <span class="hljs-variable">$role</span>)</span>
+    {</span>
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.roles.show'</span>, compact(<span class="hljs-string">'role'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Show the form for editing the specified resource.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \App\Role  $role
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">edit</span><span class="hljs-params">(Role <span class="hljs-variable">$role</span>)</span>
+    {</span>
+        <span class="hljs-variable">$permissions</span> = Permission::all();
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.roles.edit'</span>, compact(<span class="hljs-string">'role'</span>, <span class="hljs-string">'permissions'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Update the specified resource in storage.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-phpdoc"> @param</span>  \App\Role  $role
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>, Role <span class="hljs-variable">$role</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>, [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+            <span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'required|Max:100'</span>,
+            <span class="hljs-string">'permissions_id'</span> =&gt; <span class="hljs-string">'required'</span>,
+        ]);
+
+        <span class="hljs-variable">$role</span>-&gt;name = <span class="hljs-variable">$request</span>-&gt;name;
+        <span class="hljs-variable">$role</span>-&gt;label = <span class="hljs-variable">$request</span>-&gt;label;
+        <span class="hljs-variable">$role</span>-&gt;save();
+
+        <span class="hljs-variable">$role</span>-&gt;permissions()-&gt;sync(<span class="hljs-variable">$request</span>-&gt;input(<span class="hljs-string">'permissions_id'</span>));
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'مقام '</span> . <span class="hljs-variable">$request</span>-&gt;label . <span class="hljs-string">' با موفقیت ویرایش شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/roles/index'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Remove the specified resource from storage.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \App\Role  $role
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destroy</span><span class="hljs-params">(Role <span class="hljs-variable">$role</span>)</span>
+    {</span>
+        <span class="hljs-variable">$role</span>-&gt;permissions()-&gt;detach();
+		<span class="hljs-variable">$role</span>-&gt;users()-&gt;detach();
+		
+		<span class="hljs-variable">$role</span>-&gt;delete();
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'مقام '</span> . <span class="hljs-variable">$role</span>-&gt;label . <span class="hljs-string">' با موفقیت حذف شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/roles/index'</span>);
+    }
+}
+</span></code></pre>
+
+<p><span dir="rtl"><code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">permissions_id</code> آرایه ای شامل آیدیهای مجوزها میباشد.</span></p>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">3- کنترلر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">UserController</code>:</span></p>
+
+<pre><code class="language-0 hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Admin</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">User</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Role</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+{</span>
+    <span class="hljs-comment">// ...</span>
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">edit</span><span class="hljs-params">(User <span class="hljs-variable">$user</span>)</span>
+    {</span>
+        <span class="hljs-variable">$roles</span> = Role::all();
+
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'admin.users.edit'</span>, compact(<span class="hljs-string">'user'</span>, <span class="hljs-string">'roles'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Update the specified resource in storage.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-phpdoc"> @param</span>  \App\User  $user
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>, User <span class="hljs-variable">$user</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>,[
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'required|Max:30'</span>,
+            <span class="hljs-string">'role_id'</span> =&gt; <span class="hljs-string">'required'</span>,
+        ]);
+
+        <span class="hljs-variable">$user</span>-&gt;name = <span class="hljs-variable">$request</span>-&gt;name;
+        <span class="hljs-variable">$user</span>-&gt;active = <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$request</span>-&gt;active) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;
+        <span class="hljs-variable">$user</span>-&gt;save();
+
+        <span class="hljs-variable">$user</span>-&gt;roles()-&gt;sync(<span class="hljs-variable">$request</span>-&gt;input(<span class="hljs-string">'role_id'</span>));
+
+        session()-&gt;flash(<span class="hljs-string">'message'</span>, <span class="hljs-string">'کاربر '</span> . <span class="hljs-variable">$request</span>-&gt;label . <span class="hljs-string">' با موفقیت ویرایش شد.'</span>);
+
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'admin/user/index'</span>);
+    }
+    
+    <span class="hljs-comment">// ...</span>
+
+}
+</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl"><code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">role_id</code> آرایه ای شامل آیدیهای سطوح دسترسی میباشد.</span></p>
+
+<p>&nbsp;</p>
+
+<hr>
+<p>&nbsp;</p>
+
+<h3><span dir="rtl">اعمال سطوح دسترسی به route ها و view ها</span></h3>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">برای این کار کافی است در <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">route</code> مورد نظر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">middleware</code> را وارد کنیم یا <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">route</code> های مورد نظر را در یک <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">Route::group</code> قرار میدهیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/user/index'</span>, <span class="hljs-string">'UserController@index'</span>)</span>-&gt;</span>middleware<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'can:manager'</span>)</span>-&gt;</span>name(<span class="hljs-string">'admin_user.index'</span>);
+
+<span class="hljs-attribute">Route</span>::group(
+    [
+        <span class="hljs-string">'middleware'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'can:edit-users'</span>,
+    ],
+    <span class="hljs-reserved">function</span>(){
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/user/index'</span>, <span class="hljs-string">'UserController@index'</span>)</span>-&gt;</span>name(<span class="hljs-string">'admin_user.index'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/user/show/{user}'</span>, <span class="hljs-string">'UserController@show'</span>)</span>-&gt;</span>name(<span class="hljs-string">'admin-user.show'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/user/edit/{user}'</span>, <span class="hljs-string">'UserController@edit'</span>)</span>-&gt;</span>name(<span class="hljs-string">'admin-user.edit'</span>);
+        <span class="hljs-attribute">Route</span>::put<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/user/update/{user}'</span>, <span class="hljs-string">'UserController@update'</span>)</span>-&gt;</span>name(<span class="hljs-string">'admin-user.update'</span>);
+        <span class="hljs-attribute">Route</span>::<span class="hljs-keyword">delete</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/user/destroy/{user}'</span>, <span class="hljs-string">'UserController@destroy'</span>)</span>-&gt;</span>name(<span class="hljs-string">'admin-user.destroy'</span>);
+    }
+);</code></pre>
+
+<p>یا دستور زیر را در کنترلر مورد نظر وارد میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>
+{</span>
+    <span class="hljs-variable">$this</span>-&gt;authorize(<span class="hljs-string">'edit-users'</span>);
+
+<span class="hljs-comment">// ...</span>
+}</code></pre>
+
+<p><span dir="rtl">و برای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">view</code> ها بصورت زیر عمل میکنیم:</span></p>
+
+<pre><code class="language-0 hljs xml">@can('edit-users')
+<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ route('admin_user.index') }}"</span>&gt;</span>کاربران<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+@endcan</code></pre>
+
+<p>&nbsp;</p>
+</div>
+                <div id="date-row" class="row">
+                    <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-lg-offset-7 col-lg-5">
+                        <div class="post-date">
+                            <strong>نوشته شده در تاریخ: </strong>
+                            <span>پنجشنبه ۱۳۹۶/۰۸/۱۱ ساعت ۰۳:۴۰ ب.ظ</span>
+                        </div>
+                    </div>
+                </div>
+                                                        <div class="row">
+                        <div class="col-xs-12">
+                            <div class="post-tag-row">
+                                <strong class="text-info">برچسب ها: </strong>
+                                <span class="text-success">
+                                                                            <a href="http://samaiweb.com/tags/19" target="_blank">database</a>
+                                                                                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                            
+                <div class="form-box alert-info text-left">
+                    <div class="row fa-close-row">
+                        <span class="fa fa-close fa-2x" title="" data-toggle="tooltip" data-original-title="جواب نمیدهم" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div id="success-error" class="col-xs-12 col-sm-offset-3 col-sm-5" style="display: none;"></div>
+                        
+                        <form method="POST" action="http://samaiweb.com/comments" accept-charset="UTF-8" id="create-comment"><input name="_token" value="yqneoz2lMe4oHWCQQRd2OnHDtWHvJu2R9MdpAfNi" type="hidden">
+                        <input name="_token" value="yqneoz2lMe4oHWCQQRd2OnHDtWHvJu2R9MdpAfNi" type="hidden">
+
+                        <input id="post_id" name="post_id" value="14" type="hidden">
+                        <input id="parent_id" name="parent_id" value="0" type="hidden">
+
+                        <div id="username" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="username">نام</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="نام و نام خانوادگی" name="username" id="username" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="url" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="url">سایت</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="لینک سایت شما: http://example.com" name="url" id="url" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="email" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="email">ایمیل</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="ایمیل شما: example@example.com" name="email" id="email" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="captcha" class="form-group ">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3">
+                                    <label for="captcha" class="control-label">کد امنیتی</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-5">
+                                    <input class="form-control" placeholder="کد امنیتی" name="captcha" id="captcha" type="text">
+                                                                    </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-xs-1 col-sm-1">
+                                    <button type="button" id="refresh" class="btn btn-sm btn-info" title="" data-toggle="tooltip" data-original-title="تغییر کد امنیتی">
+                                        <i class="glyphicon glyphicon-refresh"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-11 col-sm-4" id="captcha-div">
+                                    <img src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/flat.png" alt="captcha" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="body" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="body">نظر</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <textarea id="body" name="body" rows="10" style="resize:none;" class="form-control" placeholder="نظر شما در مورد این مطلب"></textarea>
+                                                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-offset-3 col-sm-5 text-center">
+                                <input class="btn btn-lg btn-info" value="ارسال" type="submit">
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scrol-to-top">
+            <div class="scrollup" style="display: block;">
+                <i class="fa fa-angle-double-up"></i>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>بازدیدهای سایت</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><strong>افراد آنلاین:</strong> 1</p><p><strong>بازدید امروز:</strong> 17</p><p><strong>بازدید دیروز:</strong> 53</p><p><strong>بازدید کل:</strong> 5552</p>                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>پیوندها</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><a href="https://secure.php.net/docs.php" target="_blank">مستندات php</a></p><p><a href="http://www.w3schools.com/php/" target="_blank">PHP Tutorial</a></p><p><a href="https://laravel.com/docs/5.3" target="_blank">مستندات laravel</a></p><p><a href="http://forum.ncis.ir/" target="_blank">تالار گفتمان ncis</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <ul id="icons">
+                                <li>
+                                    <a href="https://www.facebook.com/topalternatives" target="_blank" rel="nofollow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/topalt" target="_blank" rel="nofollow">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://topalternatives.com/feed/" target="_blank" rel="nofollow">
+                                        <i class="fa fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/u/0/b/101188387378944618683/101188387378944618683" target="_blank" rel="nofollow">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCBuEJnRY2jGO0FY9SmlhfjA" target="_blank" rel="nofollow">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="pull-right">© کلیه حقوق این سایت متعلق به <a href="http://samaiweb.com/">وب سایت شخصی عبدالله سمعی</a> میباشد.</p>
+                        <p class="pull-left">قدرت گرفته از فریمورک Laravel</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/jquery.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap_003.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap_002.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/bootstrap-submenu-script.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/scripts.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/transition.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/highlight.js"></script>
+
+
+        
+    <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%B3%D8%B7%D8%AD%20%D8%A8%D9%86%D8%AF%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86_files/show-comment.js"></script>
+
+
+
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    
+</body></html>

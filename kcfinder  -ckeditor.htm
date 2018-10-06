@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="http://samaiweb.com/images/icon-logo.png">
+
+        
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>سمعی وب - سایت شخصی عبدالله سمعی طراح و برنامه نویس | افزودن kcfinder به ckeditor</title>
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap_002.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/font-awesome.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/parsley.htm">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/style.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap-submenu-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/comments-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/transition.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/vs.css">
+
+
+                <style type="text/css">
+            #main{
+                padding-top: 85px;
+            }
+        </style>
+        
+
+        
+    </head>
+    <body>
+
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <a href="http://samaiweb.com/" class="navbar-brand h2" title="" data-toggle="tooltip" data-original-title="وب سایت شخصی عبدالله سمعی">سمعی وب</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="navbar-nav" class="nav navbar-nav">
+                        <li class="">
+                            <a href="http://samaiweb.com/">صفحه اصلی</a>
+                        </li>
+                                                <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">موضوعات <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                برنامه نویسی سمت سرور <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/1">
+                                                            PHP <span class="pull-left badge">0</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/2">
+                                                            laravel <span class="pull-left badge">7</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/9">
+                                                            Mysql <span class="pull-left badge">1</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                طراحی وب سایت <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/8">
+                                                            Jquery and Javascript <span class="pull-left badge">3</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/about">درباره ما</a>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/contact">تماس با ما</a>
+                        </li>
+                                                    <li>
+                                <a href="http://samaiweb.com/admin">مدیریت</a>
+                            </li>
+                            <li>
+                                <a href="http://samaiweb.com/logout">خروج</a>
+                            </li>
+                                            </ul>
+                    <form action="http://samaiweb.com/search" method="POST" class="navbar-form navbar-left hidden-xs hidden-sm">
+                        <input name="_token" value="RXSrBTAaH4PFJRxE55XBaCRMrXi5sLIsNZwKO1nH" type="hidden">
+                        <div class="form-group">
+                            <input name="search" placeholder="جستجو" type="text">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav><!-- End of navbar -->
+
+        
+        <div class="row">
+            <div id="main" class="container-fluid">
+                <div class="container">
+                    <div id="sidebar" class="col-xs-12 col-md-3">
+                        <div id="xs-search" class="sidebar-head hidden-md hidden-lg">
+                            <div class="sidbar-main">
+                                <div class="sidebar-content alert-info">
+                                    <form action="http://samaiweb.com/search" method="POST">
+                                        <input name="_token" value="RXSrBTAaH4PFJRxE55XBaCRMrXi5sLIsNZwKO1nH" type="hidden">
+                                        <input name="search" class="form-group form-control" placeholder="جستجو در مطالب ..." type="text">
+                                        <button type="submit" class="btn btn-default btn-lg">جستجو</button>
+                                    </form>
+                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                        <div class="sidebar-head">
+                            <h3>موضوعات</h3>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>برنامه نویسی سمت سرور<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/1">
+                                                                    PHP <span class="pull-left badge">0</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/2">
+                                                                    laravel <span class="pull-left badge">12</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/9">
+                                                                    Mysql <span class="pull-left badge">1</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>طراحی وب سایت<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/8">
+                                                                    Jquery and Javascript <span class="pull-left badge">3</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                    </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="col-xs-12 col-md-9">
+                                                <div class="row">
+    <div class="col-xs-12">
+            <div class="thumbnail post">
+                <h1><span class="fa fa-arrow-left"></span> افزودن kcfinder به ckeditor</h1>
+                <div class="alert"><p><span dir="rtl">برای افزودن kcfinder به ckeditor در فریمورک لاراول مراحل زیر رو انجام میدیم:</span></p>
+
+<p><span dir="rtl">1- ابتدا kcfinder رو <a href="http://kcfinder.sunhater.com/download" target="_blank">دانلود</a> میکنیم.</span></p>
+
+<p><span dir="rtl">2- فایل فشرده را در پوشه ریشه از پروژمون اکسترکت 
+میکنیم( میتونیم در پوشه ریشه پوشه دیگه ای به نام editor بسازیم و پوشه 
+های ckeditor و kcfinder رو در اون پوشه قرار بدیم )</span></p>
+
+<p><span dir="rtl">3- کدهای زیر رو در تابع config از فایل config.js قرار میدیم:</span></p>
+
+<pre><code class="language-0 hljs javascript">CKEDITOR.editorConfig = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( config )</span> {</span>
+
+    $.ajaxSetup({
+        headers: {
+            <span class="hljs-string">'X-CSRF-TOKEN'</span>: $(<span class="hljs-string">'meta[name="csrf-token"]'</span>).attr(<span class="hljs-string">'content'</span>)
+        }
+    });
+
+    $.ajax({
+        type: <span class="hljs-string">'POST'</span>,
+        url: <span class="hljs-string">'/geturl'</span>,
+        dataType: <span class="hljs-string">'json'</span>,
+        success: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> {</span>
+            <span class="hljs-keyword">var</span> path = data.url;
+            config.filebrowserBrowseUrl = path + <span class="hljs-string">'/browse.php?opener=ckeditor&amp;type=files'</span>;
+            config.filebrowserImageBrowseUrl = path + <span class="hljs-string">'/browse.php?opener=ckeditor&amp;type=images'</span>;
+            config.filebrowserFlashBrowseUrl = path + <span class="hljs-string">'/browse.php?opener=ckeditor&amp;type=flash'</span>;
+            config.filebrowserUploadUrl = path + <span class="hljs-string">'/upload.php?opener=ckeditor&amp;type=files'</span>;
+            config.filebrowserImageUploadUrl = path + <span class="hljs-string">'/upload.php?opener=ckeditor&amp;type=images'</span>;
+            config.filebrowserFlashUploadUrl = path + <span class="hljs-string">'/upload.php?opener=ckeditor&amp;type=flash'</span>;
+        },
+        error: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> {</span>
+            <span class="hljs-keyword">var</span> a = <span class="hljs-string">'&lt;pre class="alert alert-danger"&gt;'</span>;
+            $.each(data, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(key, val)</span>{</span>
+                a += val + <span class="hljs-string">'&lt;br /&gt;'</span>;
+            });
+            $(<span class="hljs-string">'.alert'</span>).append(a + <span class="hljs-string">'&lt;/pre&gt;'</span>);
+        }
+    });
+}</code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">4- کدهای زیر را در فایل kcfinder/conf/config.php قرار میدیم:</span></p>
+
+<pre><code class="language-0 hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-variable">$url</span> = <span class="hljs-string">'../../../../../../uploads'</span>;
+
+<span class="hljs-variable">$uploadPath</span> = dirname(dirname(dirname(dirname(dirname(dirname(<span class="hljs-keyword">__FILE__</span>)))))) . <span class="hljs-string">'/uploads'</span>;
+
+<span class="hljs-variable">$dir</span> = (<span class="hljs-variable">$_SERVER</span>[<span class="hljs-string">'SERVER_NAME'</span>] == <span class="hljs-string">'localhost'</span> ? <span class="hljs-variable">$uploadPath</span> : <span class="hljs-string">''</span>);
+
+<span class="hljs-comment">// برای اینکه سشن کش نشود نامش را از طریق تایم تصادفی قرار میدهیم</span>
+<span class="hljs-variable">$sessionVar</span> = <span class="hljs-string">'Kcfinder_'</span> . time();
+
+<span class="hljs-variable">$_CONFIG</span> = <span class="hljs-keyword">array</span>(
+
+
+    <span class="hljs-string">'disabled'</span> =&gt; <span class="hljs-keyword">false</span>,
+    <span class="hljs-string">'uploadURL'</span> =&gt; <span class="hljs-variable">$url</span>,
+    <span class="hljs-string">'uploadDir'</span> =&gt; <span class="hljs-variable">$dir</span>,
+    <span class="hljs-string">'theme'</span> =&gt; <span class="hljs-string">"default"</span>,
+
+    <span class="hljs-string">'types'</span> =&gt; <span class="hljs-keyword">array</span>(
+		<span class="hljs-comment">// The folowing directory types are just for an example</span>
+		<span class="hljs-string">'files'</span>     =&gt; <span class="hljs-string">""</span>,
+		<span class="hljs-string">'flash'</span>     =&gt; <span class="hljs-string">"swf"</span>,
+		<span class="hljs-string">'media'</span>     =&gt; <span class="hljs-string">"swf flv avi mpg mpeg qt mov wmv asf rm"</span>,
+		<span class="hljs-string">'misc'</span>      =&gt; <span class="hljs-string">"! pdf doc docx xls xlsx"</span>,
+		<span class="hljs-string">'images'</span>    =&gt; <span class="hljs-string">"*img"</span>,
+		<span class="hljs-string">'mimages'</span>   =&gt; <span class="hljs-string">"*mime image/gif image/png image/jpeg"</span>,
+		<span class="hljs-string">'notimages'</span> =&gt; <span class="hljs-string">"*mime ! image/gif image/png image/jpeg"</span>
+	),
+
+<span class="hljs-comment">// IMAGE SETTINGS</span>
+
+    <span class="hljs-string">'imageDriversPriority'</span> =&gt; <span class="hljs-string">"imagick gmagick gd"</span>,
+    <span class="hljs-string">'jpegQuality'</span> =&gt; <span class="hljs-number">100</span>,
+    <span class="hljs-string">'thumbsDir'</span> =&gt; <span class="hljs-string">".thumbs"</span>,
+
+    <span class="hljs-string">'maxImageWidth'</span> =&gt; <span class="hljs-number">800</span>,
+    <span class="hljs-string">'maxImageHeight'</span> =&gt; <span class="hljs-number">800</span>,
+
+    <span class="hljs-string">'thumbWidth'</span> =&gt; <span class="hljs-number">100</span>,
+    <span class="hljs-string">'thumbHeight'</span> =&gt; <span class="hljs-number">100</span>,
+
+    <span class="hljs-string">'watermark'</span> =&gt; <span class="hljs-string">""</span>,
+
+
+<span class="hljs-comment">// DISABLE / ENABLE SETTINGS</span>
+
+    <span class="hljs-string">'denyZipDownload'</span> =&gt; <span class="hljs-keyword">true</span>,
+    <span class="hljs-string">'denyUpdateCheck'</span> =&gt; <span class="hljs-keyword">false</span>,
+    <span class="hljs-string">'denyExtensionRename'</span> =&gt; <span class="hljs-keyword">false</span>,
+
+
+<span class="hljs-comment">// PERMISSION SETTINGS</span>
+
+    <span class="hljs-string">'dirPerms'</span> =&gt; <span class="hljs-number">0777</span>,
+    <span class="hljs-string">'filePerms'</span> =&gt; <span class="hljs-number">0644</span>,
+
+    <span class="hljs-string">'access'</span> =&gt; <span class="hljs-keyword">array</span>(
+
+        <span class="hljs-string">'files'</span> =&gt; <span class="hljs-keyword">array</span>(
+            <span class="hljs-string">'upload'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'delete'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'copy'</span>   =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'move'</span>   =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'rename'</span> =&gt; <span class="hljs-keyword">true</span>
+        ),
+
+        <span class="hljs-string">'dirs'</span> =&gt; <span class="hljs-keyword">array</span>(
+            <span class="hljs-string">'create'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'delete'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'rename'</span> =&gt; <span class="hljs-keyword">true</span>
+        )
+    ),
+
+    <span class="hljs-string">'deniedExts'</span> =&gt; <span class="hljs-string">"exe com msi bat cgi pl php phps phtml php3 php4 php5 php6 py pyc pyo pcgi pcgi3 pcgi4 pcgi5 pchi6"</span>,
+
+
+<span class="hljs-comment">// MISC SETTINGS</span>
+
+    <span class="hljs-string">'_normalizeFilenames'</span> =&gt; <span class="hljs-keyword">true</span>,
+
+    <span class="hljs-string">'filenameChangeChars'</span> =&gt; <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">' '</span> =&gt; <span class="hljs-string">"-"</span>,
+        <span class="hljs-string">':'</span> =&gt; <span class="hljs-string">"-"</span>
+    ),
+
+    <span class="hljs-string">'dirnameChangeChars'</span> =&gt; <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">' '</span> =&gt; <span class="hljs-string">"_"</span>,
+        <span class="hljs-string">':'</span> =&gt; <span class="hljs-string">"_"</span>
+    ),
+
+    <span class="hljs-string">'mime_magic'</span> =&gt; <span class="hljs-string">""</span>,
+
+    <span class="hljs-comment">// میتوان کوکیها را برای سرور غیر فعال کرد</span>
+    <span class="hljs-string">'cookieDomain'</span> =&gt; <span class="hljs-string">""</span>,
+    <span class="hljs-string">'cookiePath'</span> =&gt; <span class="hljs-string">""</span>,
+    <span class="hljs-string">'cookiePrefix'</span> =&gt; <span class="hljs-string">'KCFINDER_'</span>,
+
+
+<span class="hljs-comment">// THE FOLLOWING SETTINGS CANNOT BE OVERRIDED WITH SESSION SETTINGS</span>
+
+    <span class="hljs-comment">// این قسمت فقط روی هاست فعال میشود</span>
+    <span class="hljs-string">'_sessionVar'</span> =&gt; <span class="hljs-variable">$sessionVar</span>,
+
+);
+
+<span class="hljs-comment">// این قسمت فقط روی هاست فعال میشود</span>
+<span class="hljs-variable">$_SESSION</span>[<span class="hljs-variable">$sessionVar</span>] = <span class="hljs-keyword">array</span>(
+   <span class="hljs-string">'disabled'</span> =&gt; <span class="hljs-keyword">true</span>,
+);
+
+<span class="hljs-preprocessor">?&gt;</span></span></code></pre>
+
+<p>&nbsp;</p>
+
+<p><span dir="rtl">5- در صورت نیاز تغییراتی را در فایل kcfinder/core/class/uploader.php انجام میدیم.</span></p>
+
+<p><span dir="rtl">در نهایت آپلودر عکس بصورت زیر خواهد بود:</span></p>
+
+<p><a href="http://samaiweb.com/uploads/images/uploader.jpg" target="_blank"><img alt="عکس آپلودر" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/uploader.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"></a></p>
+
+<p>&nbsp;</p>
+</div>
+                <div id="date-row" class="row">
+                    <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-lg-offset-7 col-lg-5">
+                        <div class="post-date">
+                            <strong>نوشته شده در تاریخ: </strong>
+                            <span>سه شنبه ۱۳۹۶/۰۱/۱۵ ساعت ۰۹:۰۷ ب.ظ</span>
+                        </div>
+                    </div>
+                </div>
+                                                        <div class="row">
+                        <div class="col-xs-12">
+                            <div class="post-tag-row">
+                                <strong class="text-info">برچسب ها: </strong>
+                                <span class="text-success">
+                                                                            <a href="http://samaiweb.com/tags/5" target="_blank">ckeditor</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/4" target="_blank">config</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/2" target="_blank">form</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/3" target="_blank">دانلود</a>
+                                                                                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                            
+                <div class="form-box alert-info text-left">
+                    <div class="row fa-close-row">
+                        <span class="fa fa-close fa-2x" title="" data-toggle="tooltip" data-original-title="جواب نمیدهم" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div id="success-error" class="col-xs-12 col-sm-offset-3 col-sm-5" style="display: none;"></div>
+                        
+                        <form method="POST" action="http://samaiweb.com/comments" accept-charset="UTF-8" id="create-comment"><input name="_token" value="RXSrBTAaH4PFJRxE55XBaCRMrXi5sLIsNZwKO1nH" type="hidden">
+                        <input name="_token" value="RXSrBTAaH4PFJRxE55XBaCRMrXi5sLIsNZwKO1nH" type="hidden">
+
+                        <input id="post_id" name="post_id" value="7" type="hidden">
+                        <input id="parent_id" name="parent_id" value="0" type="hidden">
+
+                        <div id="username" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="username">نام</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="نام و نام خانوادگی" name="username" id="username" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="url" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="url">سایت</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="لینک سایت شما: http://example.com" name="url" id="url" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="email" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="email">ایمیل</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="ایمیل شما: example@example.com" name="email" id="email" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="captcha" class="form-group ">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3">
+                                    <label for="captcha" class="control-label">کد امنیتی</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-5">
+                                    <input class="form-control" placeholder="کد امنیتی" name="captcha" id="captcha" type="text">
+                                                                    </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-xs-1 col-sm-1">
+                                    <button type="button" id="refresh" class="btn btn-sm btn-info" title="" data-toggle="tooltip" data-original-title="تغییر کد امنیتی">
+                                        <i class="glyphicon glyphicon-refresh"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-11 col-sm-4" id="captcha-div">
+                                    <img src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/flat.png" alt="captcha" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="body" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="body">نظر</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <textarea id="body" name="body" rows="10" style="resize:none;" class="form-control" placeholder="نظر شما در مورد این مطلب"></textarea>
+                                                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-offset-3 col-sm-5 text-center">
+                                <input class="btn btn-lg btn-info" value="ارسال" type="submit">
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scrol-to-top">
+            <div class="scrollup" style="display: block;">
+                <i class="fa fa-angle-double-up"></i>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>بازدیدهای سایت</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><strong>افراد آنلاین:</strong> 1</p><p><strong>بازدید امروز:</strong> 20</p><p><strong>بازدید دیروز:</strong> 15</p><p><strong>بازدید کل:</strong> 6629</p>                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>پیوندها</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><a href="https://secure.php.net/docs.php" target="_blank">مستندات php</a></p><p><a href="http://www.w3schools.com/php/" target="_blank">PHP Tutorial</a></p><p><a href="https://laravel.com/docs/5.3" target="_blank">مستندات laravel</a></p><p><a href="http://forum.ncis.ir/" target="_blank">تالار گفتمان ncis</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <ul id="icons">
+                                <li>
+                                    <a href="https://www.facebook.com/topalternatives" target="_blank" rel="nofollow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/topalt" target="_blank" rel="nofollow">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://topalternatives.com/feed/" target="_blank" rel="nofollow">
+                                        <i class="fa fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/u/0/b/101188387378944618683/101188387378944618683" target="_blank" rel="nofollow">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCBuEJnRY2jGO0FY9SmlhfjA" target="_blank" rel="nofollow">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="pull-right">© کلیه حقوق این سایت متعلق به <a href="http://samaiweb.com/">وب سایت شخصی عبدالله سمعی</a> میباشد.</p>
+                        <p class="pull-left">قدرت گرفته از فریمورک Laravel</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/jquery.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap_003.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap_002.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/bootstrap-submenu-script.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/scripts.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/transition.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/highlight.js"></script>
+
+
+        
+    <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20kcfinder%20%D8%A8%D9%87%20ckeditor_files/show-comment.js"></script>
+
+
+
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    
+</body></html>

@@ -1,0 +1,82 @@
+html, body{
+    font-family: vazir;
+    font-size: 16px;
+}
+
+pre {
+    width: 100%;
+    padding: 3px;
+    margin: 0 15px;
+    direction: ltr;
+    text-align: left;
+    background-color: #eee;
+}
+
+.min-height-800px{
+    min-height: 800px;
+}
+
+/*------------------------------------------------------------------
+              Hljs styles
+--------------------------------------------------------------------*/
+.hljs {
+    color: #eee;
+    overflow: auto;
+}
+
+/*------------------------------------------------------------------
+              Abstract styles
+--------------------------------------------------------------------*/
+.abstract{
+    height: 80px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/*------------------------------------------------------------------
+              Article styles
+--------------------------------------------------------------------*/
+.article img{
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 0 auto 15px;
+}
+.article h1,h2,h3,h4,h5,h6{
+    margin: 10px 15px 25px auto;
+    font-weight: bold;
+}
+.article p{
+    margin: 10px 15px;
+    font-size: 14px;
+}
+
+/*------------------------------------------------------------------
+              Card styles
+--------------------------------------------------------------------*/
+.card-text{
+    font-size: 14px;
+}
+
+/*------------------------------------------------------------------
+              Form-control styles
+--------------------------------------------------------------------*/
+.form-control:focus {
+    border-color: #e3e5e7;
+    box-shadow: 0 0 3px .2rem rgba(124, 126, 128, 0.3);
+}
+.has-error{
+    background-color: #f8e8e8;
+    padding: 0.3rem 0;
+    color: #710f0f;
+}
+.has-error .form-control{
+    border: 1px solid #f9d4d4;
+}
+.has-error .form-control:focus {
+    box-shadow: 0 0 3px .2rem rgba(252, 107, 107, 0.3);
+}
+
+
+@media only screen and (max-width: 992px) {
+    //
+}

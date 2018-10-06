@@ -1,0 +1,211 @@
+body {
+    font-family: 'Vazir', Vazir, Tahoma, Arial, sans-serif !important;
+    position: relative;
+    padding-top: 7rem;
+}
+
+a{
+    color: white;
+}
+a:hover{
+    color: #fbe0fbcc;
+}
+
+p{
+    text-align: justify;
+    line-height: 2.5rem;
+}
+
+pre{
+    direction: ltr;
+    text-align: left;
+}
+code{
+    overflow-x: auto;
+}
+
+.py-4rem{
+    padding: 4rem 0;
+}
+
+.w-60 {
+    width: 61% !important;
+}
+
+.img-p{
+    width: 100%;
+    border: 2px solid #444;
+}
+
+.has-error{
+    padding: .5rem;
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+
+
+/*-------------------------------------------------
+                    Navbar - Dropdown
+-------------------------------------------------*/
+.navbar-animate{
+    background-color: #8e44ad66;
+    transition: all .5s ease;
+}
+.scroll-y{
+    overflow-y: scroll !important;
+    max-height: 100% !important;
+}
+.navbar{
+    padding: 1.5rem 0;
+    transition: all .5s ease;
+}
+#navbar-toggler .account a,
+#navbar-toggler .navbar-nav a{
+    color: #ffffffb5;
+    font-size: 1rem;
+    transition: all .1s ease;
+    text-decoration: none;
+    padding: 10px 0
+}
+.navbar-brand:hover,
+#navbar-toggler .account a:hover,
+#navbar-toggler .navbar-nav a:hover{
+    color: #ffffffb7;
+    transform: scale(0.95);
+}
+
+.form-inline .btn-danger{
+    background-color: #c509c5;
+}
+.form-inline .btn-danger:hover{
+    background-color: #f7b8fb;
+}
+.form-inline .form-control{
+    width: 11rem;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.dropdown-menu {
+    position: static;
+    min-width: 10rem;
+    padding: 0 .5rem;
+    margin-right: 2.5rem;
+    font-size: inherit;
+    text-align: right;
+    list-style: none;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 0;
+}
+.dropdown-item:focus, 
+.dropdown-item:hover{
+    background-color: transparent;
+}
+
+@media (min-width: 991px){
+    .navbar{
+        width: 100%;
+    }
+    #navbar-toggler .account a,
+    #navbar-toggler .navbar-nav a{
+        color: #ffffffb5;
+        font-size: 0.78rem;
+        transition: all .1s ease;
+        text-decoration: none;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
+        top: 3.86rem;
+        left: auto;
+        z-index: 1000;
+        margin-right: -0.3rem;
+        background-color: #8e44ad66;
+    }
+    .dropdown-menu a{
+        text-align: center;
+        border-top: 0.1rem solid #ffffff66;
+    }
+}
+
+
+
+/*-------------------------------------------------
+                    Scroll
+-------------------------------------------------*/
+.scroll-top{
+    position: fixed;
+    display: none;
+    left: 1.5rem;
+    right: auto;
+    bottom: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    color: white;
+    background: #e056fd;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-left: 0.2rem;
+    padding-top: 0.6rem;
+    z-index: 1030;
+}
+.scroll-top:hover{
+    color: #8e44ad;
+    background-color: #ff9ff3;
+}
+@media (min-width: 991px){
+    .scroll-top{
+        right: 2rem;
+        bottom: 2rem;
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+        padding-left: 0.2rem;
+        padding-top: 0.8rem;
+    }
+}
+
+
+
+/*-------------------------------------------------
+                    Sidebar
+-------------------------------------------------*/
+.list-group .active{
+    border-color: #f368e0;
+    background-color: #f368e0;
+}
+.list-group,
+.list-group-item{
+    background-color: #e056fd;
+    border-color: #da5ad7;
+}
+.list-group-item{
+    padding: 0;
+}
+.list-group-item .collapse,
+.list-group-item .collapsing{
+    margin: 0 1.5rem;
+}
+.list-group-item .show{
+/*    margin: 0 1.5rem;*/
+}
+.list-group-item a{
+    color: purple;
+    text-decoration: none;
+    padding: .75rem .5rem;
+}
+.list-group-item a:hover{
+    color: #ffffff;
+    background-color: #ff9ff3;
+}
+.list-group-item .badge-pill{
+    padding-top: 0.4rem;
+    color: yellow;
+    background-color: purple;
+}

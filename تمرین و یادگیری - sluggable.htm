@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - sluggable
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>sluggable</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <p dir="rtl">برای نمایش ویوها بر اساس فیلد slug مراحل زیر را انجام میدهیم:</p>
+
+<p dir="rtl">1- به صفحه <a class="text-info" href="https://github.com/cviebrock/eloquent-sluggable" target="_blank">Eloquent-Sluggable</a> میرویم و طبق آموزش نصب را انجام میدهیم.</p>
+
+<p dir="rtl">2- حالا متد زیر را هم در مدل مربوطه قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRouteKeyName</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'slug'</span>;
+}</code></pre>
+
+<p dir="rtl">3- برای پشتیبانی شدن حروف فارسی، فایل config\sluggable.php به صورت زیر خواهد بود:</p>
+
+<pre><code class="language-0 hljs coffeescript">&lt;?php
+
+<span class="hljs-keyword">return</span> [
+
+    /**
+     * What attributes <span class="hljs-keyword">do</span> we use to build the slug?
+     * This can be a single field, like <span class="hljs-string">"name"</span> which will build a slug <span class="hljs-attribute">from</span>:
+     *
+     *     $model-&gt;name;
+     *
+     * Or it can be an array <span class="hljs-keyword">of</span> fields, like (<span class="hljs-string">"name"</span>, <span class="hljs-string">"company"</span>), which builds a slug <span class="hljs-attribute">from</span>:
+     *
+     *     $model-&gt;name . <span class="hljs-string">' '</span> . $model-&gt;company;
+     *
+     * If you<span class="hljs-string">'ve defined custom getters in your model, you can use those too,
+     * since Eloquent will call them when you request a custom attribute.
+     *
+     * Defaults to null, which uses the toString() method on your model.
+     */
+
+    '</span>source<span class="hljs-string">' =&gt; null,
+
+    /**
+     * The maximum length of a generated slug.  Defaults to "null", which means
+     * no length restrictions are enforced.  Set it to a positive integer if you
+     * want to make sure your slugs aren'</span>t too long.
+     */
+
+    <span class="hljs-string">'maxLength'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-number">100</span>,
+
+    /**
+     * If you are setting a maximum length <span class="hljs-literal">on</span> your slugs, you may <span class="hljs-keyword">not</span> want the
+     * truncated string to split a word <span class="hljs-keyword">in</span> half.  The <span class="hljs-reserved">default</span> setting <span class="hljs-keyword">of</span> <span class="hljs-string">"true"</span>
+     * will ensure <span class="hljs-keyword">this</span>, e.g. <span class="hljs-reserved">with</span> a maxLength <span class="hljs-keyword">of</span> <span class="hljs-number">12</span>:
+     *
+     *   <span class="hljs-string">"my source string"</span><span class="hljs-function"> -&gt;</span> <span class="hljs-string">"my-source"</span>
+     *
+     * Setting it to <span class="hljs-string">"false"</span> will simply truncate the generated slug at the
+     * desired length, e.g.:
+     *
+     *   <span class="hljs-string">"my source string"</span><span class="hljs-function"> -&gt;</span> <span class="hljs-string">"my-source-st"</span>
+     */
+
+    <span class="hljs-string">'maxLengthKeepWords'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-literal">true</span>,
+
+    /**
+     * If left to <span class="hljs-string">"null"</span>, <span class="hljs-keyword">then</span> use the cocur/slugify package to generate the slug
+     * (<span class="hljs-reserved">with</span> the separator defined below).
+     *
+     * Set <span class="hljs-keyword">this</span> to a closure that accepts two parameters (string <span class="hljs-keyword">and</span> separator)
+     * to define a custom slugger.  e.g.:
+     *
+     *    <span class="hljs-string">'method'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-reserved">function</span>( $string, $sep ) {
+     *       <span class="hljs-keyword">return</span> preg_replace(<span class="hljs-string">'/[^a-z]+/i'</span>, $sep, $string);
+     *    },
+     *
+     * Otherwise, <span class="hljs-keyword">this</span> will be treated as a callable to be used.  e.g.:
+     *
+     *    <span class="hljs-string">'method'</span><span class="hljs-function"> =&gt;</span> array(<span class="hljs-string">'Str'</span>,<span class="hljs-string">'slug'</span>),
+     */
+
+    <span class="hljs-string">'method'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-reserved">function</span>($string, $separator = <span class="hljs-string">'-'</span>) {
+        $_transliteration = [<span class="hljs-string">"/ö|œ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"e"</span>,
+            <span class="hljs-string">"/ü/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"e"</span>,
+            <span class="hljs-string">"/Ä/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"e"</span>,
+            <span class="hljs-string">"/Ü/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"e"</span>,
+            <span class="hljs-string">"/Ö/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"e"</span>,
+            <span class="hljs-string">"/À|Á|Â|Ã|Å|Ǻ|Ā|Ă|Ą|Ǎ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/à|á|â|ã|å|ǻ|ā|ă|ą|ǎ|ª/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ç|Ć|Ĉ|Ċ|Č/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ç|ć|ĉ|ċ|č/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ð|Ď|Đ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ð|ď|đ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/È|É|Ê|Ë|Ē|Ĕ|Ė|Ę|Ě/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/è|é|ê|ë|ē|ĕ|ė|ę|ě/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ĝ|Ğ|Ġ|Ģ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ĝ|ğ|ġ|ģ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ĥ|Ħ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ĥ|ħ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ì|Í|Î|Ï|Ĩ|Ī| Ĭ|Ǐ|Į|İ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ì|í|î|ï|ĩ|ī|ĭ|ǐ|į|ı/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ĵ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ĵ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ķ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ķ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ĺ|Ļ|Ľ|Ŀ|Ł/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ĺ|ļ|ľ|ŀ|ł/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ñ|Ń|Ņ|Ň/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ñ|ń|ņ|ň|ŉ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ò|Ó|Ô|Õ|Ō|Ŏ|Ǒ|Ő|Ơ|Ø|Ǿ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ò|ó|ô|õ|ō|ŏ|ǒ|ő|ơ|ø|ǿ|º/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ŕ|Ŗ|Ř/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ŕ|ŗ|ř/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ś|Ŝ|Ş|Ș|Š/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ś|ŝ|ş|ș|š|ſ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ţ|Ț|Ť|Ŧ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ţ|ț|ť|ŧ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ù|Ú|Û|Ũ|Ū|Ŭ|Ů|Ű|Ų|Ư|Ǔ|Ǖ|Ǘ|Ǚ|Ǜ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ù|ú|û|ũ|ū|ŭ|ů|ű|ų|ư|ǔ|ǖ|ǘ|ǚ|ǜ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ý|Ÿ|Ŷ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ý|ÿ|ŷ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ŵ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ŵ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Ź|Ż|Ž/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/ź|ż|ž/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>,
+            <span class="hljs-string">"/Æ|Ǽ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"E"</span>,
+            <span class="hljs-string">"/ß/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"s"</span>,
+            <span class="hljs-string">"/Ĳ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"J"</span>,
+            <span class="hljs-string">"/ĳ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"j"</span>,
+            <span class="hljs-string">"/Œ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">"E"</span>,
+            <span class="hljs-string">"/ƒ/"</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">""</span>];
+        $quotedReplacement = preg_quote($separator, <span class="hljs-string">'/'</span>);
+        $merge = [
+            <span class="hljs-string">'/[^\s\p{Zs}\p{Ll}\p{Lm}\p{Lo}\p{Lt}\p{Lu}\p{Nd}]/mu'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">' '</span>,
+            <span class="hljs-string">'/[\s\p{Zs}]+/mu'</span><span class="hljs-function"> =&gt;</span> $separator,
+            sprintf<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/^[%s]+|[%s]+$/'</span>, $quotedReplacement, $quotedReplacement)</span> =&gt;</span> <span class="hljs-string">''</span>,
+        ];
+        $map = $_transliteration + $merge;
+        unset($_transliteration);
+        <span class="hljs-keyword">return</span> preg_replace(array_keys($map), array_values($map), $string);
+    },
+
+    /**
+     * Separator to use <span class="hljs-keyword">when</span> generating slugs.  Defaults to a hyphen.
+     */
+
+    <span class="hljs-string">'separator'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'-'</span>,
+
+    /**
+     * Enforce uniqueness <span class="hljs-keyword">of</span> slugs?  Defaults to <span class="hljs-literal">true</span>.
+     * If a generated slug already exists, an incremental numeric
+     * value will be appended to the end <span class="hljs-keyword">until</span> a unique slug <span class="hljs-keyword">is</span> found.  e.g.:
+     *
+     *     my-slug
+     *     my-slug-<span class="hljs-number">1</span>
+     *     my-slug-<span class="hljs-number">2</span>
+     */
+
+    <span class="hljs-string">'unique'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-literal">true</span>,
+
+    /**
+     * If you are enforcing unique slugs, the <span class="hljs-reserved">default</span> <span class="hljs-keyword">is</span> to add an
+     * incremental value to the end <span class="hljs-keyword">of</span> the base slug.  Alternatively, you
+     * can change <span class="hljs-keyword">this</span> value to a closure that accepts three <span class="hljs-attribute">parameters</span>:
+     * the base slug, the separator, <span class="hljs-keyword">and</span> a Collection <span class="hljs-keyword">of</span> the other
+     * <span class="hljs-string">"similar"</span> slugs.  The closure should <span class="hljs-keyword">return</span> the <span class="hljs-keyword">new</span> unique
+     * suffix to append to the slug.
+     */
+    
+    <span class="hljs-string">'uniqueSuffix'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-literal">null</span>,
+
+    /**
+     * Should we include the trashed items <span class="hljs-keyword">when</span> generating a unique slug?
+     * This only applies <span class="hljs-keyword">if</span> the softDelete property <span class="hljs-keyword">is</span> set <span class="hljs-keyword">for</span> the Eloquent model.
+     * If set to <span class="hljs-string">"false"</span>, <span class="hljs-keyword">then</span> a <span class="hljs-keyword">new</span> slug could duplicate one that exists <span class="hljs-literal">on</span> a trashed model.
+     * If set to <span class="hljs-string">"true"</span>, <span class="hljs-keyword">then</span> uniqueness <span class="hljs-keyword">is</span> enforced across trashed <span class="hljs-keyword">and</span> existing models.
+     */
+
+    <span class="hljs-string">'includeTrashed'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-literal">false</span>,
+
+    /**
+     * An array <span class="hljs-keyword">of</span> slug names that can never be used <span class="hljs-keyword">for</span> <span class="hljs-keyword">this</span> model,
+     * e.g. to prevent collisions <span class="hljs-reserved">with</span> existing routes <span class="hljs-keyword">or</span> controller methods, etc..
+     * Defaults to <span class="hljs-literal">null</span> (i.e. <span class="hljs-literal">no</span> reserved names).
+     * Can be a static array, e.g.:
+     *
+     *    <span class="hljs-string">'reserved'</span><span class="hljs-function"> =&gt;</span> array(<span class="hljs-string">'add'</span>, <span class="hljs-string">'delete'</span>),
+     *
+     * <span class="hljs-keyword">or</span> a closure that returns an array <span class="hljs-keyword">of</span> reserved names.
+     * If using a closure, it will accept one <span class="hljs-attribute">parameter</span>: the model itself, <span class="hljs-keyword">and</span> should
+     * <span class="hljs-keyword">return</span> an array <span class="hljs-keyword">of</span> reserved names, <span class="hljs-keyword">or</span> <span class="hljs-literal">null</span>. e.g.
+     *
+     *    <span class="hljs-string">'reserved'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-reserved">function</span>( Model $model) {
+     *      <span class="hljs-keyword">return</span> $model-&gt;some_method_that_returns_an_array();
+     *    }
+     *
+     * In the <span class="hljs-reserved">case</span> <span class="hljs-keyword">of</span> a slug that gets generated <span class="hljs-reserved">with</span> one <span class="hljs-keyword">of</span> these reserved names,
+     * we will <span class="hljs-attribute">do</span>:
+     *
+     *    $slug .= $separator + <span class="hljs-string">"1"</span>
+     *
+     * <span class="hljs-keyword">and</span> <span class="hljs-keyword">continue</span> from there.
+     */
+
+    <span class="hljs-string">'reserved'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-literal">null</span>,
+
+    /**
+     * Whether to update the slug value <span class="hljs-keyword">when</span> a model <span class="hljs-keyword">is</span> being
+     * re-saved (i.e. already exists).  Defaults to <span class="hljs-literal">false</span>, which
+     * means slugs are <span class="hljs-keyword">not</span> updated.
+     *
+     * Be careful! If you are using slugs to generate URLs, <span class="hljs-keyword">then</span>
+     * updating your slug automatically might change your URLs which
+     * <span class="hljs-keyword">is</span> probably <span class="hljs-keyword">not</span> a good idea from an SEO point <span class="hljs-keyword">of</span> view.
+     * Only set <span class="hljs-keyword">this</span> to <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> you understand the possible consequences.
+     */
+    
+    <span class="hljs-string">'onUpdate'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-literal">true</span>,
+
+];
+</code></pre>
+
+<p dir="rtl">4- در ویوها بصورت زیر از slug استفاده میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"{{ route('articles.destroy', ['article' =&gt; $article-&gt;slug]) }}"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span>&gt;</span>
+    {!! csrf_field() !!}
+    {{ method_field('DELETE') }}
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn-group"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ route('articles.edit', ['article' =&gt; $article-&gt;slug]) }}"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-sm btn-warning"</span>&gt;</span>ویرایش<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-danger btn-sm"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return confirm('آیا مطمئن هستید؟');"</span>&gt;</span>حذف<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre>
+
+<p>&nbsp;</p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20sluggable_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

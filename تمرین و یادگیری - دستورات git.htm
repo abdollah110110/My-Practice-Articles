@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - دستورات git
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>دستورات git</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <h2 dir="rtl">نصب git و شروع کار</h2>
+
+<p dir="rtl">برای استفاده از گیت ابتدا آن را از <a class="text-info" href="https://git-scm.com/downloads" target="_blank">این سایت</a>
+ دانلود میکنیم. بعد با زدن چند next براحتی نصب میشود. حالا وارد فولدر 
+پروژه میشویم و راست کلیک میکنیم و Git Bash Here رو میزنیم. وقتی وارد خط 
+فرمان شدیم نیاز هست که برای پروژه یک ریپازیتوری ایجاد کنیم که توسط دستور
+ زیر انجام میشود:</p>
+
+<pre><code class=" hljs ">git init</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">تنظیمات یا config</h2>
+
+<p dir="rtl">برای وارد کردن نام و ایمیل در گیت میتوانیم از دستور config به دو صورت زیر استفاده کنیم:</p>
+
+<pre><code class=" hljs php"><span class="hljs-comment">// کانفیق برای پروژه فعلی</span>
+
+git config user.name <span class="hljs-string">"username"</span>
+git config user.email <span class="hljs-string">"email"</span>
+
+git config user.name <span class="hljs-string">"Ali"</span>
+git config user.name <span class="hljs-string">"Ali_sam@yahoo.com"</span>
+
+<span class="hljs-comment">//-----------------------------------------------</span>
+
+<span class="hljs-comment">// کانفیق برای تمام پروژه ها</span>
+
+git --<span class="hljs-keyword">global</span> config user.name <span class="hljs-string">"username"</span>
+git --<span class="hljs-keyword">global</span> config user.email <span class="hljs-string">"email"</span>
+
+git --<span class="hljs-keyword">global</span> config user.name <span class="hljs-string">"Ali"</span>
+git --<span class="hljs-keyword">global</span> config user.name <span class="hljs-string">"Ali_sam@yahoo.com"</span></code></pre>
+
+<p dir="rtl">با دستور config -l میتوانیم کل تنظیمات را مشاهده کنیم:</p>
+
+<pre><code class=" hljs bash">git config <span class="hljs-operator">-l</span> // لیست تنظیمات</code></pre>
+
+<ul dir="rtl">
+	<li><span style="font-size:16px"><span style="background:#f7dbf7 none repeat scroll 0% 0%; color:#c131e0; padding:1px 3px">بهتر است برای هر پروژه خاص از تنظیمات بدون global-- استفاده کنیم و از تنظیمات عمومی استفاده نکنیم.</span></span></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2 dir="rtl">مشاهده فایلها و فولدرهای جدید یا تغییر کرده</h2>
+
+<p dir="rtl">برای مشاهده فایلها و فولدرهای جدید یا تغییر کرده ای که در ریپازیتوری وجود دارند از دستور زیر استفاده میکنیم:</p>
+
+<pre><code class=" hljs ">git status</code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-status.jpg" target="_blank"><img alt="git status picture" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-status.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">در موقع کار با گیت محدوده کاری ما به سه بخش فایلهای پروژه( شاخه کاری ) و stage و repository تقسیم میشوند.</p>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">جلوگیری از دنبال شدن فایلها و فولدرها در گیت</h2>
+
+<p dir="rtl">برای این کار از ignore به شکل زیر استفاده میکنیم تا فایل مربوطه اش در داخل پروژه ساخته شود:</p>
+
+<pre><code class=" hljs ">touch .gitignore</code></pre>
+
+<p dir="rtl">در داخل فایل gitignore. فولدرها و فایلهایی که میخواهیم دنبال نشوند را مشخص میکنیم:</p>
+
+<pre><code class=" hljs ">modules/
+*.txt</code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/gitignore.jpg" target="_blank"><img alt="gitignore.jpg" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/gitignore.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">اگر نیاز باشد فایلی با پسوند خاص را متمایز شده و دنبال شود آن را با استفاده از علامت <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">!</span> مشخص میکنیم( مثلا فایل e.txt را از بین همه فایلهای txt متمایز میکنیم ):</p>
+
+<pre><code class=" hljs diff">modules/
+*.txt
+<span class="hljs-change">!e.txt</span></code></pre>
+
+<p dir="rtl">اگر بخواهیم فولدر یا فایلی که قبلا دنبال میشد، از این به 
+بعد دنبال نشود، ابتدا آنها را در فایل gitignore. مشخص میکنیم و بعد دستور
+ rm --cached -r رو وارد میکنیم( مثلا فولدر js ):</p>
+
+<pre><code class=" hljs diff">modules/
+*.txt
+<span class="hljs-change">!e.txt</span>
+js/</code></pre>
+
+<pre><code class=" hljs sql">git rm <span class="hljs-comment">--cached -r .</span></code></pre>
+
+<p dir="rtl">حالا اگر git status بگیریم خواهیم دید که فولدر js دنبال نشده است و در نهایت دستورات add و commit را اجرا میکنیم.</p>
+
+<h2 dir="rtl"><br>
+قرار دادن تغییرات فایلها و فولدرها در ریپازیتوری</h2>
+
+<p dir="rtl">وقتی برای اولین بار میخواهیم فولدرها و فایلها را در 
+ریپازیتوری قرار دهیم لازم هست که ابتدا از دستور add استفاده کنیم و آهنها
+ را در ایستیج قرار دهیم و بعد با استفاده از دستور commit آنها را در 
+ریپازیتوری قرار دهیم. در دفعات بعدی میتوانیم مستقیما از دستور commit 
+استفاده کنیم.</p>
+
+<p dir="rtl">دستور add بصورت زیر استفاده میشود:</p>
+
+<pre><code class=" hljs cs">git add . <span class="hljs-comment">// نقطه به معنی تمام فولدرها و فایلهای موجود هست</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-add.jpg" target="_blank"><img alt="git add image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-add.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">اگر بخواهیم یکی از فایلها یا فولدرهای اضافه شده به ایستیج را حذف کنیم از دستور rm به شکل زیر استفاده میکنیم:</p>
+
+<pre><code class=" hljs sql">git rm <span class="hljs-comment">--cached folder/fileName.fileExtention</span>
+
+git rm <span class="hljs-comment">--cached js/script.js</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-rm.jpg" target="_blank"><img alt="git rm image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-rm.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">اگر بخواهیم همه فولدرها و فایلهای موجود در ایستیج را حذف کنیم از دستور rm به شکل زیر استفاده میکنیم:</p>
+
+<pre><code class=" hljs sql">git rm <span class="hljs-comment">--cached -r .</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-rm-all.jpg" target="_blank"><img alt="git rm all image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-rm-all.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">حالا با استفاده از دستور add دوباره فایلها را در ایستیج 
+قرار میدیم و بعد با استفاده از دستور commit آنها را در گیت(ریپازیتوری) 
+قرار میدهیم:</p>
+
+<pre><code class=" hljs sql">git <span class="hljs-operator"><span class="hljs-keyword">commit</span> -m <span class="hljs-string">"Add this project to git"</span></span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-commit.jpg" target="_blank"><img alt="git commit image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-commit.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">اگر بخواهیم تغییرات موجود در شاخه کاری را مستقیماً و بدون 
+استفاده از دستور add در ریپازیتوری درج کنیم از دستور کامیت به شکل زیر 
+استفاده میکنیم:</p>
+
+<pre><code class=" hljs bash">git commit <span class="hljs-operator">-a</span> -m <span class="hljs-string">"Add new paragraph to about.html"</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-commit-add.jpg" target="_blank"><img alt="git commit-add imamge" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-commit-add.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">برای مشاهده جزئیات تغییرات انجام شده از دستور diff استفاده میکنیم:</p>
+
+<pre><code class=" hljs ">git diff</code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-diff.jpg" target="_blank"><img alt="git diff image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-diff.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">دستورات کار با کامیتها</h2>
+
+<p dir="rtl">برای مشاهده کامیتهای انجام شده روی ریپازیتوری از دستور log استفاده میکنیم( کامیتها را به ترتیب از آخر به اول نشان میدهد ):</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">log</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-log.jpg" target="_blank"><img alt="git log image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-log.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">برای مشاهده کامیتهای انجام شده بصورت خطی از دستور log --oneline استفاده میکنیم:</p>
+
+<pre><code class=" hljs sql">git log <span class="hljs-comment">--oneline</span></code></pre>
+
+<p dir="rtl">برای مشاهده کامیتهای انجام شده بصورت خطی و به تعداد مشخص از دستور log -[count line] --oneline استفاده میکنیم:</p>
+
+<pre><code class=" hljs sql">git log -2 <span class="hljs-comment">--oneline</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-log-oneline.jpg" target="_blank"><img alt="git log oneline image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-log-oneline.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">برای مشاهده جزئیات تغییرات انجام شده و ثبت شده در کامیت از دستور log -p استفاده میکنیم:</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">log</span> -p</code></pre>
+
+<p dir="rtl">برای مشاهده موارد بیشتری از دستور log از دستور log -help استفاده میکنیم:</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">log</span> -help</code></pre>
+
+<p dir="rtl">برای برگرداندن فایلها به حالت قبل از تغییرات جدید در شاخه 
+کاری( مثلا کدهای جدیدی که نوشتیم بیفایده است ) از دستور checkout استفاده
+ میکنیم:</p>
+
+<pre><code class=" hljs cs">git checkout -- index.html <span class="hljs-comment">// از فایلهای داخل شاخه کاری فقط فایل مشخص شده را به حالت قبل برمیگرداند</span>
+
+git checkout -- . <span class="hljs-comment">// همه فایلهای داخل شاخه کاری را به حالت قبل برمیگرداند</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-checkout.jpg" target="_blank"><img alt="git checkout image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-checkout.jpg" style="width:100%"></a></p>
+
+<p><a href="http://localhost:8000/uploads/images/git-checkout-all.jpg" target="_blank"><img alt="git checkout all image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-checkout-all.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">برای برگرداندن فایلها از ایستیج به شاخه کاری از دستور reset استفاده میکنیم:</p>
+
+<pre><code class=" hljs cs">git reset Head about.html <span class="hljs-comment">// فایل مشخص شده را از ایستیج به شاخه کاری برمیگرداند</span>
+
+git reset Head . <span class="hljs-comment">// همه فایلهای مشخص شده را از ایستیج به شاخه کاری برمیگرداند</span></code></pre>
+
+<p><a href="http://localhost:8000/uploads/images/git%20reset.jpg" target="_blank"><img alt="git reset image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git%2520reset.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">برای برگرداندن کامیتها به مراحل قبل، از دستور reset به صورتهای زیر استفاده میکنیم:</p>
+
+<p dir="rtl">1- بخشی از آیدی کامیت مورد نظر را برای دستور reset وارد 
+میکنیم که در نتیجه فایلهایی بصورت تغییر یافته در شاخه کاری قرار میگیرند و
+ برای لغو همه یا بخشی از این تغییرات از دستور checkout استفاده میکنیم. 
+همچنین میتوانیم همه یا بخشی از این فایلها را توسط دستور add به ایستیج 
+اضافه کنیم( دستوراتی که قبلا یاد گرفتیم اینجا در صورت نیاز به هر کدام 
+استفاده میشوند ).</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">reset</span> f03d5fd545s2r</code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-reset-comit-id.jpg" target="_blank"><img alt="git reset comit id image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-reset-comit-id.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">2- اگر نخواهیم موقع برگرداندن کامیتها به مرحله قبل، 
+فایلهایی دارای تغییرات در شاخه کاری قرار بگیرند( مثل مورد 1 )، از دستور 
+reset --hard&nbsp; و آیدی کامیت استفاده میکنیم. در این روش کامیتهای بعدی
+ و همه فایلهای جدید و تغییر یافته بعد از کامیت مورد نظر، حذف میشوند.</p>
+
+<pre><code class=" hljs sql">git reset <span class="hljs-comment">--hard f0d23r5ec5d5</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-reset-hard.jpg" target="_blank"><img alt="git reset hard image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-reset-hard.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">3- برای اینکه بتوانیم بعد از دستور reset --hard ، کامیت ها و
+ فایلها را برگردانیم باید قبل از استفاده از دستور reset --hard ، آیدی 
+کامیت را ذخیره کنیم و بعد با استفاده از همان آیدی و نوشتن آن در مقابل 
+دستور ریست فایلها برگردانده میشوند.</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">reset</span> gf3h5hd56hgkj76h5kgj2fgh342fgh5j</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">شاخه بندی پروژه و سوئیچ کردن( branch )</h2>
+
+<p dir="rtl">در شاخه بندیها نام شاخه اصلی master است و برای ایجاد شاخه های جدید از دستور branch استفاده میکنیم:</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">branch</span> <span class="hljs-attr_selector">[branchName]</span>
+
+<span class="hljs-tag">git</span> <span class="hljs-tag">branch</span> <span class="hljs-tag">dev</span></code></pre>
+
+<p dir="rtl">برای مشاهده شاخه های موجود از دستور branch -a استفاده میکنیم:</p>
+
+<pre><code class=" hljs bash">git branch <span class="hljs-operator">-a</span></code></pre>
+
+<p dir="rtl">برای سوئیچ کردن( رفتن به ) شاخه مورد نظر از دستور checkout استفاده میکنیم:</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-attr_selector">[branchName]</span>
+
+<span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-tag">dev</span></code></pre>
+
+<p dir="rtl">برای حذف شاخه مورد نظر از دستور branch -d استفاده میکنیم:</p>
+
+<pre><code class=" hljs bash">git branch <span class="hljs-operator">-d</span> [branchName]
+
+git branch <span class="hljs-operator">-d</span> dev</code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-branch.jpg" target="_blank"><img alt="git branch image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-branch.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">برای اینکه بتوانیم به محض ایجاد شاخه به آن سوئیچ کنیم از دستور checkout -b استفاده میکنیم:</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-tag">-b</span> <span class="hljs-attr_selector">[branchName]</span>
+
+<span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-tag">-b</span> <span class="hljs-tag">dev</span></code></pre>
+
+<ul dir="rtl">
+	<li>
+	<p><span style="font-size:16px"><span style="background:#f7dbf7 none repeat scroll 0% 0%; color:#c131e0; padding:1px 3px">در
+ موقع سوئیچ به هر کدام از شاخه ها، فقط فایلهای مربوط به کامیتهای همان 
+شاخه در فوادر پروژه وجود خواهد داشت. این نوعی نسخه بندی از پروژه میباشد.</span></span></p>
+	</li>
+</ul>
+
+<p dir="rtl">برای اینکه بتوانیم تغییرات انجام شده در شاخه ها را به پروژه
+ اصلی اعمال کنیم&nbsp;ابتدا باید به شاخه master سوئیچ کنیم و بعد از 
+دستور merge استفاده کنیم:</p>
+
+<pre><code class=" hljs sql">git <span class="hljs-operator"><span class="hljs-keyword">merge</span> [branchName]
+
+git <span class="hljs-keyword">merge</span> dev</span></code></pre>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-merge.jpg" target="_blank"><img alt="git merge image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-merge.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">در بعضی از مواقع موقع اجرای دستور merge ممکن است تناقض روی دهد و پیامی مثل تصویر زیر نمایش دهد:</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-merge-confilict.jpg" target="_blank"><img alt="git merge confilict image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-merge-confilict.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">در موقع تناقض ابتدا دستور git status را اجرا میکنیم تا فایلهای تناقض پیدا کرده مشخص شوند.</p>
+
+<p dir="rtl">و در فایل مربوطه محل تناقض بصورت تصویر زیر نشانه گذاری 
+میشود( کدهای شاخه master را در قسمت HEAD نشان میدهد و کدهای شاخه دیگر را
+ با همان نام خودش که در اینجا dev است ):</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-merge-confilict-file.jpg" target="_blank"><img alt="git-merge-confilict-file" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-merge-confilict-file.jpg" style="border-color:#666666; border-style:solid; border-width:1px; width:100%"></a></p>
+
+<p dir="rtl">اگر در موقع تناقض از merge کردن منصرف بشویم میتوانیم از دستور merge --abort استفاده کنیم:</p>
+
+<pre><code class=" hljs sql">git <span class="hljs-operator"><span class="hljs-keyword">merge</span> --abort</span></code></pre>
+
+<p dir="rtl">اگر موقع تناقض بخواهیم merge را انجام دهیم به فایل مشخص شده
+ میرویم و هر کدام از قسمتهای مشخص شده در فایل را که بخواهیم پاک میکنیم و
+ دیگری را نگه میداریم:</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-merge-confilict-file-ok.jpg" target="_blank"><img alt="git-merge-confilict-file-ok" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-merge-confilict-file-ok.jpg" style="border-color:#666666; border-style:solid; border-width:1px; width:100%"></a></p>
+
+<p dir="rtl">حالا اگر git status بگیریم فایلها را دوباره خواهیم دید با 
+این تفاوت که میدانیم فایلهای مورد نظر را اصلاح کرده ایم. پس دستورات 
+add&nbsp; و commit را برای فایلها اجرا میکنیم. با اجرا شدن دستور commit 
+ترکیب کردن( merge ) با موفقیت به انجام میرسد. بعد یک git log میگیریم تا 
+کامیتهای ترکیب شده را ببینیم.</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-merge-complite.jpg" target="_blank"><img alt="git-merge-complite" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-merge-complite.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">ذخیره سازی موقت تغییرات( stash )</h2>
+
+<p dir="rtl">وقتی در یک برنچ خاص قرار داریم و در پروژه تغییراتی داده ایم
+ اگر قبل از کامیت کردن این تغییرات به برنچ دیگه ای سوئیچ کنیم همان 
+تغییرات به برنچ دیگه منتقل میشوند. برای حل این مشکل از دستور stash 
+استفاده میکنیم و تغییرات را بصورت موقت در جایی ذخیره میکنیم.</p>
+
+<pre><code class=" hljs ">git stash</code></pre>
+
+<p dir="rtl">برای مشاهده لیست استشها از stash list استفاده میکنیم:</p>
+
+<pre><code class=" hljs php">git stash <span class="hljs-keyword">list</span></code></pre>
+
+<p dir="rtl">برای مشاهده آپشنهای استش، از stash --help و stash -h استفاده میکنیم:</p>
+
+<pre><code class=" hljs sql">git stash <span class="hljs-comment">--help</span>
+
+git stash -h</code></pre>
+
+<p dir="rtl">برای حذف یک استش از دستور stash drop استفاده میکنیم:</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">drop</span> <span class="hljs-attr_selector">[stashId]</span>
+
+<span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">drop</span> <span class="hljs-tag">stash</span><span class="hljs-at_rule">@<span class="hljs-keyword">{0}</span></span></code></pre>
+
+<p dir="rtl">برای اینکه بتوانیم توضیح مختصری را به استش اعمال کنیم از stash save در موقع ایجاد استش استفاده میکنیم:</p>
+
+<pre><code class=" hljs bash">git stash save <span class="hljs-string">"commit"</span></code></pre>
+
+<p dir="rtl">برای مشاهده جزئیات یک استش خاص از دستور stash show -p استفاده میکنیم:</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">show</span> <span class="hljs-tag">-p</span> <span class="hljs-attr_selector">[stashId]</span></code></pre>
+
+<p dir="rtl">برای اعمال کردن تغییرات داخل استش به شاخه کاری( در هر کدام 
+از برنچها ) از دو دستور stash pop و stash apply استفاده میکنیم. تفاوت 
+این دو دستور این است که دستور stash pop پس از اجرا شدن استش مورد نظر را 
+حذف میکند اما دستور stash apply استش مورد نظر را حذف نمیکند و اگر یک 
+stash list بگیریم میبینیم که هنوز وجود دارد. پس وقتی که بخواهیم استش 
+مورد نظر بلافاصله بعد از اعمال حذف شود از stash pop استفاده میکنیم.</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">apply</span> <span class="hljs-attr_selector">[stashId]</span>
+
+<span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">pop</span> <span class="hljs-attr_selector">[stashId]</span></code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">&nbsp;</h2>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">عضویت در گیت هاب</h2>
+
+<p dir="rtl">برای عضویت در گیت هاب به <a href="https://github.com/join" target="_blank">این صفحه</a> میرویم. مراحل ثبت نام را انجام میدهیم. بعد اکانتمان را فعال کنیم تا ایمیلمان تایید شود.</p>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">ایجاد پروژه در گیت هاپ</h2>
+
+<p dir="rtl">برای ایجاد ریپازیتوری در گیت هاپ به صفحه <a href="https://github.com/new" target="_blank">Create a new repository</a>
+ میرویم و یک نام برای ریپازیتوری تعیین میکنیم و روی create repository 
+کلیک میکنیم. وقتی ریپازیتوری ایجاد شد کدهایی برای ارتباط با آن در 
+اختیارمان قرار میگیرد.</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/github-codes.jpg" target="_blank"><img alt="github-codes image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/github-codes.jpg" style="border-color:#000000; border-style:solid; border-width:1px; width:100%"></a></p>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">آپلود و دانلود پروژه از ویندوز به گیت هاپ</h2>
+
+<p dir="rtl">برای این کار وارد پروژه در ویندوز میشویم و Git Bash Here رو
+ کلیک میکنیم. بعد دستور زیر را در خط فرمان وارد میکنیم تا یک ریموت 
+برایمان ایجاد شود:</p>
+
+<pre><code class=" hljs cs">git remote add origin https:<span class="hljs-comment">//github.com/abdollah110110/Practice_project.git</span></code></pre>
+
+<p dir="rtl">برای مشاهده ریموت از دستور زیر استفاده میکنیم:</p>
+
+<pre><code class=" hljs ">git remote</code></pre>
+
+<p dir="rtl">حالا با استفاده از دستور push -u پروژه را به گیت هاب آپلود 
+میکنیم( با همین دستور میتوانیم برنچهای دیگر را هم آپلود کنیم فقط بجای 
+maser نام برنچ مورد نظرمان را مینویسیم ):</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">push</span> -u origin master</code></pre>
+
+<p dir="rtl">پس از وارد کردن دستور بالا، نام کاربری و پسورد گیت هاب را سوال میکند که باید وارد کنیم، به صورت تصویر زیر:</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/git-push.jpg" target="_blank"><img alt="git-push image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-push.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">حالا از طریق لینک Your profile در بالای صفحه میتوانیم به 
+این پروژه دسترسی داشته باشیم. با کلیک بر روی نام ریپازیتوری فایلها و 
+فولدرهای پروژه را خواهیم دید.</p>
+
+<p dir="rtl">اگر کامیتهای جدیدی در پروژه اضافه کرده باشیم با دستور push آنها را به گیت و origin آپلود میکنیم.</p>
+
+<pre><code class=" hljs perl">git <span class="hljs-keyword">push</span></code></pre>
+
+<p dir="rtl">اگر بخواهیم روی گیت هاب کدهای یکی از فایلها را تغییر دهیم 
+روی آن فایل کلیک میکنیم و در صفحه باز شده روی Edit this file کلیک 
+میکنیم.</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/github-edit-file.jpg" target="_blank"><img alt="github-edit-file image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/github-edit-file.jpg" style="border-color:#000000; border-style:solid; border-width:1px; width:100%"></a></p>
+
+<p dir="rtl">بعد در صفحه باز شده پس از انجام تغییرات در قسمت Commit changes یک عنوان و توضیح مختصر برای کامیت وارد میکنیم.</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/commit-changes.jpg" target="_blank"><img alt="commit-changes.jpg" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/commit-changes.jpg" style="border-color:#000000; border-style:solid; border-width:1px; width:100%"></a></p>
+
+<p dir="rtl">برای اینکه بتوانیم این تغییرات را به پروژه روی ویندوز و دانلود کنیم از دستور pull استفاده میکنیم:</p>
+
+<pre><code class=" hljs ">git pull</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 dir="rtl">دانلود یک پروژه از گیت هاب روی ویندوز</h2>
+
+<p dir="rtl">برای دانلود یک پروژه در صفحه پروژه روی Clone or download 
+کلیک میکنیم و کینک نشان داده شده را برمیداریم( کپی میکنیم ) یا بصورت 
+فایل zip دانلود میکنیم.</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/Clone-Download.jpg" target="_blank"><img alt="Clone-Download image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/Clone-Download.jpg" style="border-color:#000000; border-style:solid; border-width:1px; width:100%"></a></p>
+
+<p dir="rtl">بعد در جایی مثل desktop راست کلیک کرده و Git Bash Here رو کلیک میکنیم در خط فرمان دستور clone را بصورت زیر وارد میکنیم:</p>
+
+<pre><code class=" hljs php">git <span class="hljs-keyword">clone</span> [<span class="hljs-keyword">clone</span> link] [project folder name]
+
+git <span class="hljs-keyword">clone</span> /uploads/images/<span class="hljs-keyword">Clone</span>-Download.jpg myproject</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<p dir="rtl">&nbsp;</p>
+
+<p dir="rtl">&nbsp;</p>
+
+<p dir="rtl">&nbsp;</p>
+
+<p dir="rtl">&nbsp;</p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

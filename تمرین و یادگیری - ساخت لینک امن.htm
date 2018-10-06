@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - ساخت لینک امن
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>ساخت لینک امن</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <p dir="rtl">اگر وب سایتی داریم که باید فایلهایی را در آن آپلود کنیم و کاربران دانلود کنند باید مراحل زیر را انجام دهیم:</p>
+
+<p dir="rtl"><span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">در این روش فایلها با استفاده از نرم افزارهایی مثل فایلزیلا به فولدر مورد نظر آپلود میشوند.</span></p>
+
+<p dir="rtl">1- در فولدر storage یک فولدر به نام downloads ایجاد میکنیم.</p>
+
+<p dir="rtl">2- مدل فایل را ایجاد میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Hash</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Carbon</span>\<span class="hljs-title">Carbon</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">File</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+{</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$fillable</span> = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'path'</span>];
+    
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">download</span><span class="hljs-params">()</span> {</span>
+        
+        <span class="hljs-variable">$time</span> = Carbon::now()-&gt;addHour(<span class="hljs-number">5</span>)-&gt;timestamp;
+        <span class="hljs-variable">$ip</span> = request()-&gt;ip();
+        
+        <span class="hljs-variable">$strHash</span> = <span class="hljs-string">'CDE#$RFFVFR%TTGBHYT%%$#@WW#$$'</span> . <span class="hljs-variable">$this</span>-&gt;id . <span class="hljs-variable">$ip</span> . <span class="hljs-variable">$time</span>;
+        
+        <span class="hljs-variable">$hash</span> = HasH::make(<span class="hljs-variable">$strHash</span>);
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"/download/$this-&gt;id?h=$hash&amp;t=$time"</span>;
+    }
+}</code></pre>
+
+<p dir="rtl">3- مایگریشن جدول files را ایجاد میکنیم:</p>
+
+<pre><code class="language-0 hljs php">Schema::create(<span class="hljs-string">'files'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint <span class="hljs-variable">$table</span>)</span> {</span>
+    <span class="hljs-variable">$table</span>-&gt;increments(<span class="hljs-string">'id'</span>);
+
+    <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'title'</span>)-&gt;index();
+    <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'path'</span>);
+
+    <span class="hljs-variable">$table</span>-&gt;timestamps();
+});</code></pre>
+
+<p dir="rtl">4- کنترلر FileController را ایجاد میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">File</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">MainController</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MainController</span>
+{</span>
+    <span class="hljs-comment">/**
+     * Display a listing of the resource.
+     *
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-variable">$files</span> = File::all();
+        
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'files.index'</span>, compact(<span class="hljs-string">'files'</span>));
+    }
+
+    <span class="hljs-comment">/**
+     * Show the form for creating a new resource.
+     *
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'files.create'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Store a newly created resource in storage.
+     *
+     *<span class="hljs-phpdoc"> @param</span>  \Illuminate\Http\Request  $request
+     *<span class="hljs-phpdoc"> @return</span> \Illuminate\Http\Response
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">store</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>, [
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'required|min:3'</span>,
+            <span class="hljs-string">'path'</span> =&gt; <span class="hljs-string">'required'</span>,
+        ]);
+        
+        <span class="hljs-variable">$file</span> = <span class="hljs-keyword">new</span> File();
+        <span class="hljs-variable">$file</span>-&gt;title = <span class="hljs-variable">$request</span>-&gt;title;<span class="hljs-comment">// 24 Forms, 25 Forms, 26 Forms</span>
+        <span class="hljs-variable">$file</span>-&gt;path = <span class="hljs-variable">$request</span>-&gt;path;<span class="hljs-comment">// downloads\24 Forms.zip, downloads\25 Forms.zip, downloads\26 Forms.zip</span>
+        <span class="hljs-variable">$file</span>-&gt;save();
+        
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'/files'</span>);
+    }
+
+}
+</code></pre>
+
+<p dir="rtl">5- ویوی create.blade.php را که دارای فرمی برای دریافت نام و مسیر فایل است را بصورت زیر ایجاد میکنیم:</p>
+
+<pre><code class="language-0 hljs xml">@extends('layouts.welcome')
+
+
+@section('title')
+    - ایجاد لینک
+@endsection
+
+
+@section('content')
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>ایجاد لینک<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"{{ route('files.store') }}"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-horizontal"</span>&gt;</span>
+        {!! csrf_field() !!}
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-group {{ $errors-&gt;has('title') ? 'has-error' : '' }}"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-left"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"title"</span>&gt;</span>عنوان:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"title"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"title"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"عنوان مناسبی برای لینک بنویسید"</span> &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-danger"</span>&gt;</span>
+                {{ $errors-&gt;first('title') }}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-group {{ $errors-&gt;has('path') ? 'has-error' : '' }}"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-left"</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"path"</span>&gt;</span>مسیر:<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"path"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"path"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"downloads\flie-name.zip"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-danger"</span>&gt;</span>
+                {{ $errors-&gt;first('path') }}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-info"</span>&gt;</span>ابتدا فایل را در مسیر storage آپلود کرده و سپس مسیرش را بصورت  downloads\file-name.zip وارد کنید<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-center"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-success btn-lg"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>ایجاد<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+@endsection</code></pre>
+
+<p dir="rtl">فرم ساخته شده بصورت تصویر زیر خواهد بود:</p>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/path-file-form.jpg" target="_blank"><img alt="فرم دریافت مسیر فایل آپلود شده" class="img-p" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/path-file-form.jpg"></a></p>
+
+<p dir="rtl">6- ویوی index.blade.php بصورت زیر خواهد بود:</p>
+
+<pre><code class="language-0 hljs xml">@extends('layouts.welcome')
+
+
+@section('title')
+    - فایل های آپلود شده
+@endsection
+
+
+@section('content')
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table-responsive"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-bordered table-striped text-center"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">thead</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg-light"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>فایلهای آپلود شده با فایلزیلا<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+            @foreach($files as $file)
+                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ $file-&gt;download() }}"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-info px-3"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span>&gt;</span>{{ $file-&gt;title }}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            @endforeach
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+@endsection</code></pre>
+
+<div class="text-left">
+<p dir="rtl">در ویوی index با استفاده از کد ریر هش ساخته شده برای مسیر فایل را از مدل File دریافت میکنیم.</p>
+
+<pre><code class=" hljs bash"><span class="hljs-variable">$file</span>-&gt;download()</code></pre>
+
+<p dir="rtl">در تصویر زیر لینکهای امن ساخته شده را میبینیم:</p>
+</div>
+
+<p dir="rtl"><a href="http://localhost:8000/uploads/images/uploaded-filezila.jpg" target="_blank"><img alt="لینک امن و هش شده" class="img-p" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/uploaded-filezila.jpg" style="width:100%"></a></p>
+
+<p dir="rtl">7- کنترلر LinkController را ایجاد میکنیم و متد download را بصورت زیر در آن مینویسیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">download</span><span class="hljs-params">(File <span class="hljs-variable">$file</span>)</span> {</span>
+
+    <span class="hljs-variable">$time</span> = request(<span class="hljs-string">'t'</span>);
+    <span class="hljs-variable">$h</span> = request(<span class="hljs-string">'h'</span>);
+    <span class="hljs-variable">$ip</span> = request()-&gt;ip();
+
+    <span class="hljs-variable">$strHash</span> = <span class="hljs-string">'CDE#$RFFVFR%TTGBHYT%%$#@WW#$$'</span> . <span class="hljs-variable">$file</span>-&gt;id . <span class="hljs-variable">$ip</span> . <span class="hljs-variable">$time</span>;
+
+    <span class="hljs-keyword">if</span>(Hash::check(<span class="hljs-variable">$strHash</span>, <span class="hljs-variable">$h</span>)){
+        <span class="hljs-keyword">return</span> response()-&gt;download(storage_path(<span class="hljs-variable">$file</span>-&gt;path));
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'link error'</span>;
+    }
+}</code></pre>
+
+<p dir="rtl">8- روتهای مربوط به کنترلرهای ایجاد شده بصورت زیر خواهند بود:</p>
+
+<pre><code class="language-0 hljs cs"><span class="hljs-comment">// File Routes</span>
+Route::resource(<span class="hljs-string">'/files'</span>, <span class="hljs-string">'FileController'</span>);
+
+<span class="hljs-comment">// Download Route</span>
+Route::<span class="hljs-keyword">get</span>(<span class="hljs-string">'/download/{file}'</span>, <span class="hljs-string">'HomeController@download'</span>)-&gt;name(<span class="hljs-string">'download'</span>);</code></pre>
+
+<p>&nbsp;</p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%84%DB%8C%D9%86%DA%A9%20%D8%A7%D9%85%D9%86_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

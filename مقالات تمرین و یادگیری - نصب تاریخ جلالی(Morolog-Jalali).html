@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>مقالات تمرین و یادگیری - نصب تاریخ جلالی(Morolog-Jalali)
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/monokai.css" rel="stylesheet">
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>نصب تاریخ جلالی(Morolog-Jalali)</h2>
+    </div>
+    <hr>
+    
+    <div class="row article"><p dir="rtl" style="text-align:justify">برای نصب و نمایش تاریخ جلالی به صفحه <a href="https://github.com/morilog/jalali" target="_blank">Morolog - Jalali</a>
+ رفته و طبق آموزش نصب را انجام میدهیم. بعد یک مایگریشن ایجاد میکنیم و با
+ دستورات زیر دو فیلد creat_time و update_time را به جدول مورد نظر اضافه 
+میکنیم:</p>
+
+<pre><code class=" hljs sql">php artisan make:migration add_jalali_fields_to_articles_table <span class="hljs-comment">--table=articles</span></code></pre>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+{</span>
+    Schema::table(<span class="hljs-string">'articles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint <span class="hljs-variable">$table</span>)</span> {</span>
+        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'create_time'</span>)-&gt;after(<span class="hljs-string">'active'</span>)-&gt;<span class="hljs-keyword">default</span>(<span class="hljs-number">0</span>);
+        <span class="hljs-variable">$table</span>-&gt;string(<span class="hljs-string">'update_time'</span>)-&gt;after(<span class="hljs-string">'active'</span>)-&gt;<span class="hljs-keyword">default</span>(<span class="hljs-number">0</span>);
+    });
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+{</span>
+    Schema::table(<span class="hljs-string">'articles'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint <span class="hljs-variable">$table</span>)</span> {</span>
+        <span class="hljs-variable">$table</span>-&gt;dropColumn(<span class="hljs-string">'create_time'</span>);
+        <span class="hljs-variable">$table</span>-&gt;dropColumn(<span class="hljs-string">'update_time'</span>);
+    });
+}</code></pre>
+
+<p dir="rtl">در کنترلر برای استفاده از این فیلدها دو کلاس زیر را use میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Carbon</span>\<span class="hljs-title">Carbon</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Morilog</span>\<span class="hljs-title">Jalali</span>\<span class="hljs-title">Jalalian</span>;</code></pre>
+
+<p dir="rtl">بعد در متد store فیلد create_time را مقداردهی میکنیم:</p>
+
+<pre><code class="language-0 hljs bash"><span class="hljs-variable">$article</span>-&gt;create_time = Jalalian::fromCarbon(Carbon::now());</code></pre>
+
+<p dir="rtl">در متد update هم فیلد update_time را مقداردهی میکنیم:</p>
+
+<pre><code class="language-0 hljs bash"><span class="hljs-variable">$article</span>-&gt;update_time = Jalalian::fromCarbon(Carbon::now());</code></pre>
+
+<p dir="rtl">و در نهایت به روش زیر در ویو نمایش میدهیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"clearfix d-flex justify-content-center mb-3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"px-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>تاریخ ایجاد: <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-muted"</span>&gt;</span>{{ $article-&gt;create_time }}<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"px-3"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>تاریخ ویرایش: <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">small</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-muted"</span>&gt;</span>{{ $article-&gt;update_time }}<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p>&nbsp;</p></div>
+    
+    <div class="clearfix d-flex justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1397-07-11 10:19:06</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1397-07-11 16:22:25</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/jquery.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/bootstrap.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/ckeditor.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/ckfinder.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D9%86%D8%B5%D8%A8%20%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%20%D8%AC%D9%84%D8%A7%D9%84%DB%8C(Morolog-Jalali)_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>

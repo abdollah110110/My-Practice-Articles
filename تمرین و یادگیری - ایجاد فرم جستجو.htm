@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>تمرین و یادگیری     - ایجاد فرم جستجو
+</title>
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/bootstrap.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/bootstrap-rtl.css">
+
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/vazir.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/themify-icons.css">
+        <link rel="stylesheet" href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/open-iconic-bootstrap.css">
+        
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/monokai_sublime.css" rel="stylesheet">
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/highlight.js"></script>
+
+        <link href="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/styles.css" rel="stylesheet">
+        
+        <style>
+            body{
+                padding-top: 1.5rem;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div id="content"><div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>ایجاد فرم جستجو</h2>
+        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    </div>
+    <hr>
+
+    <p dir="rtl">مراحل ایجاد یک فرم جستجوی ساده برای مقالات به این شکل است:</p>
+
+<p dir="rtl">1- فایل resources\includes\search-form.blade.php را ایجاد میکنیم:</p>
+
+<pre><code class="language-0 hljs bash">&lt;form action=<span class="hljs-string">"{{ route('article.search') }}"</span> method=<span class="hljs-string">"POST"</span> class=<span class="hljs-string">"form-inline border {{ <span class="hljs-variable">$errors</span>-&gt;any() ? 'has-error' : '' }}"</span>&gt;
+    {!! csrf_field() !!}
+    &lt;input class=<span class="hljs-string">"form-control border-0 rounded-0"</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"search"</span> name=<span class="hljs-string">"search"</span> placeholder=<span class="hljs-string">"فقط یک کلمه وارد کنید ..."</span> style=<span class="hljs-string">"width:25rem;"</span>&gt;
+    &lt;button class=<span class="hljs-string">"btn btn-dark border-0 rounded-0"</span> <span class="hljs-built_in">type</span>=<span class="hljs-string">"submit"</span>&gt;جستجو&lt;/button&gt;
+    @<span class="hljs-keyword">if</span>(<span class="hljs-variable">$errors</span>-&gt;any())
+        @foreach(<span class="hljs-variable">$errors</span>-&gt;all() as <span class="hljs-variable">$error</span>)
+            &lt;span class=<span class="hljs-string">"mr-2"</span>&gt;{{ <span class="hljs-variable">$error</span> }}&lt;/span&gt;
+        @endforeach
+    @endif
+&lt;/form&gt;</code></pre>
+
+<p dir="rtl">2- در هر کدام از ویوهای articles از جمله ویوی index فایل بالا را include میکنیم:</p>
+
+<pre><code class="language-0 hljs ruby"><span class="hljs-variable">@include</span>(<span class="hljs-string">'includes.search-form'</span>)</code></pre>
+
+<p dir="rtl">3- روت مربوط به این فرم را در web.php مینویسیم:</p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-regexp">//</span> Search Route
+<span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/search'</span>, <span class="hljs-string">'HomeController@search'</span>)</span>-&gt;</span>name(<span class="hljs-string">'article.search'</span>);</code></pre>
+
+<p dir="rtl">4- متد search را بصورت زیر پیاده سازی میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">search</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span> {</span>
+
+    <span class="hljs-variable">$this</span>-&gt;validate(<span class="hljs-variable">$request</span>,[
+        <span class="hljs-string">'search'</span> =&gt; <span class="hljs-string">'required|min:3|alpha_num'</span>
+    ]);
+
+    <span class="hljs-variable">$search</span> = <span class="hljs-variable">$request</span>-&gt;search;
+    <span class="hljs-variable">$like</span> = <span class="hljs-string">'%'</span> . <span class="hljs-variable">$request</span>-&gt;search . <span class="hljs-string">'%'</span>;
+
+    <span class="hljs-variable">$articles</span> = Article::where(<span class="hljs-string">'title'</span>, <span class="hljs-string">'like'</span>, <span class="hljs-variable">$like</span>)-&gt;paginate(<span class="hljs-number">30</span>);
+
+    <span class="hljs-keyword">return</span> view(<span class="hljs-string">'articles.search'</span>, compact(<span class="hljs-string">'articles'</span>, <span class="hljs-string">'search'</span>));
+}</code></pre>
+
+<p dir="rtl">5- در ویوی search نتایج را نشان میدهیم:</p>
+
+<pre><code class="language-0 hljs xml">@extends('layouts.welcome')
+
+
+@section('title')
+- نتیجه جستجو
+@endsection
+
+
+@section('content')
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"d-flex justify-content-between align-items-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>نتیجه جستجوی: <span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>{{ $search }}<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+        @include('includes.search-form')
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> /&gt;</span>
+
+    @if(count($articles) &gt; 0)
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table-responsive"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-bordered table-striped"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">thead</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-center bg-light"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:85%;"</span>&gt;</span>عنوان مقاله<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"width:15%;"</span>&gt;</span>تنظیمات<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">thead</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tbody</span>&gt;</span>
+                @foreach($articles as $article)
+                <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ route('articles.show', $article-&gt;id) }}"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link p-0 text-info"</span>&gt;</span>{{ $article-&gt;title }}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"{{ route('articles.destroy', $article-&gt;id) }}"</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"POST"</span>&gt;</span>
+                            {!! csrf_field() !!}
+                            {{ method_field('DELETE') }}
+                            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn-group"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"{{ route('articles.edit', $article-&gt;id) }}"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-sm btn-warning"</span>&gt;</span>ویرایش<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-danger btn-sm"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onclick</span>=<span class="hljs-value">"return confirm('آیا مطمئن هستید؟');"</span>&gt;</span>حذف<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+                @endforeach
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tbody</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-center"</span>&gt;</span>
+        {{ $articles-&gt;render() }}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    @else
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>هیچ موردی یافت نشد.<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/articles"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-primary"</span>&gt;</span>صفحه اصلی مقالات<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    @endif
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+@endsection</code></pre>
+
+<p>&nbsp;</p>
+    
+</div>
+</div>
+        
+        
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/jquery.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/bootstrap.js"></script>
+        <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D9%81%D8%B1%D9%85%20%D8%AC%D8%B3%D8%AA%D8%AC%D9%88_files/script.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            
+</body></html>

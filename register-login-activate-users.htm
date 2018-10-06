@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="tTxzjhSuOxqxW10huYTrOz4Y3IvmF33yjW7PYluG">
+
+        <meta name="csrf-token" content="tTxzjhSuOxqxW10huYTrOz4Y3IvmF33yjW7PYluG">
+
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>سمعی وب - وب سایت شخصی عبدالله سمعی | نمایش پست</title>
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap_002.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap-submenu-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap-select.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/font-awesome.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/admin-style.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/comments-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/vs.css">
+
+
+        
+    </head>
+    <body>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="http://samaiweb.com/" class="navbar-brand h2" title="" data-toggle="tooltip" data-original-title="وب سایت شخصی عبدالله سمعی">
+                        <img src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/logo.png">سمعی وب</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="navbar-nav" class="nav navbar-nav">
+                        <li class="">
+                            <a href="http://samaiweb.com/admin">صفحه اصلی</a>
+                        </li>
+                                                <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">امکانات مدیریت <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://samaiweb.com/categories">موضوعات</a></li>
+                                <li><a href="http://samaiweb.com/posts">پست ها</a></li>
+                                <li><a href="http://samaiweb.com/comments">نظرات</a></li>
+                                <li><a href="http://samaiweb.com/tags">برچسب ها</a></li>
+                                <li><a href="http://samaiweb.com/abouts">درباره ما</a></li>
+                                <li><a href="http://samaiweb.com/admin/create" target="_blank">ایجاد فایل پشتیبان</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://samaiweb.com/logout">خروج</a>
+                        </li>
+                                            </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav><!-- End of navbar -->
+
+        <div id="content" class="container">
+            <div class="row">
+                <div class="col-md-12">
+                                                <div class="row">
+        <div class="col-xs-12">
+                        <div id="show-btn-row" class="row">
+                <div class="col-xs-12 col-md-4">
+                    <a class="btn btn-block btn-lg btn-primary" href="http://samaiweb.com/posts">برگست به صفحه قبل</a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <a class="btn btn-block btn-lg btn-warning" href="http://samaiweb.com/posts/17/edit">ویرایش</a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <form method="POST" action="http://samaiweb.com/posts/17" accept-charset="UTF-8"><input name="_method" value="DELETE" type="hidden"><input name="_token" value="tTxzjhSuOxqxW10huYTrOz4Y3IvmF33yjW7PYluG" type="hidden">
+                        <input name="_token" value="tTxzjhSuOxqxW10huYTrOz4Y3IvmF33yjW7PYluG" type="hidden">
+                        <button type="submit" class="btn btn-block btn-lg btn-danger" onclick="return confirm('آیا مطمئن هستید؟')">حذف</button>
+                    </form>
+                </div>
+            </div>
+            <div class="thumbnail post">
+                <h1><span class="fa fa-arrow-left"></span> ثبت نام - فعال سازی - ورود (register - activation - login)</h1>
+                <div class="row alert"><p><span dir="rtl">در این پست میخوایم مراحل ثبت نام، فعال سازی و ورود کاربران را بصورت زیر انجام بدیم:</span></p>
+
+<p><span dir="rtl">1- به فایل EventServiceProvider.php میریم و در پراپرتی <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">listen$</code> کد زیر را اضافه میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-string">'App\Events\UserActivation'</span> =&gt; [
+    <span class="hljs-string">'App\Listeners\UserActivation\SendMail'</span>,
+],</code></pre>
+
+<p><span dir="rtl">2- در خط فرمان دستور زیر را وارد میکنیم تا event و listener های تعریف شده در پراپرتی <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">listen$</code> ایجاد شوند:</span></p>
+
+<pre><code class=" hljs cs">php artisan <span class="hljs-keyword">event</span>:generate</code></pre>
+
+<p><span dir="rtl">3- با دستور زیر مدل و مایگریشن مربوط به جدول <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">activations</code> رو ایجاد میکنیم:</span></p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:model</span> <span class="hljs-tag">Activation</span> <span class="hljs-tag">-m</span></code></pre>
+
+<p><span dir="rtl">4- به فایل CreateActivationsTable.php میریم و در متد up دستورات زیر رو وارد میکنیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-attribute">Schema</span>::create(<span class="hljs-string">'activations'</span>, <span class="hljs-reserved">function</span> (Blueprint $table) {
+    $table-&gt;increments(<span class="hljs-string">'id'</span>);
+
+    $table-&gt;integer<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'user_id'</span>)</span>-&gt;</span>unsigned();
+    $table-&gt;foreign<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'user_id'</span>)</span>-&gt;</span>references<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id'</span>)</span>-&gt;</span><span class="hljs-literal">on</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'users'</span>)</span>-&gt;</span>onDelete(<span class="hljs-string">'cascade'</span>);
+
+    $table-&gt;string(<span class="hljs-string">'code'</span>);
+    $table-&gt;boolean<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'used'</span>)</span>-&gt;</span><span class="hljs-reserved">default</span>(<span class="hljs-literal">false</span>);
+    $table-&gt;dateTime(<span class="hljs-string">'expire'</span>);
+
+    $table-&gt;timestamps();
+});</code></pre>
+
+<p><span dir="rtl">5- دستور زیر را وارد میکنیم تا جدول activations ایجاد شود:</span></p>
+
+<pre><code class=" hljs ">php artisan migrate</code></pre>
+
+<p><span dir="rtl">6- مدل <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">Activation</code> را بصورت زیر پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">Model</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Str</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Carbon</span>\<span class="hljs-title">Carbon</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Activation</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+{</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$fillable</span> = [<span class="hljs-string">'user_id'</span>, <span class="hljs-string">'code'</span>, <span class="hljs-string">'used'</span>, <span class="hljs-string">'expire'</span>];
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scopeCreateCode</span><span class="hljs-params">(<span class="hljs-variable">$query</span>, <span class="hljs-variable">$user</span>)</span>
+    {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$query</span>-&gt;create([
+            <span class="hljs-string">'user_id'</span> =&gt; <span class="hljs-variable">$user</span>-&gt;id,
+            <span class="hljs-string">'code'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;code(),
+            <span class="hljs-string">'expire'</span> =&gt; Carbon::now()-&gt;addMinutes(<span class="hljs-number">15</span>),
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">code</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-keyword">do</span>{
+            <span class="hljs-variable">$code</span> = Str::random(<span class="hljs-number">60</span>);
+            <span class="hljs-variable">$checkCode</span> = <span class="hljs-keyword">static</span>::whereCode(<span class="hljs-variable">$code</span>)-&gt;get();
+        }<span class="hljs-keyword">while</span>(!<span class="hljs-variable">$checkCode</span>-&gt;isEmpty());
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$code</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;belongsTo(User::<span class="hljs-class"><span class="hljs-keyword">class</span>);
+    }
+
+}</span></code></pre>
+
+<p><span dir="rtl">7- در فایل UserActivation.php کلاسی را بصورت زیر پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Events</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Broadcasting</span>\<span class="hljs-title">Channel</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">SerializesModels</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Broadcasting</span>\<span class="hljs-title">PrivateChannel</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Broadcasting</span>\<span class="hljs-title">PresenceChannel</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Foundation</span>\<span class="hljs-title">Events</span>\<span class="hljs-title">Dispatchable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Broadcasting</span>\<span class="hljs-title">InteractsWithSockets</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Broadcasting</span>\<span class="hljs-title">ShouldBroadcast</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Activation</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserActivation</span>
+{</span>
+    <span class="hljs-keyword">use</span> <span class="hljs-title">Dispatchable</span>, <span class="hljs-title">InteractsWithSockets</span>, <span class="hljs-title">SerializesModels</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$code</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-variable">$user</span>)</span>
+    {</span>
+<span class="hljs-comment">//        dd(Activation::createCode($user)-&gt;code);</span>
+
+        <span class="hljs-variable">$this</span>-&gt;user = <span class="hljs-variable">$user</span>;
+        <span class="hljs-variable">$this</span>-&gt;code = Activation::createCode(<span class="hljs-variable">$user</span>)-&gt;code;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadcastOn</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PrivateChannel(<span class="hljs-string">'channel-name'</span>);
+    }
+}
+</code></pre>
+
+<p><span dir="rtl">8- ایمیل مارکداون را با اجرای دستورات زیر در خط فرمان ایجاد میکنیم:</span></p>
+
+<pre><code class=" hljs sql">php artisan make:mail SendActivationCode <span class="hljs-comment">--markdown=emails.send-activation-code</span>
+
+php artisan vendor:publish <span class="hljs-comment">--tag=laravel-mail</span></code></pre>
+
+<p><span dir="rtl">9- در مسیر App\Listeners\UserActivation، فایل SendMail.php را برای ارسال ایمیل فعال سازی بصورت زیر پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Listeners</span>\<span class="hljs-title">UserActivation</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Events</span>\<span class="hljs-title">UserActivation</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">InteractsWithQueue</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">ShouldQueue</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Mail</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Mail</span>\<span class="hljs-title">MailWithMarkdown</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Mail</span>\<span class="hljs-title">SendActivationCode</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SendMail</span>
+{</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+    {</span>
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">(UserActivation <span class="hljs-variable">$event</span>)</span>
+    {</span>
+        Mail::to(<span class="hljs-variable">$event</span>-&gt;user-&gt;email)
+            -&gt;send(<span class="hljs-keyword">new</span> SendActivationCode(<span class="hljs-variable">$event</span>-&gt;user, <span class="hljs-variable">$event</span>-&gt;code));
+    }
+}
+</code></pre>
+
+<p><span dir="rtl">10- در مسیر App\Mail، فایل SendActivationCode.php را بصورت زیر پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Mail</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Bus</span>\<span class="hljs-title">Queueable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Mail</span>\<span class="hljs-title">Mailable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">SerializesModels</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">ShouldQueue</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">User</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Mail</span>\<span class="hljs-title">SendActivationCode</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Mail</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SendActivationCode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mailable</span>
+{</span>
+    <span class="hljs-keyword">use</span> <span class="hljs-title">Queueable</span>, <span class="hljs-title">SerializesModels</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$code</span>;
+
+   
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(User <span class="hljs-variable">$user</span>, <span class="hljs-variable">$code</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;user = <span class="hljs-variable">$user</span>;
+        <span class="hljs-variable">$this</span>-&gt;code = <span class="hljs-variable">$code</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;subject(<span class="hljs-string">'لینک فعال سازی'</span>)
+                    -&gt;markdown(<span class="hljs-string">'emails.send-activation-code'</span>);
+    }
+}
+</code></pre>
+
+<p><span dir="rtl">11- در مسیر resources\views\emails، در فایل&nbsp;send-activation-code.blde.php قالب ایمیل را بصورت زیر پیاده میکنیم:</span></p>
+
+<pre><code class="language-0 hljs perl"><span class="hljs-variable">@component</span>(<span class="hljs-string">'mail::message'</span>)
+
+&lt;h1&gt;سلام {{ <span class="hljs-variable">$user</span>-&gt;name }} گرامی&lt;<span class="hljs-regexp">/h1&gt;
+
+&lt;p&gt;برای فعال سازی اکانت خود، روی دکمه زیر کلیک کنید:&lt;/p</span>&gt;
+
+<span class="hljs-variable">@component</span>(<span class="hljs-string">'mail::button'</span>, [<span class="hljs-string">'url'</span> =&gt; route(<span class="hljs-string">'activation'</span>, <span class="hljs-variable">$code</span>)])
+فعال سازی اکانت
+<span class="hljs-variable">@endcomponent</span>
+
+با تشکر&lt;br&gt;
+{{ config(<span class="hljs-string">'app.name'</span>) }}
+<span class="hljs-variable">@endcomponent</span>
+</code></pre>
+
+<p><span dir="rtl">12- در فایل web.php روت مربوط به لینک فعال سازی رو تعریف میکنیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'home/activation/{token}'</span>, <span class="hljs-string">'HomeController@activation'</span>)</span>-&gt;</span>name(<span class="hljs-string">'activation'</span>);</code></pre>
+
+<p><span dir="rtl">13- در کنترلر HomeController متد زیر را پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">activation</span><span class="hljs-params">(<span class="hljs-variable">$token</span>)</span>
+{</span>
+    <span class="hljs-variable">$codeActivation</span> = Activation::whereCode(<span class="hljs-variable">$token</span>)-&gt;first();
+
+    <span class="hljs-keyword">if</span>(!<span class="hljs-variable">$codeActivation</span>){
+        session()-&gt;flash(<span class="hljs-string">'danger'</span>, <span class="hljs-string">'کد فعال سازی معتبر نیست.'</span>);
+    }
+    <span class="hljs-keyword">elseif</span>(<span class="hljs-variable">$codeActivation</span>-&gt;expire &lt; Carbon::now()){
+        session()-&gt;flash(<span class="hljs-string">'danger'</span>, <span class="hljs-string">'زمان فعال سازی کد تمام شده است. لطفا به صفحه ورود رفته و کد فعال سازی دیگری بفرستید.'</span>);
+    }
+    <span class="hljs-keyword">elseif</span>(<span class="hljs-variable">$codeActivation</span>-&gt;used){
+        session()-&gt;flash(<span class="hljs-string">'danger'</span>, <span class="hljs-string">'کد فعالسازی قبلا استفاده شده است.'</span>);
+    }
+    <span class="hljs-keyword">else</span>{
+        <span class="hljs-variable">$codeActivation</span>-&gt;used = <span class="hljs-number">1</span>;
+        <span class="hljs-variable">$codeActivation</span>-&gt;save();
+
+        <span class="hljs-variable">$user</span> = <span class="hljs-variable">$codeActivation</span>-&gt;user;
+        <span class="hljs-variable">$user</span>-&gt;active = <span class="hljs-number">1</span>;
+        <span class="hljs-variable">$user</span>-&gt;save();
+
+        session()-&gt;flash(<span class="hljs-string">'success'</span>, <span class="hljs-variable">$user</span>-&gt;name . <span class="hljs-string">' گرامی، اکانت شما با موفقیت فعال شد.'</span>);
+
+        auth()-&gt;loginUsingId(<span class="hljs-variable">$codeActivation</span>-&gt;user-&gt;id);
+    }
+
+    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'/'</span>);
+}</code></pre>
+
+<p><span dir="rtl">14- برای اینکه چک کنیم کاربر فعال است یا نه، یک middleware با وارد کردن دستور زیر در خط فرمان ایجاد میکنیم:</span></p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:middleware</span> <span class="hljs-tag">CheckUserActive</span></code></pre>
+
+<p><span dir="rtl">15- بعد به مسیر App\Http\Middleware میرویم و در فایل App\Http\Middleware.php کلاس زیر را پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Middleware</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Closure</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CheckUserActive</span>
+{</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">(<span class="hljs-variable">$request</span>, Closure <span class="hljs-variable">$next</span>)</span>
+    {</span>
+        <span class="hljs-keyword">if</span>(auth()-&gt;check() &amp;&amp; auth()-&gt;user()-&gt;active == <span class="hljs-number">0</span>){
+
+            auth()-&gt;logout();
+
+            redirect(<span class="hljs-string">'/'</span>);
+            
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$next</span>(<span class="hljs-variable">$request</span>);
+    }
+}</code></pre>
+
+<p><span dir="rtl">16- به مسیر App\Http میرویم و در فایل Kernel.php به پراپرتی <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">protected $middlewareGroups</code> مسیر میدلور ساخته شده را میدهیم:</span></p>
+
+<pre><code class="language-0 hljs ruby">protected <span class="hljs-variable">$middlewareGroups</span> = [
+    <span class="hljs-string">'web'</span> =&gt; [
+        <span class="hljs-regexp">//</span> ...
+        \<span class="hljs-constant">App</span>\<span class="hljs-constant">Http</span>\<span class="hljs-constant">Middleware</span>\<span class="hljs-constant">CheckUserActive::</span><span class="hljs-class"><span class="hljs-keyword">class</span>,</span>
+    ],
+
+<span class="hljs-regexp">//</span> ...
+];</code></pre>
+
+<p><span dir="rtl">17- در مسیر App\Http\Controllers\Auth، در فایل RegisterController.php، در کنترلر RegisterController، متد <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">register</code> را بصورت زیر پیاده سازی میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+{</span>
+    <span class="hljs-variable">$this</span>-&gt;validator(<span class="hljs-variable">$request</span>-&gt;all())-&gt;validate();
+
+    <span class="hljs-variable">$user</span> = <span class="hljs-variable">$this</span>-&gt;create(<span class="hljs-variable">$request</span>-&gt;all());
+
+    event(<span class="hljs-keyword">new</span> UserActivation(<span class="hljs-variable">$user</span>));
+
+    session()-&gt;flash(<span class="hljs-string">'success'</span>, <span class="hljs-variable">$user</span>-&gt;name . <span class="hljs-string">' گرامی، عضویت شما انجام شد. برای ورود به سایت ابتدا به ایمیل خودتان بروید و اکانت خود را فعال کنید.'</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;registered(<span class="hljs-variable">$request</span>, <span class="hljs-variable">$user</span>)
+                    ?: redirect(<span class="hljs-variable">$this</span>-&gt;redirectPath());
+}</code></pre>
+
+<p><span dir="rtl">حالا اگر به صفحه عضویت بریم و ثبت نام را انجام دهیم، یک ایمیل برایمان ارسال میشود:</span></p>
+
+<p><a href="http://samaiweb.com/uploads/images/register-success.jpg" target="_blank"><img alt="" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/register-success.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"></a></p>
+
+<p><span dir="rtl">به ایمیل خودمان میرویم و کلید فعال سازی اکانت رو میزنیم</span></p>
+
+<p><a href="http://samaiweb.com/uploads/images/activation-link.jpg" target="_blank"><img alt="" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/activation-link.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"></a></p>
+
+<p><span dir="rtl">در صورتی که فعال سازی بدرستی انجام شده باشد، پیامی بصورت تصویر زیر را خواهیم دید:</span></p>
+
+<p><a href="http://samaiweb.com/uploads/images/activation-success.jpg" target="_blank"><img alt="" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/activation-success.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"></a></p>
+
+<p><span dir="rtl">18- برای این که کاربر بتواند وارد سایت شود، باید در 
+مسیر App\Http\Controllers\Auth، و در فایل LoginController.php، کلاس زیر 
+را پیاده سازی کنیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Auth</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Foundation</span>\<span class="hljs-title">Auth</span>\<span class="hljs-title">AuthenticatesUsers</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">User</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Carbon</span>\<span class="hljs-title">Carbon</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Events</span>\<span class="hljs-title">UserActivation</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+{</span>
+    <span class="hljs-keyword">use</span> <span class="hljs-title">AuthenticatesUsers</span>;
+
+
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$redirectTo</span> = <span class="hljs-string">'/'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;middleware(<span class="hljs-string">'guest'</span>)-&gt;except(<span class="hljs-string">'logout'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span><span class="hljs-params">(Request <span class="hljs-variable">$request</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;validateLogin(<span class="hljs-variable">$request</span>);
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;hasTooManyLoginAttempts(<span class="hljs-variable">$request</span>)) {
+            <span class="hljs-variable">$this</span>-&gt;fireLockoutEvent(<span class="hljs-variable">$request</span>);
+
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;sendLockoutResponse(<span class="hljs-variable">$request</span>);
+        }
+
+        <span class="hljs-keyword">if</span>(auth()-&gt;validate(<span class="hljs-variable">$request</span>-&gt;only(<span class="hljs-string">'email'</span>, <span class="hljs-string">'password'</span>))){
+
+            <span class="hljs-variable">$user</span> = User::whereEmail(<span class="hljs-variable">$request</span>-&gt;input(<span class="hljs-string">'email'</span>))-&gt;first();
+
+            <span class="hljs-keyword">if</span>(<span class="hljs-variable">$user</span>-&gt;active == <span class="hljs-number">0</span>){
+                <span class="hljs-variable">$checkActivationCode</span> = <span class="hljs-variable">$user</span>-&gt;activations()
+                                            -&gt;where(<span class="hljs-string">'expire'</span>, <span class="hljs-string">'&gt;'</span>, Carbon::now())
+                                            -&gt;latest()
+                                            -&gt;first();
+
+                <span class="hljs-keyword">if</span>(count(<span class="hljs-variable">$checkActivationCode</span>) == <span class="hljs-number">1</span>){
+                    <span class="hljs-variable">$this</span>-&gt;incrementLoginAttempts(<span class="hljs-variable">$request</span>);
+
+                    session()-&gt;flash(<span class="hljs-string">'success'</span>, <span class="hljs-string">'کد فعال سازی برای شما ارسال شده است. لطفا به ایمیل خودتان مراجعه کنید و کد را فعال کنید.'</span>);
+                }
+                <span class="hljs-keyword">else</span>{
+                    session()-&gt;flash(<span class="hljs-string">'success'</span>, <span class="hljs-string">'کد فعال سازی جدیدی به ایمیلتان ارسال شد. لطفا به ایمیل خودتان مراجعه کنید و فعال سازی را انجام دهید.'</span>);
+                    event(<span class="hljs-keyword">new</span> UserActivation(<span class="hljs-variable">$user</span>));
+                }
+
+                <span class="hljs-keyword">return</span> back();
+            }
+
+
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;attemptLogin(<span class="hljs-variable">$request</span>)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;sendLoginResponse(<span class="hljs-variable">$request</span>);
+        }
+
+        <span class="hljs-variable">$this</span>-&gt;incrementLoginAttempts(<span class="hljs-variable">$request</span>);
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;sendFailedLoginResponse(<span class="hljs-variable">$request</span>);
+    }
+}</code></pre>
+
+<p>اگر بعد از عضویت فوراً لاگین کنیم پیامی بصورت زیر خواهیم دید:</p>
+
+<p><a href="http://samaiweb.com/uploads/images/user-login.jpg" target="_blank"><img alt="" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/user-login.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"><div class="tooltip fade top in" style="top: 7234.03px; left: 682px; display: block;"><div class="tooltip-arrow"></div><div class="tooltip-inner">کلیک کنید برای مشاهده تصویر در اندازه واقعی</div></div></a></p>
+</div>
+                                                        <div class="row">
+                        <div class="col-xs-12">
+                            <div class="text-center">
+                                <strong class="text-info">برچسب ها: </strong>
+                                <span class="text-success">
+                                                                        <a href="http://samaiweb.com/tags/28" target="_blank">events</a>
+                                    ،                                                                         <a href="http://samaiweb.com/tags/18" target="_blank">migration</a>
+                                    ،                                                                         <a href="http://samaiweb.com/tags/22" target="_blank">model</a>
+                                    ،                                                                         <a href="http://samaiweb.com/tags/12" target="_blank">view</a>
+                                    ،                                                                         <a href="http://samaiweb.com/tags/9" target="_blank">خط فرمان</a>
+                                                                                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                                <div id="date-row" class="row">
+                    <div class="col-xs-12 col-sm-offset-7 col-sm-5 col-md-offset-8 col-md-4">
+                        <div class="text-center post-date">
+                            <strong>نوشته شده در تاریخ: </strong>
+                            <small>جمعه ۱۳۹۶/۱۰/۰۱ - ۱۱:۳۰</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+                                     </div>
+            </div>
+        </div><!-- End of container -->
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/jquery.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap_003.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap_002.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap-select.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/bootstrap-submenu-script.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/scripts.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/show-comment.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/highlight.js"></script>
+
+
+         <script type="text/javascript" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D9%88%D8%A8%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%20%20%D9%86%D9%85%D8%A7%DB%8C%D8%B4%20%D9%BE%D8%B3%D8%AA%20-%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%81%D8%B9%D9%84%20%D8%B3%D8%A7%D8%B2%DB%8C%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86_files/show-comment.js"></script>
+ 
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    
+
+</body></html>

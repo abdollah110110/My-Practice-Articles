@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="http://samaiweb.com/images/icon-logo.png">
+
+        
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>سمعی وب - سایت شخصی عبدالله سمعی طراح و برنامه نویس | نصب ckeditor</title>
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap_002.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/font-awesome.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/parsley.htm">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/style.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap-submenu-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/comments-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/transition.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/vs.css">
+
+
+                <style type="text/css">
+            #main{
+                padding-top: 85px;
+            }
+        </style>
+        
+
+        
+    </head>
+    <body>
+
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </button>
+                    <a href="http://samaiweb.com/" class="navbar-brand h2" title="" data-toggle="tooltip" data-original-title="وب سایت شخصی عبدالله سمعی">سمعی وب</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="navbar-nav" class="nav navbar-nav">
+                        <li class="">
+                            <a href="http://samaiweb.com/">صفحه اصلی</a>
+                        </li>
+                                                <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">موضوعات <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                برنامه نویسی سمت سرور <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/1">
+                                                            PHP <span class="pull-left badge">0</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/2">
+                                                            laravel <span class="pull-left badge">7</span>
+                                                        </a>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/9">
+                                                            Mysql <span class="pull-left badge">1</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                                    <li class="dropdown dropdown-submenu">
+                                                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                طراحی وب سایت <span class="fa fa-caret-left"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li>
+                                                        <a href="http://samaiweb.com/categories/8">
+                                                            Jquery and Javascript <span class="pull-left badge">3</span>
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                                                            </li>
+                                                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/about">درباره ما</a>
+                        </li>
+                        <li class="">
+                            <a href="http://samaiweb.com/contact">تماس با ما</a>
+                        </li>
+                                            </ul>
+                    <form action="http://samaiweb.com/search" method="POST" class="navbar-form navbar-left hidden-xs hidden-sm">
+                        <input name="_token" value="JNn2BsYZvcvIMWergK3y7DMofrxtGDTraPt5mUtu" type="hidden">
+                        <div class="form-group">
+                            <input name="search" placeholder="جستجو" type="text">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </form>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav><!-- End of navbar -->
+
+        
+        <div class="row">
+            <div id="main" class="container-fluid">
+                <div class="container">
+                    <div id="sidebar" class="col-xs-12 col-md-3">
+                        <div id="xs-search" class="sidebar-head hidden-md hidden-lg">
+                            <div class="sidbar-main">
+                                <div class="sidebar-content alert-info">
+                                    <form action="http://samaiweb.com/search" method="POST">
+                                        <input name="_token" value="JNn2BsYZvcvIMWergK3y7DMofrxtGDTraPt5mUtu" type="hidden">
+                                        <input name="search" class="form-group form-control" placeholder="جستجو در مطالب ..." type="text">
+                                        <button type="submit" class="btn btn-default btn-lg">جستجو</button>
+                                    </form>
+                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                        <div class="sidebar-head">
+                            <h3>موضوعات</h3>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>برنامه نویسی سمت سرور<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/1">
+                                                                    PHP <span class="pull-left badge">0</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/2">
+                                                                    laravel <span class="pull-left badge">7</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/9">
+                                                                    Mysql <span class="pull-left badge">1</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>طراحی وب سایت<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/8">
+                                                                    Jquery and Javascript <span class="pull-left badge">3</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                    </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="col-xs-12 col-md-9">
+                                                <div class="row">
+    <div class="col-xs-12">
+            <div class="thumbnail post">
+                <h1><span class="fa fa-arrow-left"></span> نصب ckeditor</h1>
+                <div class="alert"><p>برای نصب ckeditor بر روی لاراول به روش زیر عمل میکنیم:</p>
+
+<p>1- دستور زیر را در خط فرمان اجرا میکنیم:</p>
+
+<pre><code class=" hljs ruby">composer <span class="hljs-keyword">require</span> unisharp/laravel-ckeditor</code></pre>
+
+<p>&nbsp;</p>
+
+<p>2- در فایل config/app.php در بخش <code>Application Service Providers</code> کد زیر را قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs ruby"><span class="hljs-constant">Unisharp</span>\<span class="hljs-constant">Ckeditor</span>\<span class="hljs-constant">ServiceProvider::</span><span class="hljs-class"><span class="hljs-keyword">class</span>,</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p>3- دستور زیر را در خط فرمان اجرا میکنیم:</p>
+
+<pre><code class="language-0 hljs sql">php artisan vendor:publish <span class="hljs-comment">--tag=ckeditor</span></code></pre>
+
+<p>&nbsp;</p>
+
+<p>4- به روشهای زیر از ckeditor در انتهای تگ body از صفحمون استفاده میکنیم:</p>
+
+<pre><code class="language-0 hljs xml">{!! Html::script('/vendor/unisharp/laravel-ckeditor/ckeditor.js') !!}
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    CKEDITOR.replace( <span class="hljs-string">'article-ckeditor'</span> );
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p>یا به روش زیر:</p>
+
+<pre><code class="language-0 hljs ruby">{!! <span class="hljs-constant">Html::</span>script(<span class="hljs-string">'/vendor/unisharp/laravel-ckeditor/ckeditor.js'</span>) !!}
+{!! <span class="hljs-constant">Html::</span>script(<span class="hljs-string">'/vendor/unisharp/laravel-ckeditor/adapters/jquery.js'</span>) !!}
+&lt;script&gt;
+    <span class="hljs-variable">$(</span><span class="hljs-string">'textarea'</span>).ckeditor();
+    <span class="hljs-regexp">//</span> <span class="hljs-variable">$(</span><span class="hljs-string">'.textarea'</span>).ckeditor(); <span class="hljs-regexp">//</span> <span class="hljs-keyword">if</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">is</span> <span class="hljs-title">prefered</span>.</span>
+&lt;<span class="hljs-regexp">/script&gt;</span></code></pre>
+
+<p>&nbsp;</p>
+</div>
+                <div id="date-row" class="row">
+                    <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-lg-offset-7 col-lg-5">
+                        <div class="post-date">
+                            <strong>نوشته شده در تاریخ: </strong>
+                            <span>سه شنبه ۱۳۹۶/۰۱/۱۵ ساعت ۰۷:۰۲ ب.ظ</span>
+                        </div>
+                    </div>
+                </div>
+                                                        <div class="row">
+                        <div class="col-xs-12">
+                            <div class="post-tag-row">
+                                <strong class="text-info">برچسب ها: </strong>
+                                <span class="text-success">
+                                                                            <a href="http://samaiweb.com/tags/2" target="_blank">form</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/5" target="_blank">ckeditor</a>
+                                                                                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                            
+                <div class="form-box alert-info text-left">
+                    <div class="row fa-close-row">
+                        <span class="fa fa-close fa-2x" title="" data-toggle="tooltip" data-original-title="جواب نمیدهم" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div id="success-error" class="col-xs-12 col-sm-offset-3 col-sm-5" style="display: none;"></div>
+                        
+                        <form method="POST" action="http://samaiweb.com/comments" accept-charset="UTF-8" id="create-comment"><input name="_token" value="JNn2BsYZvcvIMWergK3y7DMofrxtGDTraPt5mUtu" type="hidden">
+                        <input name="_token" value="JNn2BsYZvcvIMWergK3y7DMofrxtGDTraPt5mUtu" type="hidden">
+
+                        <input id="post_id" name="post_id" value="5" type="hidden">
+                        <input id="parent_id" name="parent_id" value="0" type="hidden">
+
+                        <div id="username" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="username">نام</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="نام و نام خانوادگی" name="username" id="username" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="url" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="url">سایت</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="لینک سایت شما: http://example.com" name="url" id="url" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="email" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="email">ایمیل</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="ایمیل شما: example@example.com" name="email" id="email" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="captcha" class="form-group ">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3">
+                                    <label for="captcha" class="control-label">کد امنیتی</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-5">
+                                    <input class="form-control" placeholder="کد امنیتی" name="captcha" id="captcha" type="text">
+                                                                    </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-xs-1 col-sm-1">
+                                    <button type="button" id="refresh" class="btn btn-sm btn-info" title="" data-toggle="tooltip" data-original-title="تغییر کد امنیتی">
+                                        <i class="glyphicon glyphicon-refresh"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-11 col-sm-4" id="captcha-div">
+                                    <img src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/flat.png" alt="captcha" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="body" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="body">نظر</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <textarea id="body" name="body" rows="10" style="resize:none;" class="form-control" placeholder="نظر شما در مورد این مطلب"></textarea>
+                                                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-offset-3 col-sm-5 text-center">
+                                <input class="btn btn-lg btn-info" value="ارسال" type="submit">
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scrol-to-top">
+            <div class="scrollup">
+                <i class="fa fa-angle-double-up"></i>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>بازدیدهای سایت</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><strong>افراد آنلاین:</strong> 1</p><p><strong>بازدید امروز:</strong> 88</p><p><strong>بازدید دیروز:</strong> 100</p><p><strong>بازدید کل:</strong> 4841</p>                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>پیوندها</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><a href="https://secure.php.net/docs.php" target="_blank">مستندات php</a></p><p><a href="http://www.w3schools.com/php/" target="_blank">PHP Tutorial</a></p><p><a href="https://laravel.com/docs/5.3" target="_blank">مستندات laravel</a></p><p><a href="http://forum.ncis.ir/" target="_blank">تالار گفتمان ncis</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <ul id="icons">
+                                <li>
+                                    <a href="https://www.facebook.com/topalternatives" target="_blank" rel="nofollow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/topalt" target="_blank" rel="nofollow">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://topalternatives.com/feed/" target="_blank" rel="nofollow">
+                                        <i class="fa fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/u/0/b/101188387378944618683/101188387378944618683" target="_blank" rel="nofollow">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCBuEJnRY2jGO0FY9SmlhfjA" target="_blank" rel="nofollow">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="pull-right">© کلیه حقوق این سایت متعلق به <a href="http://samaiweb.com/">وب سایت شخصی عبدالله سمعی</a> میباشد.</p>
+                        <p class="pull-left">قدرت گرفته از فریمورک Laravel</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/jquery.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap_003.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap_002.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/bootstrap-submenu-script.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/scripts.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/transition.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/highlight.js"></script>
+
+
+        
+    <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20_%20%D9%86%D8%B5%D8%A8%20ckeditor_files/show-comment.js"></script>
+
+
+
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    
+</body></html>

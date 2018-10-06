@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="http://samaiweb.com/images/icon-logo.png">
+
+        
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>ارسال ایمیل</title>
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap_002.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/font-awesome.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/parsley.htm">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/style.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap-submenu-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/comments-styles.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/transition.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/vs.css">
+
+
+                <style type="text/css">
+            #main{
+                padding-top: 85px;
+            }
+        </style>
+        
+
+        
+    </head>
+    <body>
+
+        
+        
+       
+        <div class="row">
+            <div id="main" class="container-fluid">
+                <div class="container">
+                    <div id="sidebar" class="col-xs-12 col-md-3">
+                        <div id="xs-search" class="sidebar-head hidden-md hidden-lg">
+                            <div class="sidbar-main">
+                                <div class="sidebar-content alert-info">
+                                    <form action="http://samaiweb.com/search" method="POST">
+                                        <input name="_token" value="kAnWVai85KVAgzQ3Lm8h6yNnxY9992e3iiJkDqYR" type="hidden">
+                                        <input name="search" class="form-group form-control" placeholder="جستجو در مطالب ..." type="text">
+                                        <button type="submit" class="btn btn-default btn-lg">جستجو</button>
+                                    </form>
+                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                        <div class="sidebar-head">
+                            <h3>موضوعات</h3>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>برنامه نویسی سمت سرور<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/1">
+                                                                    PHP <span class="pull-left badge">0</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/2">
+                                                                    laravel <span class="pull-left badge">9</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/9">
+                                                                    Mysql <span class="pull-left badge">1</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                            <ul class="list-group">
+                                                                                            <li class="list-group-item">
+                                                    <a>طراحی وب سایت<i class="fa fa-caret-down pull-left"></i></a>
+                                                    <ul class="list-group sub-list-grop">
+                                                                                                                    <li class="list-group-item">
+                                                                <a href="http://samaiweb.com/categories/8">
+                                                                    Jquery and Javascript <span class="pull-left badge">3</span>
+                                                                </a>
+                                                            </li>
+                                                                                                            </ul>
+                                                </li>
+                                                                                    </ul>
+                                                                    </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="content" class="col-xs-12 col-md-9">
+                                                <div class="row">
+    <div class="col-xs-12">
+            <div class="thumbnail post">
+                <h1><span class="fa fa-arrow-left"></span> ارسال ایمیل در laravel</h1>
+                <div class="alert"><p><span dir="rtl">برای اینکه بتونیم با لاراول ایمیل ارسال کنیم مراحل زیر رو انجام میدهیم:</span></p>
+
+<p><span dir="rtl">1- دستور زیر رو در خط فرمان وارد میکنیم:</span></p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:mail</span> <span class="hljs-tag">MailNoMarkdown</span></code></pre>
+
+<p><span dir="rtl">2- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">app/Mail</code> فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">MailNoMarkdown.php</code> ایجاد میشه که شامل کلاسی به همین نام است. برای استفاده از این کلاس دو پراپرتی <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">public $user</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">public $site</code> رو تعریف میکنیم و در متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">__construct</code> کاربر مورد نظر رو به عنوان پارامتر میگیریم. در متد&nbsp;<code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">build</code> مسیر ویو که قالب ایمیل است رو مشخص میکنیم. در نهایت کلاس ما بصورت زیر خواهد بود:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Mail</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Bus</span>\<span class="hljs-title">Queueable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Mail</span>\<span class="hljs-title">Mailable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">SerializesModels</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">ShouldQueue</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">User</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RegisterUserMail</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mailable</span>
+{</span>
+    <span class="hljs-keyword">use</span> <span class="hljs-title">Queueable</span>, <span class="hljs-title">SerializesModels</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$site</span>;
+
+    <span class="hljs-comment">/**
+     * Create a new message instance.
+     *
+     *<span class="hljs-phpdoc"> @return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-variable">$user</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;user = <span class="hljs-variable">$user</span>;
+        <span class="hljs-variable">$this</span>-&gt;site = config(<span class="hljs-string">'app.name'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Build the message.
+     *
+     *<span class="hljs-phpdoc"> @return</span> $this
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
+    {</span>
+       <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;view(<span class="hljs-string">'emails.mail-no-markdown'</span>);
+    }
+}</code></pre>
+
+<p><span dir="rtl">3- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/views/emails</code> فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">mail-no-markdown.blade.php</code> رو ایجاد میکنیم:</span></p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"direction:rtl;text-align:right;"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>ایمیل از: {{ $site }}<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{ $user-&gt;name }} گرامی، ثبت نام شما در سایت با موفقیت انجام شد.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>با تشکر.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p><span dir="rtl">4- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/routes</code> در فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">web.php</code> روت زیر رو تعریف میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php">Route::get(<span class="hljs-string">'/mail-no-markdown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+
+    <span class="hljs-variable">$user</span> = \App\User::find(<span class="hljs-number">1</span>);
+
+    Mail::to(<span class="hljs-variable">$user</span>-&gt;email)-&gt;send(<span class="hljs-keyword">new</span> \App\Mail\MailNoMarkdown(<span class="hljs-variable">$user</span>));
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'ایمیل با موفقیت ارسال شد.'</span>;
+});</code></pre>
+
+<p><span dir="rtl">5- در فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">env.</code> تنظیمات زیر رو برای ایمیل انجام میدیم:</span></p>
+
+<pre><code class=" hljs ini"><span class="hljs-setting">MAIL_DRIVER=<span class="hljs-value">smtp</span></span>
+<span class="hljs-setting">MAIL_HOST=<span class="hljs-value">smtp.mailtrap.io</span></span>
+<span class="hljs-setting">MAIL_PORT=<span class="hljs-value"><span class="hljs-number">2525</span></span></span>
+<span class="hljs-setting">MAIL_USERNAME=<span class="hljs-value">****</span></span>
+<span class="hljs-setting">MAIL_PASSWORD=<span class="hljs-value">****</span></span>
+<span class="hljs-setting">MAIL_ENCRYPTION=<span class="hljs-value">null</span></span></code></pre>
+
+<p><span dir="rtl">6- در فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">config/mail.php</code> تنظیمات زیر رو انجام میدیم:</span></p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">return</span> [
+
+    <span class="hljs-string">'driver'</span> =&gt; env(<span class="hljs-string">'MAIL_DRIVER'</span>, <span class="hljs-string">'smtp'</span>),
+
+    <span class="hljs-string">'host'</span> =&gt; env(<span class="hljs-string">'MAIL_HOST'</span>, <span class="hljs-string">'smtp.mailtrap.io'</span>),
+
+    <span class="hljs-string">'port'</span> =&gt; env(<span class="hljs-string">'MAIL_PORT'</span>, <span class="hljs-number">587</span>),
+
+    <span class="hljs-string">'from'</span> =&gt; [
+        <span class="hljs-string">'address'</span> =&gt; env(<span class="hljs-string">'MAIL_FROM_ADDRESS'</span>, <span class="hljs-string">'info@example.com'</span>),
+        <span class="hljs-string">'name'</span> =&gt; env(<span class="hljs-string">'MAIL_FROM_NAME'</span>, <span class="hljs-string">'مثال وب'</span>),
+    ],
+
+    <span class="hljs-string">'encryption'</span> =&gt; env(<span class="hljs-string">'MAIL_ENCRYPTION'</span>, <span class="hljs-string">'tls'</span>),
+
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'****'</span>,
+
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">'****'</span>,
+
+    <span class="hljs-string">'sendmail'</span> =&gt; <span class="hljs-string">'/usr/sbin/sendmail -bs'</span>,
+
+    <span class="hljs-string">'markdown'</span> =&gt; [
+        <span class="hljs-string">'theme'</span> =&gt; <span class="hljs-string">'default'</span>,
+
+        <span class="hljs-string">'paths'</span> =&gt; [
+            resource_path(<span class="hljs-string">'views/vendor/mail'</span>),
+        ],
+    ],
+];</code></pre>
+
+<p><span dir="rtl">7- حالا اگه به روت <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">mail-no-markdown/</code> بریم یک ایمیل به <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">mailtrap</code> ارسال میشه که نتیجه بصورت تصویر زیر خواهد بود:</span></p>
+
+<p><img alt="نتیجه اجرای ارسال ایمیل" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/example-mail.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"></p>
+
+<p>&nbsp;</p>
+
+<hr>
+<p>&nbsp;</p>
+
+<h3><span dir="rtl">ارسال ایمیل با استفاده از markdown</span></h3>
+
+<p><span dir="rtl">در این روش خود لاراول امکاناتی رو برای طراحی بهتر قالب ایمیل در اختیارمون قرار میده:</span></p>
+
+<p><span dir="rtl">1- دستور زیر رو در خط فرمان وارد میکنیم:</span></p>
+
+<pre><code class=" hljs javascript">php artisan make:mail MailWithMarkdown --markdown=emails.mail-<span class="hljs-keyword">with</span>-markdown</code></pre>
+
+<p><span dir="rtl">2- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">app/Mail</code> فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">MailWithMarkdown.php</code> ایجاد میشه که شامل کلاسی به همین نام است. برای استفاده از این کلاس دو پراپرتی <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">public $user</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">public $site</code> رو تعریف میکنیم و در متد <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">__construct</code> کاربر مورد نظر رو به عنوان پارامتر میگیریم. در متد&nbsp;<code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">build</code> مسیر ویو که قالب ایمیل است با استفاده از دستور قبل مشخص شده است. در نهایت کلاس ما بصورت زیر خواهد بود:</span></p>
+
+<pre><code class="language-0 hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Mail</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Bus</span>\<span class="hljs-title">Queueable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Mail</span>\<span class="hljs-title">Mailable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">SerializesModels</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">Queue</span>\<span class="hljs-title">ShouldQueue</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MailWithMarkdown</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mailable</span>
+{</span>
+    <span class="hljs-keyword">use</span> <span class="hljs-title">Queueable</span>, <span class="hljs-title">SerializesModels</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$user</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$site</span>;
+
+    <span class="hljs-comment">/**
+     * Create a new message instance.
+     *
+     *<span class="hljs-phpdoc"> @return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-variable">$user</span>)</span>
+    {</span>
+        <span class="hljs-variable">$this</span>-&gt;user = <span class="hljs-variable">$user</span>;
+        <span class="hljs-variable">$this</span>-&gt;site = config(<span class="hljs-string">'app.name'</span>);
+    }
+
+    <span class="hljs-comment">/**
+     * Build the message.
+     *
+     *<span class="hljs-phpdoc"> @return</span> $this
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">()</span>
+    {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;markdown(<span class="hljs-string">'emails.mail-with-markdown'</span>);
+    }
+}
+</span></code></pre>
+
+<p><span dir="rtl">3- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/views/emails</code> فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">mail-with-markdown.blade.php</code> رو ایجاد میکنیم:</span></p>
+
+<pre><code class="language-0 hljs coffeescript"><span class="hljs-property">@component</span>(<span class="hljs-string">'mail::message'</span>)
+
+&lt;h3&gt;سلام {{ $user-&gt;name }} گرامی&lt;/h3&gt;
+
+&lt;p&gt;ثبت نام شما در سایت با موفقیت انجام شد.&lt;/p&gt;
+
+<span class="hljs-property">@component</span>(<span class="hljs-string">'mail::button'</span>, [<span class="hljs-string">'url'</span><span class="hljs-function"> =&gt;</span> config(<span class="hljs-string">'app.url'</span>), <span class="hljs-string">'color'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'red'</span>])
+ورود به سایت
+<span class="hljs-property">@endcomponent</span>
+
+<span class="hljs-property">@endcomponent</span></code></pre>
+
+<p><span dir="rtl">4- در مسیر <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">resources/routes</code> در فایل <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">web.php</code> روت زیر رو تعریف میکنیم:</span></p>
+
+<pre><code class="language-0 hljs php">
+Route::get(<span class="hljs-string">'/mail-with-markdown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+
+    <span class="hljs-variable">$user</span> = \App\User::find(<span class="hljs-number">1</span>);
+
+    Mail::to(<span class="hljs-variable">$user</span>-&gt;email)-&gt;send(<span class="hljs-keyword">new</span> \App\Mail\MailWithMarkdown(<span class="hljs-variable">$user</span>));
+
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'ایمیل با موفقیت ارسال شد.'</span>;
+});</code></pre>
+
+<p><span dir="rtl">5- تنظیمات فایلهای <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">env.</code> و <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">config/mail.php</code> بصورت همون روش بدون markdown خواهد بود.</span></p>
+
+<p><span dir="rtl">6- میتوانیم با رفتن به فایل <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">default.css</code> در مسیر <code style="background-color:#f8d8f9;color:#fc00cd;padding:0 2px;text-align:center;">resources/views/vendor/mail/html/themes</code> استایل دلخواهمون رو اعمال کنیم.</span></p>
+
+<p><span dir="rtl">7- حالا اگه به روت<code> </code><code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">mail-with-markdown/</code> بریم یک ایمیل به <code style="background-color:#f8d8f9; color:#fc00cd; padding:0 2px; text-align:center">mailtrap</code> ارسال میشه که نتیجه بصورت تصویر زیر خواهد بود:</span></p>
+
+<p><img alt="نتیجه ارسال ایمیل با استفاده از markdown" src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/example-mail-markdown-1.jpg" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی"></p>
+
+<p>&nbsp;</p>
+</div>
+                <div id="date-row" class="row">
+                    <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-lg-offset-7 col-lg-5">
+                        <div class="post-date">
+                            <strong>نوشته شده در تاریخ: </strong>
+                            <span>شنبه ۱۳۹۶/۰۹/۲۵ ساعت ۰۲:۲۳ ب.ظ</span>
+                        </div>
+                    </div>
+                </div>
+                                                        <div class="row">
+                        <div class="col-xs-12">
+                            <div class="post-tag-row">
+                                <strong class="text-info">برچسب ها: </strong>
+                                <span class="text-success">
+                                                                            <a href="http://samaiweb.com/tags/26" target="_blank">Mail</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/27" target="_blank">Markdown</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/4" target="_blank">config</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/20" target="_blank">env</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/1" target="_blank">framework</a>
+                                        ،                                                                             <a href="http://samaiweb.com/tags/9" target="_blank">خط فرمان</a>
+                                                                                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                            
+                <div class="form-box alert-info text-left">
+                    <div class="row fa-close-row">
+                        <span class="fa fa-close fa-2x" title="" data-toggle="tooltip" data-original-title="جواب نمیدهم" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div id="success-error" class="col-xs-12 col-sm-offset-3 col-sm-5" style="display: none;"></div>
+                        
+                        <form method="POST" action="http://samaiweb.com/comments" accept-charset="UTF-8" id="create-comment"><input name="_token" value="kAnWVai85KVAgzQ3Lm8h6yNnxY9992e3iiJkDqYR" type="hidden">
+                        <input name="_token" value="kAnWVai85KVAgzQ3Lm8h6yNnxY9992e3iiJkDqYR" type="hidden">
+
+                        <input id="post_id" name="post_id" value="15" type="hidden">
+                        <input id="parent_id" name="parent_id" value="0" type="hidden">
+
+                        <div id="username" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="username">نام</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="نام و نام خانوادگی" name="username" id="username" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="url" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="url">سایت</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="لینک سایت شما: http://example.com" name="url" id="url" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="email" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="email">ایمیل</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <input class="form-control" placeholder="ایمیل شما: example@example.com" name="email" id="email" type="text">
+                                                            </div>
+                        </div>
+
+                        <div id="captcha" class="form-group ">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3">
+                                    <label for="captcha" class="control-label">کد امنیتی</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-5">
+                                    <input class="form-control" placeholder="کد امنیتی" name="captcha" id="captcha" type="text">
+                                                                    </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-xs-1 col-sm-1">
+                                    <button type="button" id="refresh" class="btn btn-sm btn-info" title="" data-toggle="tooltip" data-original-title="تغییر کد امنیتی">
+                                        <i class="glyphicon glyphicon-refresh"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-11 col-sm-4" id="captcha-div">
+                                    <img src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/flat.png" alt="captcha" title="" data-toggle="tooltip" data-original-title="کلیک کنید برای مشاهده تصویر در اندازه واقعی">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="body" class="row form-group ">
+                            <div class="col-xs-12 col-sm-3">
+                                <label for="body">نظر</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <textarea id="body" name="body" rows="10" style="resize:none;" class="form-control" placeholder="نظر شما در مورد این مطلب"></textarea>
+                                                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-offset-3 col-sm-5 text-center">
+                                <input class="btn btn-lg btn-info" value="ارسال" type="submit">
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scrol-to-top">
+            <div class="scrollup" style="display: block;">
+                <i class="fa fa-angle-double-up"></i>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>بازدیدهای سایت</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><strong>افراد آنلاین:</strong> 1</p><p><strong>بازدید امروز:</strong> 35</p><p><strong>بازدید دیروز:</strong> 19</p><p><strong>بازدید کل:</strong> 5672</p>                                </div>
+                                <!--<div class="sidebar-foot"></div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <h3>پیوندها</h3>
+                            <hr>
+                            <div class="sidbar-main">
+                                <div class="sidebar-content">
+                                    <p><a href="https://secure.php.net/docs.php" target="_blank">مستندات php</a></p><p><a href="http://www.w3schools.com/php/" target="_blank">PHP Tutorial</a></p><p><a href="https://laravel.com/docs/5.3" target="_blank">مستندات laravel</a></p><p><a href="http://forum.ncis.ir/" target="_blank">تالار گفتمان ncis</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="well">
+                            <ul id="icons">
+                                <li>
+                                    <a href="https://www.facebook.com/topalternatives" target="_blank" rel="nofollow">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/topalt" target="_blank" rel="nofollow">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://topalternatives.com/feed/" target="_blank" rel="nofollow">
+                                        <i class="fa fa-rss"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/u/0/b/101188387378944618683/101188387378944618683" target="_blank" rel="nofollow">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCBuEJnRY2jGO0FY9SmlhfjA" target="_blank" rel="nofollow">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="pull-right">© کلیه حقوق این سایت متعلق به <a href="http://samaiweb.com/">وب سایت شخصی عبدالله سمعی</a> میباشد.</p>
+                        <p class="pull-left">قدرت گرفته از فریمورک Laravel</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/jquery.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap_003.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap_002.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/bootstrap-submenu-script.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/scripts.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/transition.js"></script>
+
+        <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/highlight.js"></script>
+
+
+        
+    <script src="%D8%B3%D9%85%D8%B9%DB%8C%20%D9%88%D8%A8%20-%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B4%D8%AE%D8%B5%DB%8C%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87%20%D8%B3%D9%85%D8%B9%DB%8C%20%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87%20%D9%86%D9%88%DB%8C%D8%B3%20%20%20%D8%A7%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84%20%D8%AF%D8%B1%20laravel_files/show-comment.js"></script>
+
+
+
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    
+</body></html>
