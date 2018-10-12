@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>مقالات تمرین و یادگیری - Include و Component
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="Include%20%D9%88%20Component_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="Include%20%D9%88%20Component_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="Include%20%D9%88%20Component_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="Include%20%D9%88%20Component_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="Include%20%D9%88%20Component_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="Include%20%D9%88%20Component_files/monokai.css" rel="stylesheet">
+        <script src="Include%20%D9%88%20Component_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>Include و Component</h2>
+    </div>
+    <hr>
+    
+    <div class="article mt-5">
+        <p dir="rtl">برای اینکه بتوانیم ویوهای مختلف را در لیوتها نشان 
+دهیم از include یا component استفاده میکنیم که نحوه استفاده از آهنا را 
+در اینجا یاد میگیریم.</p>
+
+<h3 dir="rtl">include</h3>
+
+<p dir="rtl">1- فرض کنید لیوتی داشته باشیم که شامل کدهای زیر باشد:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container text-center mt-4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-success"</span>&gt;</span>
+            پیام اول برای ویو
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-warning"</span>&gt;</span>
+            پیام دوم برای ویو
+        <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p dir="rtl">2- حالا بخشی از این کد را به ویوی resources\views\includes\alert.blade.php انتقال میدیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-success"</span>&gt;</span>
+    پیام اول برای ویو
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+
+<p dir="rtl">و بقیه کدها را در لیوت حذف میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container text-center mt-4"</span>&gt;</span>
+        //
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p dir="rtl">3- فایل resources\views\includes\alert.blade.php بصورت زیر تغییر میدهیم:</p>
+
+<pre><code class="language-0 hljs bash">&lt;p class=<span class="hljs-string">"alert {{ <span class="hljs-variable">$class</span> }}"</span>&gt;
+    {{ <span class="hljs-variable">$message</span> }}
+&lt;/p&gt;</code></pre>
+
+<p dir="rtl">4- برای ارسال مقادیر از لیوت به متغیرهای موجود در ویو پارامتر دومی که یک آرایه است برای دستور include در لیوت قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs perl">&lt;div class=<span class="hljs-string">"row"</span>&gt;
+    &lt;div class=<span class="hljs-string">"container text-center mt-4"</span>&gt;
+        <span class="hljs-variable">@include</span>(<span class="hljs-string">'includes.alert'</span>,[
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'alert-success'</span>,
+            <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'پیام اول برای ویو.'</span>,
+        ])
+        <span class="hljs-variable">@include</span>(<span class="hljs-string">'includes.alert'</span>,[
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'alert-danger'</span>,
+            <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'پیام دوم برای ویو.'</span>,
+        ])
+    &lt;<span class="hljs-regexp">/div&gt;
+&lt;/div</span>&gt;</code></pre>
+
+<h3 dir="rtl">component</h3>
+
+<p dir="rtl">کامپوننت فراخوانی کننده فایلی ویویی است که میخواهیم آن را 
+در لیوت نشان دهیم و اسلات تعیین کننده مقادیر برای متغیرهای موجود در ویوی
+ مورد نظر است.</p>
+
+<p dir="rtl">1- اگر فایل ویو به شکل زیر باشد:</p>
+
+<pre><code class="language-0 hljs bash">&lt;p class=<span class="hljs-string">"alert {{ <span class="hljs-variable">$class</span> }}"</span>&gt;
+    {{ <span class="hljs-variable">$message</span> }}
+&lt;/p&gt;</code></pre>
+
+<p dir="rtl">و اگر بخواهیم مقدار پیشفرض برای این متغیر قرار دهیم بصورت زیر عمل میکنیم:</p>
+
+<pre><code class="language-0 hljs bash">&lt;p class=<span class="hljs-string">"alert {{ <span class="hljs-variable">$class</span> ?? 'alert-info' }}"</span>&gt;
+    {{ <span class="hljs-variable">$message</span> ?? <span class="hljs-string">'پیام پیشفرض'</span> }}
+&lt;/p&gt;</code></pre>
+
+<p dir="rtl">که در اینجا alert-info زمانی اعمال میشود که متغیر class$ دارای مقدار نباشد و عملگر ?? به معنی یا هست.</p>
+
+<p dir="rtl">2- لیوتی که فایل ویو را فراخوانی میکند و متغیرها را مقداردهی میکند به شکل زیر میشود:</p>
+
+<pre><code class="language-0 hljs perl">&lt;div class=<span class="hljs-string">"row"</span>&gt;
+    &lt;div class=<span class="hljs-string">"container text-center mt-4"</span>&gt;
+        <span class="hljs-variable">@component</span>(<span class="hljs-string">'includes.alert'</span>)
+            <span class="hljs-variable">@slot</span>(<span class="hljs-string">'class'</span>)
+                alert-success
+            <span class="hljs-variable">@endslot</span>
+            <span class="hljs-variable">@slot</span>(<span class="hljs-string">'message'</span>)
+                پیام اول برای ویو
+            <span class="hljs-variable">@endslot</span>
+        <span class="hljs-variable">@endcomponent</span>
+    &lt;<span class="hljs-regexp">/div&gt;
+&lt;/div</span>&gt;</code></pre>
+
+<p dir="rtl">3- اگر کامپوننت خودش غیر از اسلاتهای تعریف شده شامل متن یا 
+کدهایی باشد برای نمایش آنها در ویو، در خورد ویو متغیر slot$ را قرار 
+میدهیم:</p>
+
+<pre><code class="language-0 hljs xml">//layout - component
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container text-center mt-4"</span>&gt;</span>
+        @component('includes.alert')
+            @slot('class')
+                alert-success
+            @endslot
+            @slot('message')
+                پیام اول برای نمایش
+            @endslot
+            <span class="hljs-tag">&lt;<span class="hljs-title">hr</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>نمایش کدها و متنهای داخل کامپوننت در ویو<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+            برای این کار در ویو بجای متغیر message$ از متغیر slot$ استفاده میکنیم.
+        @endcomponent
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+// view - slot
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert {{ $class ?? 'alert-info' }}"</span>&gt;</span>
+    {{ $message ?? 'پیام پیشفرض' }}
+    {{ $slot ?? 'کدهای پیشفرض' }}
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+<p dir="rtl">اگر بخواهیم از component و slot در لیوتها و ویوها استفاده کنیم شکل کلی بصورت زیر خواهد بود:</p>
+
+<pre><code class="language-0 hljs xml">//leyout - master
+<span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"{{ app()-&gt;getLocale() }}"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">"X-UA-Compatible"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"IE=edge"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Laravel {{ $title }}<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        
+        {{ $styles ?? '' }}
+        
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        
+        <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container-fluid my-3"</span>&gt;</span>
+            {{ $content }}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+
+    {{ $script ?? '' }}
+    
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+<pre><code class="language-0 hljs perl">// view - <span class="hljs-keyword">index</span>
+<span class="hljs-variable">@component</span>(<span class="hljs-string">'layouts.master-component'</span>)
+
+<span class="hljs-variable">@slot</span>(<span class="hljs-string">'title'</span>)
+- component <span class="hljs-keyword">and</span> slot learning
+<span class="hljs-variable">@endslot</span>
+
+
+<span class="hljs-variable">@slot</span>(<span class="hljs-string">'styles'</span>)
+    &lt;<span class="hljs-keyword">link</span> href=<span class="hljs-string">"/css/bootstrap.min.css"</span> rel=<span class="hljs-string">"stylesheet"</span> type=<span class="hljs-string">"text/css"</span>&gt;
+    &lt;<span class="hljs-keyword">link</span> href=<span class="hljs-string">"/css/bootstrap-rtl.css"</span> rel=<span class="hljs-string">"stylesheet"</span> type=<span class="hljs-string">"text/css"</span>&gt;
+    &lt;<span class="hljs-keyword">link</span> href=<span class="hljs-string">"/css/vazir.css"</span> rel=<span class="hljs-string">"stylesheet"</span> type=<span class="hljs-string">"text/css"</span>&gt;
+    &lt;<span class="hljs-keyword">link</span> href=<span class="hljs-string">"/css/styles.css"</span> rel=<span class="hljs-string">"stylesheet"</span> type=<span class="hljs-string">"text/css"</span>&gt;
+<span class="hljs-variable">@endslot</span>
+
+
+<span class="hljs-variable">@slot</span>(<span class="hljs-string">'content'</span>)
+    &lt;div class=<span class="hljs-string">"alert alert-success"</span>&gt;
+        &lt;h3&gt;این بخش از کدها بجای همان سکشن در لیوتها استفاده میشود.&lt;<span class="hljs-regexp">/h3&gt;
+    &lt;/div</span>&gt;
+<span class="hljs-variable">@endslot</span>
+
+
+<span class="hljs-variable">@slot</span>(<span class="hljs-string">'script'</span>)
+    &lt;script src=<span class="hljs-string">"/js/jquery.min.js"</span>&gt;&lt;<span class="hljs-regexp">/script&gt;
+    &lt;script src="/js</span><span class="hljs-regexp">/bootstrap.min.js"&gt;&lt;/script</span>&gt;
+<span class="hljs-variable">@endslot</span>
+
+<span class="hljs-variable">@endcomponent</span></code></pre>
+
+<p>&nbsp;</p>
+    </div>
+    
+    <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1397-07-19 13:09:19</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1397-07-19 16:36:09</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="Include%20%D9%88%20Component_files/jquery.js"></script>
+        <script src="Include%20%D9%88%20Component_files/bootstrap.js"></script>
+        <script src="Include%20%D9%88%20Component_files/ckeditor.js"></script>
+        <script src="Include%20%D9%88%20Component_files/ckfinder.js"></script>
+        <script src="Include%20%D9%88%20Component_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>

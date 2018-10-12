@@ -75,10 +75,9 @@ pre {
     height: 14.5rem;
 }
 .card .card-title {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     overflow: hidden;
-    height: 2rem;
-    border-bottom: 1px solid #95ca95;
+    height: 1.7rem;
 }
 .card-text{
     font-size: 14px;
@@ -86,12 +85,11 @@ pre {
 .card-box-shadow{
     box-shadow: 0 0 4px 2px green !important;
 }
-.card a{
-    color: #68b468;
+.card-box-shadow hr{
+    border-color: #68b468;
 }
-.card a:hover {
-    color: #1caa06 !important;
-    text-decoration: none;
+.card-box-shadow a{
+    color: #68b468;
 }
 .card-link{
     position: absolute;

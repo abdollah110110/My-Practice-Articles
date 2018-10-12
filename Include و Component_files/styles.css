@@ -6,8 +6,10 @@ html, body{
 pre {
     width: 100%;
     padding: 3px;
+    margin: 0 15px;
     direction: ltr;
     text-align: left;
+    background-color: #eee;
 }
 
 .min-height-800px{
@@ -42,61 +44,34 @@ pre {
 /*------------------------------------------------------------------
               Article styles
 --------------------------------------------------------------------*/
-#content .container{
-    margin-top: 1rem;
-    box-shadow: 0 0 5px 3px orange;
-}
-#content .h2, h2 {
-    font-size: 2rem;
-    color: #f86d08;
-    font-weight: bold;
-}
-#content hr {
-    border-top: 1rem solid orange;
-}
 .article img{
     width: 100%;
     border: 1px solid #eee;
     margin: 0 auto 15px;
 }
-.article .h3, h3{
-    color: #f83a08;
-    margin: 50px 0 15px;
+.article h3{
+    margin: 35px 15px 20px;
+    font-weight: bold;
 }
 .article p{
-    margin: 10px 0;
+    margin: 10px 15px;
     font-size: 14px;
 }
 
 /*------------------------------------------------------------------
               Card styles
 --------------------------------------------------------------------*/
-.card{
-    height: 14.5rem;
-}
-.card .card-title {
-    margin-bottom: 1rem;
-    overflow: hidden;
-    height: 2rem;
-    border-bottom: 1px solid #95ca95;
-}
 .card-text{
     font-size: 14px;
 }
 .card-box-shadow{
     box-shadow: 0 0 4px 2px green !important;
 }
-.card a{
+.card-box-shadow hr{
+    border-color: #68b468;
+}
+.card-box-shadow a{
     color: #68b468;
-}
-.card a:hover {
-    color: #1caa06 !important;
-    text-decoration: none;
-}
-.card-link{
-    position: absolute;
-    left: 1.5rem;
-    bottom: 0.7rem;
 }
 
 /*------------------------------------------------------------------
@@ -125,15 +100,5 @@ pre {
     --------------------------------------------------------------------*/
     .abstract{
         height: 140px;
-    }   
-}
-
-
-@media only screen and (max-width: 321px) {
-    /*------------------------------------------------------------------
-                  Abstract styles
-    --------------------------------------------------------------------*/
-    .abstract{
-        height: 105px;
     }   
 }
