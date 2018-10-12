@@ -1,0 +1,139 @@
+html, body{
+    font-family: vazir;
+    font-size: 16px;
+}
+
+pre {
+    width: 100%;
+    padding: 3px;
+    direction: ltr;
+    text-align: left;
+}
+
+.min-height-800px{
+    min-height: 800px;
+}
+
+/*------------------------------------------------------------------
+              Hljs styles
+--------------------------------------------------------------------*/
+.hljs {
+    color: #eee;
+    overflow: auto;
+}
+
+/*------------------------------------------------------------------
+              Jumbotron styles
+--------------------------------------------------------------------*/
+.jumbotron{
+    background: #eee url('../images/bg-jumbotron.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+/*------------------------------------------------------------------
+              Abstract styles
+--------------------------------------------------------------------*/
+.abstract{
+    height: 80px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/*------------------------------------------------------------------
+              Article styles
+--------------------------------------------------------------------*/
+#content .container{
+    margin-top: 1rem;
+    box-shadow: 0 0 5px 3px orange;
+}
+#content .h2, h2 {
+    font-size: 2rem;
+    color: #f86d08;
+    font-weight: bold;
+}
+#content hr {
+    border-top: 1rem solid orange;
+}
+.article img{
+    width: 100%;
+    border: 1px solid #eee;
+    margin: 0 auto 15px;
+}
+.article .h3, h3{
+    color: #f83a08;
+    margin: 50px 0 15px;
+}
+.article p{
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/*------------------------------------------------------------------
+              Card styles
+--------------------------------------------------------------------*/
+.card{
+    height: 14.5rem;
+}
+.card .card-title {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    height: 2rem;
+    border-bottom: 1px solid #95ca95;
+}
+.card-text{
+    font-size: 14px;
+}
+.card-box-shadow{
+    box-shadow: 0 0 4px 2px green !important;
+}
+.card a{
+    color: #68b468;
+}
+.card a:hover {
+    color: #1caa06 !important;
+    text-decoration: none;
+}
+.card-link{
+    position: absolute;
+    left: 1.5rem;
+    bottom: 0.7rem;
+}
+
+/*------------------------------------------------------------------
+              Form-control styles
+--------------------------------------------------------------------*/
+.form-control:focus {
+    border-color: #e3e5e7;
+    box-shadow: 0 0 3px .2rem rgba(124, 126, 128, 0.3);
+}
+.has-error{
+    background-color: #f8e8e8;
+    padding: 0.3rem 0;
+    color: #710f0f;
+}
+.has-error .form-control{
+    border: 1px solid #f9d4d4;
+}
+.has-error .form-control:focus {
+    box-shadow: 0 0 3px .2rem rgba(252, 107, 107, 0.3);
+}
+
+
+@media only screen and (max-width: 992px) {
+    /*------------------------------------------------------------------
+                  Abstract styles
+    --------------------------------------------------------------------*/
+    .abstract{
+        height: 140px;
+    }   
+}
+
+
+@media only screen and (max-width: 321px) {
+    /*------------------------------------------------------------------
+                  Abstract styles
+    --------------------------------------------------------------------*/
+    .abstract{
+        height: 105px;
+    }   
+}

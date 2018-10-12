@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>مقالات تمرین و یادگیری - چک کردن admin یا user بودن کاربر لاگین شده
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/monokai.css" rel="stylesheet">
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>چک کردن admin یا user بودن کاربر لاگین شده</h2>
+    </div>
+    <hr>
+    
+    <div class="article mt-5">
+        <p dir="rtl">برای اینکه بعد از لاگین کردن کاربر تشخیص دهیم کاربر وارد شده Admin است یا user معمولی، یک Middleware ایجاد میکنیم.</p>
+
+<p dir="rtl">1- ایجاد middleware با استفاده از دستور زیر در خط فرمان:</p>
+
+<pre><code class=" hljs css"><span class="hljs-tag">php</span> <span class="hljs-tag">artisan</span> <span class="hljs-tag">make</span><span class="hljs-pseudo">:middleware</span> <span class="hljs-tag">CheckAdminOrUser</span></code></pre>
+
+<p dir="rtl">2- به فایل app\Http\Middleware\CheckAdminOrUser.php میرویم و به شکل زیر تغییرش میدهیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Middleware</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Closure</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CheckAdminOrUser</span>
+{</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">(<span class="hljs-variable">$request</span>, Closure <span class="hljs-variable">$next</span>)</span>
+    {</span>
+        <span class="hljs-keyword">if</span>(auth()-&gt;check() &amp;&amp; auth()-&gt;user()-&gt;isAdmin()){
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$next</span>(<span class="hljs-variable">$request</span>);
+        }
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'/'</span>);
+    }
+}
+</span></code></pre>
+
+<p dir="rtl">3- در فایل app\Http\Kernel.php مسیر middleware را وارد میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">protected</span> <span class="hljs-variable">$routeMiddleware</span> = [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'checkAdmin'</span> =&gt; \App\Http\Middleware\CheckAdminOrUser::<span class="hljs-class"><span class="hljs-keyword">class</span>,
+];</span></code></pre>
+
+<p dir="rtl">4- در مدل User متد زیر را وارد میکنیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isAdmin</span><span class="hljs-params">()</span>
+{</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;level == <span class="hljs-string">'admin'</span> ? <span class="hljs-keyword">true</span> : <span class="hljs-keyword">false</span>;
+}</code></pre>
+
+<p dir="rtl">5- با قرار دادن روتهایی که باید برای admin نمایش داده شوند 
+در یک Route::group ، مانع از ورود سایر کاربران به بخشهای مدیریتی سایت 
+میشویم:</p>
+
+<pre><code class="language-0 hljs coffeescript">&lt;?php
+
+<span class="hljs-attribute">Route</span>::group(
+    [
+<span class="hljs-regexp">//</span>        <span class="hljs-string">'namespace'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">''</span>,
+<span class="hljs-regexp">//</span>        <span class="hljs-string">'prefix'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">''</span>,
+        <span class="hljs-string">'middleware'</span><span class="hljs-function"> =&gt;</span> [<span class="hljs-string">'checkAdmin'</span>, <span class="hljs-string">'auth'</span>],
+    ],
+    <span class="hljs-reserved">function</span>(){
+        <span class="hljs-regexp">//</span>Categories Routes
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories'</span>, <span class="hljs-string">'CategoryController@index'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories/create'</span>, <span class="hljs-string">'CategoryController@create'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories.create'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories/store'</span>, <span class="hljs-string">'CategoryController@store'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories.store'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories/{category}/show'</span>, <span class="hljs-string">'CategoryController@show'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories.show'</span>);
+        <span class="hljs-attribute">Route</span>::<span class="hljs-keyword">delete</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories/destroy/{category}'</span>, <span class="hljs-string">'CategoryController@destroy'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories.destroy'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories/{category}/edit'</span>, <span class="hljs-string">'CategoryController@edit'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories.edit'</span>);
+        <span class="hljs-attribute">Route</span>::put<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/categories/{category}/update'</span>, <span class="hljs-string">'CategoryController@update'</span>)</span>-&gt;</span>name(<span class="hljs-string">'categories.update'</span>);
+
+        <span class="hljs-regexp">//</span>Articles Routes
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles'</span>, <span class="hljs-string">'ArticleController@index'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/create'</span>, <span class="hljs-string">'ArticleController@create'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles.create'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/store'</span>, <span class="hljs-string">'ArticleController@store'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles.store'</span>);
+        <span class="hljs-attribute">Route</span>::<span class="hljs-keyword">delete</span><span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/destroy/{article}'</span>, <span class="hljs-string">'ArticleController@destroy'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles.destroy'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/{article}/edit'</span>, <span class="hljs-string">'ArticleController@edit'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles.edit'</span>);
+        <span class="hljs-attribute">Route</span>::put<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/{article}/update'</span>, <span class="hljs-string">'ArticleController@update'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles.update'</span>);
+    }
+);
+
+<span class="hljs-regexp">//</span> Category selected route
+<span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/category/{category}'</span>, <span class="hljs-string">'ArticleController@selected'</span>)</span>-&gt;</span>name(<span class="hljs-string">'category.selected'</span>);
+
+<span class="hljs-regexp">//</span> Articles show Route
+<span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/articles/{article}/show'</span>, <span class="hljs-string">'ArticleController@show'</span>)</span>-&gt;</span>name(<span class="hljs-string">'articles.show'</span>);
+
+<span class="hljs-regexp">//</span> Home routes
+<span class="hljs-attribute">Route</span>::get(<span class="hljs-string">'/slot-view'</span>, <span class="hljs-reserved">function</span>(){
+    <span class="hljs-keyword">return</span> view(<span class="hljs-string">'site.slot-view'</span>);
+});
+<span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/'</span>, <span class="hljs-string">'HomeController@index'</span>)</span>-&gt;</span>name(<span class="hljs-string">'home'</span>);
+<span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/home/activation/{token}'</span>, <span class="hljs-string">'HomeController@activation'</span>)</span>-&gt;</span>name(<span class="hljs-string">'activation'</span>);
+
+
+<span class="hljs-attribute">Route</span>::group(
+    [
+        <span class="hljs-string">'namespace'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'Auth'</span>, 
+        <span class="hljs-string">'prefix'</span><span class="hljs-function"> =&gt;</span> <span class="hljs-string">'auth'</span>
+    ],
+    <span class="hljs-reserved">function</span>(){
+        <span class="hljs-regexp">//</span> Registration Routes...
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/register'</span>, <span class="hljs-string">'RegisterController@showRegistrationForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'register'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/register'</span>, <span class="hljs-string">'RegisterController@register'</span>)</span>-&gt;</span>name(<span class="hljs-string">'register.post'</span>);
+
+
+        <span class="hljs-regexp">//</span> Login-Logout Routes...
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/login'</span>, <span class="hljs-string">'LoginController@showLoginForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'login'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/login'</span>, <span class="hljs-string">'LoginController@login'</span>)</span>-&gt;</span>name(<span class="hljs-string">'login.post'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/logout'</span>, <span class="hljs-string">'LoginController@logout'</span>)</span>-&gt;</span>name(<span class="hljs-string">'logout'</span>);
+
+
+        <span class="hljs-regexp">//</span> Password Reset Routes...
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/password/reset'</span>, <span class="hljs-string">'ForgotPasswordController@showLinkRequestForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.request'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/password/email'</span>, <span class="hljs-string">'ForgotPasswordController@sendResetLinkEmail'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.email'</span>);
+        <span class="hljs-attribute">Route</span>::get<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/password/reset/{token}'</span>, <span class="hljs-string">'ResetPasswordController@showResetForm'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.reset'</span>);
+        <span class="hljs-attribute">Route</span>::post<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'/password/reset'</span>, <span class="hljs-string">'ResetPasswordController@reset'</span>)</span>-&gt;</span>name(<span class="hljs-string">'password.update'</span>);
+    }
+);</code></pre>
+
+<p dir="rtl">6- در navbar یا هر جای دیگر سایت لینکها یا کدهایی که فقط مخصوص مدیر است را بین شرط زیر قرار میدهیم:</p>
+
+<pre><code class="language-0 hljs xml">@if(Auth::user()-&gt;isAdmin())
+<span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mb-5"</span>&gt;</span>سلام <span class="hljs-tag">&lt;<span class="hljs-title">b</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text-success"</span>&gt;</span>{{ Auth::user()-&gt;name }}<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> گرامی<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mt-5"</span>&gt;</span>برای مدیریت سایت میتوانید از لینک های زیر استفاده نمایید:<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-info mt-3"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/categories"</span>&gt;</span>ورود به بخش موضوعات<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-primary mt-3"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/articles"</span>&gt;</span>ورود به بخش مقالات<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+@else
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mt-5"</span>&gt;</span>به وب سایت من خوش آمدید<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+@endif</code></pre>
+
+<p>&nbsp;</p>
+    </div>
+    
+    <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1397-07-20 19:46:42</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1397-07-20 20:35:19</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/jquery.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/bootstrap.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/ckeditor.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/ckfinder.js"></script>
+        <script src="%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA%20%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%DA%86%DA%A9%20%DA%A9%D8%B1%D8%AF%D9%86%20admin%20%DB%8C%D8%A7%20user%20%D8%A8%D9%88%D8%AF%D9%86%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%20%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%B4%D8%AF%D9%87_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>
