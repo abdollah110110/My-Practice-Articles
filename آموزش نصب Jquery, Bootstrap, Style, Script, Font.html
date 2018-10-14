@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>آموزش نصب Jquery, Bootstrap, Style, Script, Font
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/monokai.css" rel="stylesheet">
+        <script src="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>آموزش نصب Jquery, Bootstrap, Style, Script, Font</h2>
+    </div>
+    <hr>
+    
+    <div class="article mt-5">
+        <p dir="rtl">در این مقاله دانلود و نصب مواردی که برای یک صفحه اولیه وب سایت لازم است را یاد میگیریم.</p>
+
+<h3 dir="rtl">دانلود و استفاده از Bootstrap</h3>
+
+<p dir="rtl">CSS و JS کامپایل شده را از bootstrap download دانلود میکنیم
+ که کدهای آماده برای استفاده برای Bootstrap 4 هستند و به راحتی به پروژه 
+خود منتقل میکنیم و در فولدر اصلی پروژه قرار میدهیم و با کد زیر در صفحه 
+لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/bootstrap.min.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span></code></pre>
+
+<p dir="rtl">فایل bootstrap.rtl.css را که شامل کدهای زیر است:</p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-comment">/* ----------------- body ----------------- */</span>
+<span class="hljs-tag">body</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">direction</span>:<span class="hljs-value"> rtl</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-comment">/* ----------------- List Group ----------------- */</span>
+<span class="hljs-class">.list-group</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-right</span>:<span class="hljs-value"> <span class="hljs-number">0</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+    
+<span class="hljs-comment">/* ---------------- List Inline -------------------- */</span>
+<span class="hljs-class">.list-inline</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-right</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.list-inline-item</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> .<span class="hljs-number">5</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> auto <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-comment">/* ------------------ Input Group --------------- */</span>
+
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-append</span>&gt;<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-append</span>&gt;<span class="hljs-class">.input-group-text</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-prepend</span><span class="hljs-pseudo">:first-child</span>&gt;<span class="hljs-class">.btn</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-prepend</span><span class="hljs-pseudo">:first-child</span>&gt;<span class="hljs-class">.input-group-text</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-prepend</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span>&gt;<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-prepend</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span>&gt;<span class="hljs-class">.input-group-text</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-append</span><span class="hljs-pseudo">:last-child</span>&gt;<span class="hljs-class">.btn</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span><span class="hljs-pseudo">:not(</span><span class="hljs-class">.dropdown-toggle</span>),
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-append</span><span class="hljs-pseudo">:last-child</span>&gt;<span class="hljs-class">.input-group-text</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-append</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span>&gt;<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-append</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span>&gt;<span class="hljs-class">.input-group-text</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-prepend</span>&gt;<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.input-group-prepend</span>&gt;<span class="hljs-class">.input-group-text</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">2</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-select</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.form-control</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-select</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.form-control</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group-prepend</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> -<span class="hljs-number">1</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group-append</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> -<span class="hljs-number">1</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group-append</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group-append</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.input-group-text</span>,
+<span class="hljs-class">.input-group-append</span> <span class="hljs-class">.input-group-text</span>+<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group-append</span> <span class="hljs-class">.input-group-text</span>+<span class="hljs-class">.input-group-text</span>,
+<span class="hljs-class">.input-group-prepend</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group-prepend</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.input-group-text</span>,
+<span class="hljs-class">.input-group-prepend</span> <span class="hljs-class">.input-group-text</span>+<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.input-group-prepend</span> <span class="hljs-class">.input-group-text</span>+<span class="hljs-class">.input-group-text</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> -<span class="hljs-number">1</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span>+<span class="hljs-class">.custom-file</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span>+<span class="hljs-class">.custom-select</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span>+<span class="hljs-class">.form-control</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-select</span>+<span class="hljs-class">.custom-file</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-select</span>+<span class="hljs-class">.custom-select</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-select</span>+<span class="hljs-class">.form-control</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.form-control</span>+<span class="hljs-class">.custom-file</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.form-control</span>+<span class="hljs-class">.custom-select</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.form-control</span>+<span class="hljs-class">.form-control</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> -<span class="hljs-number">1</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span> <span class="hljs-class">.custom-file-label</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span> <span class="hljs-class">.custom-file-label</span><span class="hljs-pseudo">::before</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span> <span class="hljs-class">.custom-file-label</span>,
+<span class="hljs-class">.input-group</span>&gt;<span class="hljs-class">.custom-file</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span> <span class="hljs-class">.custom-file-label</span><span class="hljs-pseudo">::before</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.custom-file-label</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> auto</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-right</span>:<span class="hljs-value"> <span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#ced4da</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem <span class="hljs-number">0</span> <span class="hljs-number">0</span> .<span class="hljs-number">25</span>rem</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-comment">/* ------------------ Btn Group ------------------ */</span>
+
+<span class="hljs-class">.btn-group</span>&gt;<span class="hljs-class">.btn-group</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span>&gt;<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.btn-group</span>&gt;<span class="hljs-class">.btn</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span><span class="hljs-pseudo">:not(</span><span class="hljs-class">.dropdown-toggle</span>) <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.btn-group</span>&gt;<span class="hljs-class">.btn-group</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span>&gt;<span class="hljs-class">.btn</span>,
+<span class="hljs-class">.btn-group</span>&gt;<span class="hljs-class">.btn</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.btn-group</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.btn</span>, 
+<span class="hljs-class">.btn-group</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.btn-group</span>, 
+<span class="hljs-class">.btn-group</span> <span class="hljs-class">.btn-group</span>+<span class="hljs-class">.btn</span>, <span class="hljs-class">.btn-group</span> 
+<span class="hljs-class">.btn-group</span>+<span class="hljs-class">.btn-group</span>, <span class="hljs-class">.btn-group-vertical</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.btn</span>, 
+<span class="hljs-class">.btn-group-vertical</span> <span class="hljs-class">.btn</span>+<span class="hljs-class">.btn-group</span>, <span class="hljs-class">.btn-group-vertical</span> 
+<span class="hljs-class">.btn-group</span>+<span class="hljs-class">.btn</span>, <span class="hljs-class">.btn-group-vertical</span> <span class="hljs-class">.btn-group</span>+<span class="hljs-class">.btn-group</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> -<span class="hljs-number">1</span>px</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left </span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span> 
+
+<span class="hljs-comment">/* ----------------- Drop Down ---------------- */</span>
+<span class="hljs-class">.dropdown-toggle</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> .<span class="hljs-number">255</span>em</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-left </span>:<span class="hljs-value"> <span class="hljs-number">0</span>
+</span></span></span>}
+
+<span class="hljs-class">.dropright</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">direction</span>:<span class="hljs-value"> ltr</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.dropright</span>&gt;<span class="hljs-class">.btn</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:last-child)</span><span class="hljs-pseudo">:not(</span><span class="hljs-class">.dropdown-toggle</span>) <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.dropright</span> &gt; <span class="hljs-class">.btn</span><span class="hljs-pseudo">:not(</span><span class="hljs-pseudo">:first-child)</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-comment">/* ------------------- Pagination ------------------------ */</span>
+<span class="hljs-class">.page-item</span><span class="hljs-pseudo">:first-child</span> <span class="hljs-class">.page-link</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.page-item</span><span class="hljs-pseudo">:last-child</span> <span class="hljs-class">.page-link</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-right-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-top-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-left-radius</span>:<span class="hljs-value"> .<span class="hljs-number">25</span>rem</span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+<p dir="rtl">را با دستور زیر در صفحه لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/bootstrap.rtl.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span></code></pre>
+
+<p dir="rtl">فایل <a href="https://jquery.com/download/" target="_blank">jquery</a> را دانلود کرده و در صفحه لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/jquery.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p dir="rtl">فایل جاوااسکریپت بوت استرپ را لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/bootstrap.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<h3 dir="rtl">دانلود و نصب فونت Vazir</h3>
+
+<p dir="rtl">فونت وزیر را از <a href="https://rastikerdar.github.io/vazir-font/" target="_blank">این صفحه</a>
+ دانلود میکنیم. پس از اکسترکت فایل فشرده نام فولدری که فونتهای وزیر را 
+دارد به vazir تغییر میدهیم و این فولدر را داخل فولدر font در پروژه کپی 
+میکنیم.</p>
+
+<p dir="rtl">فایل vazir.css را در فولدر css پروژه قرار میدهیم که شامل کدهای زیر است:</p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Vazir</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir.eot'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir.woff2'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff2'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> normal</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Vazir</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Bold.eot'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Bold.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Bold.woff2'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff2'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Bold.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Bold.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Vazir</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Black.eot'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Black.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Black.woff2'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff2'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Black.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Black.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">900</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Vazir</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Medium.eot'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Medium.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Medium.woff2'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff2'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Medium.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Medium.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">500</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Vazir</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Light.eot'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Light.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Light.woff2'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff2'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Light.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Light.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">300</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Vazir</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Thin.eot'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Thin.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Thin.woff2'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff2'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Thin.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+         <span class="hljs-function">url(<span class="hljs-string">'../font/vazir/Vazir-Thin.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">100</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">html</span>, <span class="hljs-tag">body</span>, <span class="hljs-tag">h1</span>, <span class="hljs-tag">h2</span>, <span class="hljs-tag">h3</span> , <span class="hljs-tag">h4</span>, <span class="hljs-tag">h5</span>, <span class="hljs-tag">h6</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'Vazir'</span>, sans-serif</span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+<p dir="rtl">و حالا با کد زیر فونت وزیر را در صفحه لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/vazir.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span></code></pre>
+
+<h3 dir="rtl">دانلود و نصب آیکن های font awsome</h3>
+
+<p dir="rtl">ابتدا font awsome را از <a href="https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css" target="_blank">این صفحه</a>
+ دانلود میکنیم. بعد از اکسترکت کردن فایل فشرده، سه فولدر css و js 
+و&nbsp;webfonts&nbsp; را در مسیر font\fontawsome از پروژه قرار میدهیم.</p>
+
+<p dir="rtl">در فولدر css به غیر از all.min.css بقیه فایلها را حذف میکنیم.</p>
+
+<p dir="rtl">در فولدر js به غیر از all.min.js بقیه فایلها را حذف میکنیم.</p>
+
+<p dir="rtl">فایل all.min.css را در صفحه لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"font/fontawesome/css/all.min.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span></code></pre>
+
+<p dir="rtl">فایل all.min.js را در صفحه لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"font/fontawesome/css/all.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+<p dir="rtl">برای دیدن نحوه استفاده از آیکنها به <a href="https://fontawesome.com/icons?d=gallery&amp;q=caret" target="_blank">این صفحه</a> میرویم و به شکل زیر آیکنهای مورد نیاز را استفاده میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fas fa-caret-down"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span></code></pre>
+
+<h3 dir="rtl">دانلود و استفاده از Themify icons</h3>
+
+<p dir="rtl">برای دانلود فایل فشرده و مشاهده آیکنها به <a href="https://themify.me/themify-icons" target="_blank">این صفحه</a> میرویم. بعد از اکسترکت فایل فشرده نام فولدر را به themify تغییر میدهیم و این فولدر را در فولدر font از پروژه قرار میدهیم.</p>
+
+<p dir="rtl">فایل themify-icons.css را در فولدر css اصلی پروژه قرار میدهیم که کدهای این فایل بصورت زیر خواهد بود:</p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'themify'</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"><span class="hljs-function">url(<span class="hljs-string">'../font/themify/themify.eot'</span>)</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"><span class="hljs-function">url(<span class="hljs-string">'../font/themify/themify.eot?#iefix'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'embedded-opentype'</span>)</span>,
+		<span class="hljs-function">url(<span class="hljs-string">'../font/themify/themify.woff'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'woff'</span>)</span>,
+		<span class="hljs-function">url(<span class="hljs-string">'../font/themify/themify.ttf'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'truetype'</span>)</span>,
+		<span class="hljs-function">url(<span class="hljs-string">'../font/themify/themify.svg'</span>)</span> <span class="hljs-function">format(<span class="hljs-string">'svg'</span>)</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> normal</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-attr_selector">[class^="ti-"]</span>, <span class="hljs-attr_selector">[class*=" ti-"]</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'themify'</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">speak</span>:<span class="hljs-value"> none</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> normal</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> normal</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">font-variant</span>:<span class="hljs-value"> normal</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">text-transform</span>:<span class="hljs-value"> none</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+
+	<span class="hljs-comment">/* Better Font Rendering =========== */</span>
+	<span class="hljs-rule"><span class="hljs-attribute">-webkit-font-smoothing</span>:<span class="hljs-value"> antialiased</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">-moz-osx-font-smoothing</span>:<span class="hljs-value"> grayscale</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.ti-wand</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e600"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-volume</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e601"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-user</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e602"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-unlock</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e603"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-unlink</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e604"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-trash</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e605"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-thought</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e606"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-target</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e607"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-tag</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e608"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-tablet</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e609"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-star</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e60a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-spray</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e60b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-signal</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e60c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shopping-cart</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e60d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shopping-cart-full</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e60e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-settings</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e60f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-search</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e610"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-zoom-in</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e611"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-zoom-out</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e612"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-cut</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e613"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-ruler</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e614"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-ruler-pencil</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e615"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-ruler-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e616"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bookmark</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e617"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bookmark-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e618"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-reload</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e619"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-plus</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e61a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pin</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e61b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pencil</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e61c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pencil-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e61d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-paint-roller</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e61e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-paint-bucket</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e61f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-na</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e620"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-mobile</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e621"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-minus</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e622"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-medall</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e623"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-medall-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e624"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-marker</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e625"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-marker-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e626"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e627"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e628"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e629"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e62a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-lock</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e62b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-location-arrow</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e62c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-link</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e62d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e62e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layers</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e62f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layers-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e630"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-key</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e631"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-import</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e632"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-image</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e633"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-heart</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e634"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-heart-broken</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e635"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-stop</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e636"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-open</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e637"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-drag</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e638"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-folder</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e639"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-flag</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e63a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-flag-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e63b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-flag-alt-2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e63c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-eye</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e63d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-export</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e63e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-exchange-vertical</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e63f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-desktop</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e640"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-cup</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e641"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-crown</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e642"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-comments</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e643"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-comment</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e644"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-comment-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e645"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-close</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e646"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-clip</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e647"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e648"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e649"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e64a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e64b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-check</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e64c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-check-box</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e64d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-camera</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e64e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-announcement</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e64f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-brush</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e650"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-briefcase</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e651"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bolt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e652"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bolt-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e653"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-blackboard</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e654"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bag</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e655"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-move</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e656"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrows-vertical</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e657"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrows-horizontal</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e658"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-fullscreen</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e659"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-top-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e65a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-top-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e65b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-circle-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e65c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-circle-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e65d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-circle-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e65e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrow-circle-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e65f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-double-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e660"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-double-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e661"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-double-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e662"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-angle-double-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e663"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-zip</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e664"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-world</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e665"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-wheelchair</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e666"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-view-list</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e667"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-view-list-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e668"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-view-grid</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e669"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-uppercase</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e66a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-upload</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e66b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-underline</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e66c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-truck</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e66d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-timer</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e66e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-ticket</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e66f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-thumb-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e670"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-thumb-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e671"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-text</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e672"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-stats-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e673"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-stats-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e674"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-split-v</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e675"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-split-h</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e676"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-smallcap</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e677"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shine</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e678"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shift-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e679"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shift-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e67a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shield</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e67b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-notepad</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e67c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-server</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e67d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-quote-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e67e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-quote-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e67f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pulse</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e680"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-printer</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e681"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-power-off</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e682"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-plug</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e683"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pie-chart</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e684"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-paragraph</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e685"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-panel</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e686"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-package</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e687"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-music</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e688"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-music-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e689"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-mouse</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e68a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-mouse-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e68b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-money</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e68c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-microphone</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e68d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-menu</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e68e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-menu-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e68f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-map</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e690"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-map-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e691"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-loop</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e692"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-location-pin</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e693"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-list</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e694"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-light-bulb</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e695"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-Italic</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e696"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-info</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e697"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-infinite</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e698"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-id-badge</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e699"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hummer</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e69a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-home</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e69b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-help</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e69c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-headphone</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e69d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-harddrives</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e69e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-harddrive</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e69f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-gift</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a0"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-game</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a1"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-filter</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a2"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-files</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a3"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-file</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a4"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-eraser</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a5"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-envelope</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a6"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-download</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a7"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-direction</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a8"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-direction-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6a9"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-dashboard</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6aa"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-stop</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ab"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-shuffle</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ac"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-play</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ad"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-pause</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ae"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-forward</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6af"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-backward</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b0"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-cloud</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b1"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-cloud-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b2"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-cloud-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b3"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-clipboard</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b4"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-car</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b5"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-calendar</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b6"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-book</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b7"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bell</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b8"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-basketball</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6b9"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bar-chart</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ba"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-bar-chart-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6bb"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-back-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6bc"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-back-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6bd"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-arrows-corner</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6be"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-archive</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6bf"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-anchor</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c0"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-align-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c1"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-align-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c2"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-align-justify</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c3"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-align-center</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c4"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-alert</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c5"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-alarm-clock</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c6"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-agenda</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c7"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-write</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c8"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-window</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6c9"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-widgetized</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ca"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-widget</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6cb"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-widget-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6cc"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-wallet</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6cd"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-video-clapper</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ce"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-video-camera</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6cf"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-vector</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d0"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-themify-logo</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d1"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-themify-favicon</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d2"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-themify-favicon-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d3"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-support</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d4"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-stamp</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d5"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-split-v-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d6"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-slice</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d7"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shortcode</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d8"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shift-right-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6d9"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-shift-left-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6da"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-ruler-alt-2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6db"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-receipt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6dc"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pin2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6dd"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pin-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6de"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pencil-alt2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6df"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-palette</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e0"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-more</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e1"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-more-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e2"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-microphone-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e3"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-magnet</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e4"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-line-double</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e5"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-line-dotted</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e6"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-line-dashed</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e7"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-width-full</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e8"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-width-default</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6e9"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-width-default-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ea"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-tab</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6eb"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-tab-window</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ec"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-tab-v</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ed"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-tab-min</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ee"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-slider</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ef"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-slider-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f0"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-sidebar-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f1"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-sidebar-none</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f2"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-sidebar-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f3"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-placeholder</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f4"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-menu</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f5"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-menu-v</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f6"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-menu-separated</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f7"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-menu-full</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f8"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-right-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6f9"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6fa"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-overlay</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6fb"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-overlay-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6fc"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-overlay-alt-2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6fd"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-left-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6fe"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e6ff"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-center-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e700"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-media-center</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e701"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-list-thumb</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e702"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-list-thumb-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e703"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-list-post</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e704"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-list-large-image</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e705"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-line-solid</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e706"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid4</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e707"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid3</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e708"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e709"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid2-thumb</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e70a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-cta-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e70b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-cta-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e70c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-cta-center</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e70d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-cta-btn-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e70e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-cta-btn-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e70f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-column4</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e710"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-column3</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e711"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-column2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e712"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-accordion-separated</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e713"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-accordion-merged</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e714"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-accordion-list</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e715"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-ink-pen</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e716"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-info-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e717"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-help-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e718"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-headphone-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e719"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-point-up</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e71a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-point-right</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e71b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-point-left</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e71c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-hand-point-down</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e71d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-gallery</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e71e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-face-smile</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e71f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-face-sad</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e720"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-credit-card</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e721"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-skip-forward</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e722"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-skip-backward</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e723"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-record</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e724"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-control-eject</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e725"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-comments-smiley</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e726"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-brush-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e727"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-youtube</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e728"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-vimeo</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e729"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-twitter</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e72a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-time</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e72b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-tumblr</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e72c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-skype</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e72d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-share</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e72e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-share-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e72f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-rocket</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e730"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pinterest</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e731"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-new-window</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e732"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-microsoft</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e733"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-list-ol</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e734"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-linkedin</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e735"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-sidebar-2</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e736"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid4-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e737"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid3-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e738"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-grid2-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e739"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-column4-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e73a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-column3-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e73b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-layout-column2-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e73c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-instagram</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e73d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-google</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e73e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-github</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e73f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-flickr</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e740"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-facebook</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e741"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-dropbox</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e742"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-dribbble</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e743"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-apple</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e744"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-android</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e745"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-save</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e746"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-save-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e747"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-yahoo</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e748"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-wordpress</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e749"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-vimeo-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e74a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-twitter-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e74b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-tumblr-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e74c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-trello</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e74d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-stack-overflow</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e74e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-soundcloud</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e74f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-sharethis</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e750"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-sharethis-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e751"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-reddit</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e752"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-pinterest-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e753"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-microsoft-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e754"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-linux</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e755"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-jsfiddle</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e756"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-joomla</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e757"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-html5</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e758"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-flickr-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e759"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-email</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e75a"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-drupal</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e75b"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-dropbox-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e75c"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-css3</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e75d"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-rss</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e75e"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.ti-rss-alt</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">"\e75f"</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+
+<p dir="rtl">حالا این فایل را برای صفحه لود میکنیم:</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/themify-icons.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span>&gt;</span></code></pre>
+
+<p dir="rtl">&nbsp;</p>
+    </div>
+    
+    <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1397-07-22 13:14:14</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1397-07-22 20:08:41</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/jquery.js"></script>
+        <script src="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/bootstrap.js"></script>
+        <script src="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/ckeditor.js"></script>
+        <script src="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/ckfinder.js"></script>
+        <script src="%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%86%D8%B5%D8%A8%20Jquery,%20Bootstrap,%20Style,%20Script,%20Font_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>
