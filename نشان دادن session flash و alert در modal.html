@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>نشان دادن session flash و alert در modal
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/monokai.css" rel="stylesheet">
+        <script src="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>نشان دادن session flash و alert در modal</h2>
+    </div>
+    <hr>
+    
+    <div class="article mt-5">
+        <p dir="rtl">برای نشان دادن session flash در modal ابتدا باید 
+کنترلر که در آن هستیم را از کنترلر دیگری به نام ParentController مشتق 
+کنیم. با این کار در هر کنترلری که نیاز باشد میتوانیم براحتی از مودالها 
+استفاده کنیم.</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArticleController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ParentController</span>{</span>
+     <span class="hljs-comment">//</span>
+}</code></pre>
+
+<p dir="rtl">در ParentController متد flashAlert را بصورت زیر مینویسیم:</p>
+
+<pre><code class="language-0 hljs php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">flashAlert</span><span class="hljs-params">(<span class="hljs-variable">$message</span> = <span class="hljs-string">'عملیات با موفقیت انجام شد.'</span>, <span class="hljs-variable">$class</span> = <span class="hljs-string">'success'</span>, <span class="hljs-variable">$title</span> = <span class="hljs-string">''</span>)</span> {</span>
+    session()-&gt;flash(<span class="hljs-string">'flash'</span>, 
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-variable">$class</span>,
+            <span class="hljs-string">'title'</span> =&gt; <span class="hljs-variable">$title</span>,
+            <span class="hljs-string">'message'</span> =&gt; <span class="hljs-variable">$message</span>,
+        ]
+    );
+}</code></pre>
+
+<p dir="rtl">با هر کدام از روشهای زیر بسته به نیازمان میتوانیم متد flashAlert را فراخوانی کنیم:</p>
+
+<pre><code class="language-0 hljs cs">$<span class="hljs-keyword">this</span>-&gt;flashAlert(); <span class="hljs-comment">// این دستور پیام موفقیت را بدون عنوان نشان خواهد داد</span>
+
+$<span class="hljs-keyword">this</span>-&gt;flashAlert(<span class="hljs-string">'ویرایش مقاله با موفقیت انجام شد.'</span>);
+
+$<span class="hljs-keyword">this</span>-&gt;flashAlert(<span class="hljs-string">'ویرایش مقاله با موفقیت انجام شد.'</span>, <span class="hljs-string">'warning'</span>);
+
+$<span class="hljs-keyword">this</span>-&gt;flashAlert(<span class="hljs-string">'ویرایش مقاله انجام نشد.'</span>, <span class="hljs-string">'danger'</span>);
+
+$<span class="hljs-keyword">this</span>-&gt;flashAlert(<span class="hljs-string">'ویرایش مقاله انجام نشد.'</span>, <span class="hljs-string">'danger'</span>, <span class="hljs-string">'ناموفق'</span>);
+
+$<span class="hljs-keyword">this</span>-&gt;flashAlert(<span class="hljs-string">'مقاله با موفقیت حذف شد.'</span>, <span class="hljs-string">'info'</span>, <span class="hljs-string">'موفق'</span>);</code></pre>
+
+<p dir="rtl">کلاسهایی که میتوانیم استفاده کنیم success, warning, danger, info هستند.</p>
+
+<p dir="rtl">در فایل resources\views\includes\session-flash.blade.php کدهای زیر را مینویسیم:</p>
+
+<pre><code class="language-0 hljs xml">@if(session()-&gt;has('flash'))
+<span class="php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-variable">$flash</span> = session()-&gt;get(<span class="hljs-string">'flash'</span>);
+<span class="hljs-preprocessor">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal fade"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"exampleModalCenter"</span> <span class="hljs-attribute">tabindex</span>=<span class="hljs-value">"-1"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"dialog"</span> <span class="hljs-attribute">aria-labelledby</span>=<span class="hljs-value">"exampleModalCenterTitle"</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal-dialog modal-dialog-centered"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"document"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal-content text-{{ $flash['class'] }} border border-{{ $flash['class'] }} bg-light"</span>&gt;</span>
+            @if($flash['title'] != '')
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal-title border-0 p-2"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">h5</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal-title"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"exampleModalLongTitle"</span>&gt;</span>
+                    {{ $flash['title'] }}
+                <span class="hljs-tag">&lt;/<span class="hljs-title">h5</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            @endif
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"modal-body mt-2 mb-4 text-center text-dark"</span>&gt;</span>
+                @if($flash['class'] == 'success')
+                <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ti-check text-{{ $flash['class'] }}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+                @elseif($flash['class'] == 'danger')
+                <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ti-alert text-{{ $flash['class'] }}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+                @elseif($flash['class'] == 'warning')
+                <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ti-pencil-alt text-{{ $flash['class'] }}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+                @elseif($flash['class'] == 'info')
+                <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ti-close text-{{ $flash['class'] }}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
+                @endif
+                {{ $flash['message'] }}
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p-0 my-2 text-center"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-{{ $flash['class'] }} btn-sm"</span> <span class="hljs-attribute">data-dismiss</span>=<span class="hljs-value">"modal"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Close"</span>&gt;</span>بسته شود<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+@endif</code></pre>
+
+<p dir="rtl">و این کد را در صفحه ای که میخواهیم استفاده کنیم با دستور زیر اینکلود میکنیم:</p>
+
+<pre><code class="language-0 hljs ruby"><span class="hljs-variable">@include</span>(<span class="hljs-string">'includes.session-flash'</span>)</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+    </div>
+    
+    <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1397-07-25 22:20:51</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1397-07-26 00:03:03</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/jquery.js"></script>
+        <script src="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/bootstrap.js"></script>
+        <script src="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/ckeditor.js"></script>
+        <script src="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/ckfinder.js"></script>
+        <script src="%D9%86%D8%B4%D8%A7%D9%86%20%D8%AF%D8%A7%D8%AF%D9%86%20session%20flash%20%D9%88%20alert%20%D8%AF%D8%B1%20modal_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>
