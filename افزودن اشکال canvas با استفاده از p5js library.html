@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>افزودن اشکال canvas با استفاده از p5js library
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/monokai.css" rel="stylesheet">
+        <script src="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>افزودن اشکال canvas با استفاده از p5js library</h2>
+    </div>
+    <hr>
+    
+    <div class="article mt-5">
+        <p dir="rtl">کتابخانه <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">p5js</span> به ما کمک میکند تا اشکال زیبای هندسی را رسم کنیم و متحرک سازی نماییم.</p>
+
+<p dir="rtl">این کتابخانه را از صفحه <a href="https://p5js.org/download/" target="_blank">p5js.org/download</a> دانلود میکنیم.</p>
+
+<p dir="rtl">جی کوئری را هم از <a href="https://jquery.com/download/" target="_blank">jquery.com/download</a> دانلود میکنیم.</p>
+
+<h3 dir="rtl">مثال برای قرار دادن canvas در اندازه کل عرض صفحه</h3>
+
+<p dir="rtl">فایل p5.js.convas.practice\index.html را ایجاد میکنیم که شامل کدهای زیر خواهد بود:</p>
+
+<pre><code class="language-4 hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"fa"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>p5js project<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/my-styles.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> &gt;</span>
+  
+		<span class="hljs-comment">&lt;!-- &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"&gt;&lt;/script&gt; --&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/p5.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+	
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  
+	<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"canvas"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/jquery.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/my.p5-1.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+		
+	<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p dir="rtl">در فایل js\my.p5-1.js کدهای جاوا اسکریپت مربوط به canvas را مینویسیم.</p>
+
+<pre><code class="language-0 hljs makefile">
+var canvas = function(p) {
+	
+	p.setup = function(){
+		
+		var width = <span class="hljs-variable">$(window)</span>.innerWidth(); 
+		var height = <span class="hljs-variable">$(window)</span>.innerHeight() / 2 + 10;	
+		
+		p.createCanvas(width, height);
+		p.background('red');
+		p.fill('yellow');
+		
+	}
+	
+	p.windowResized = function() {
+		
+		var width = <span class="hljs-variable">$(window)</span>.innerWidth(); 
+		var height = <span class="hljs-variable">$(window)</span>.innerHeight() / 2;
+		
+		p.resizeCanvas(width - 10, height - 10);
+		p.background('#00a');
+		
+	}	
+	
+	p.draw = function() {
+				
+		if(p.mouseIsPressed){
+			p.fill('green');
+			p.background('orange');
+			p.rect(100, 100, p.mouseX, p.mouseY);
+		}
+		else{
+			p.fill('orange');
+			p.background('green');
+			p.rect(100,100, p.mouseX, p.mouseY);
+		}
+		
+	}
+
+	
+};
+new p5(canvas, window.document.getElementById('canvas'));
+
+</code></pre>
+
+<p dir="rtl">تابع setup برای کدهایی است که یک بار اجرا میشوند و تابع 
+windowResized موقعی اجرا میشود که سایز صفحه تغییر کند و تابع draw برای 
+کدهایی است که باید تکرار شوند و حلقه تکرار است.</p>
+
+<p dir="rtl">در فایل css\my-styles.css استایلهای لازم را مینویسیم:</p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-comment">/***********************************************************************************
+							Page styles
+***********************************************************************************/</span>
+<span class="hljs-tag">body</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">direction</span>:<span class="hljs-value"> rtl</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">h1</span>, <span class="hljs-tag">h2</span>, <span class="hljs-tag">h3</span>, <span class="hljs-tag">h4</span>, <span class="hljs-tag">h5</span>, <span class="hljs-tag">h6</span>, <span class="hljs-tag">p</span> <span class="hljs-rules">{
+
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">15</span>px <span class="hljs-number">0</span> <span class="hljs-number">26</span>px</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#0b030a</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-comment">/***********************************************************************************
+							Canvas styles
+***********************************************************************************/</span>
+<span class="hljs-id">#parent-canvas</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">50</span>%</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px auto</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> purple</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">min-height</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-id">#canvas</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">100</span>px</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> black</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-id">#defaultCanvas0</span> <span class="hljs-rules">{
+
+    <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> -<span class="hljs-number">4</span>px</span></span>;
+
+<span class="hljs-rule">}</span></span>
+
+</code></pre>
+
+<p dir="rtl">آیدی defaultCanvas0 بعد از اجرا به تگ canvas تعلق مییابد که داخل تگ div که آیدی canvas دارد ایجاد شده است.</p>
+
+<h3 dir="rtl">مثال برای قرار دادن canvas در اندازه عرض یک المنت</h3>
+
+<p dir="rtl">فایل p5.js.convas.practice\index-2.html را ایجاد میکنیم که شامل کدهای زیر خواهد بود:</p>
+
+<pre><code class="language-4 hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"fa"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>p5js project 2<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/my-styles-2.css"</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> &gt;</span>
+  
+		<span class="hljs-comment">&lt;!-- &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"&gt;&lt;/script&gt; --&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/p5.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+	
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  
+	<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+	
+		<span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>ایجاد canvas در حد یک المنت از صفحه<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"parent-canvas"</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"canvas"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+		
+		<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/jquery.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/my.p5-2.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+		
+	<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
+<p dir="rtl">در فایل js\my.p5-2.js کدهای جاوا اسکریپت مربوط به canvas را مینویسیم.</p>
+
+<pre><code class="language-0 hljs makefile">
+var canvas = function(p) {
+	
+	p.setup = function(){
+		
+		var width = <span class="hljs-variable">$('#parent-canvas')</span>.innerWidth(); 
+		var height = width / 2;	
+		
+		p.createCanvas(width, height);
+		p.background('red');
+		p.fill('yellow');
+		
+	}
+	
+	p.windowResized = function() {
+		
+		var width = <span class="hljs-variable">$('#parent-canvas')</span>.innerWidth(); 
+		var height = width / 2;
+		
+		p.resizeCanvas(width, height);
+		p.background('#00a');
+		
+	}	
+	
+	p.draw = function() {
+				
+		if(p.mouseIsPressed){
+			p.fill('green');
+			p.background('orange');
+			p.rect(100, 100, p.mouseX, p.mouseY);
+		}
+		else{
+			p.fill('orange');
+			p.background('green');
+			p.rect(100,100, p.mouseX, p.mouseY);
+		}
+		
+	}
+
+	
+};
+new p5(canvas, window.document.getElementById('canvas'));
+</code></pre>
+
+<p dir="rtl">در فایل css\my-styles-2.css استایلهای لازم را مینویسیم:</p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-comment">/***********************************************************************************
+							Page styles
+***********************************************************************************/</span>
+<span class="hljs-tag">body</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">direction</span>:<span class="hljs-value"> rtl</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">h1</span>, <span class="hljs-tag">h2</span>, <span class="hljs-tag">h3</span>, <span class="hljs-tag">h4</span>, <span class="hljs-tag">h5</span>, <span class="hljs-tag">h6</span>, <span class="hljs-tag">p</span> <span class="hljs-rules">{
+
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">15</span>px <span class="hljs-number">0</span> <span class="hljs-number">26</span>px</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#0b030a</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-comment">/***********************************************************************************
+							Canvas styles
+***********************************************************************************/</span>
+<span class="hljs-id">#parent-canvas</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">50</span>%</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px auto</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> purple</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">min-height</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-id">#canvas</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> black</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-id">#defaultCanvas0</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> -<span class="hljs-number">4</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+
+</code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<p dir="rtl">&nbsp;</p>
+    </div>
+    
+    <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1397-07-29 21:53:53</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1397-07-30 16:51:25</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/jquery.js"></script>
+        <script src="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/bootstrap.js"></script>
+        <script src="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/ckeditor.js"></script>
+        <script src="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/ckfinder.js"></script>
+        <script src="%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%86%20%D8%A7%D8%B4%DA%A9%D8%A7%D9%84%20canvas%20%D8%A8%D8%A7%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20p5js%20library_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>
