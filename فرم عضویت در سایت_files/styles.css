@@ -1,0 +1,355 @@
+html, body{
+    font-family: vazir;
+    font-size: 16px;
+	padding-top: 28px;
+}
+
+.btn{
+	border-radius: 30px !important;
+}
+
+a{
+	color: #888;
+	text-decoration: none;
+}
+a:hover,
+a:focus{
+	color: #4cd137;
+	text-decoration: none;
+}
+.navbar{
+	padding: 8px;
+	transition: all .3s ease;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+.navbar-brand{
+	font-weight: bold;
+}
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link {
+    color: #fcf906;
+}
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-brand:focus,
+.navbar-dark .navbar-brand:hover {
+    color: #c0fed8;
+}
+
+.bg-success {
+    background-color: #44bd32 !important;
+}
+
+.has-error{
+	padding: 7px 0;
+	margin-bottom: 7px;
+	color: #cc0000;
+	background-color: #ffc6c6;
+}
+
+.form-control{
+	background-color: #f8f9fa;
+	border-left: 0;
+	border-radius: 30px;
+	transition: none;
+	border: 1px solid #cad4cc;
+	padding: 5px 18px 7px;
+	width: 98% !important;
+}
+.form-inline{
+	position: relative;
+	width: 94%;
+}
+.form-inline .form-control{
+	padding: 5px 18px 7px 100px;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ffc107;
+    outline: 0;
+    box-shadow: none !important;
+}
+.form-inline .btn-warning{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid #ffc107;
+	padding: 6px 30px;
+}
+
+.dropdown-menu{
+	left: -45px;
+	border: 0;
+	border-radius: 0;
+	margin: 8px 0 0;
+	padding: 1px;
+	text-align: right;
+	background-color: #4cd137;
+}
+
+#basket{
+	border: 2px solid #888;
+	padding: 15px 8px 11px;
+	line-height: normal;
+	transition: all .5s ease;
+}
+#basket .ti-shopping-cart{
+	font-size: 24px;
+	color: #44bd32;
+}
+#basket .badge-pill {
+    border-radius: 14px;
+    padding: 5px 22px 0px;
+    background-color: #cad4cc;
+    width: 56px !important;
+    height: 30px !important;
+}
+.top-basket{
+	position: fixed;
+	top: 41px;
+	left: 1px;
+	background-color: #fff;
+	width: 18% !important;
+	padding-bottom: 18px !important;
+	line-height: 2 !important;
+	z-index: 1000;
+}
+
+ /* Style the list */
+ul.breadcrumb {
+	padding: 5px 20px 2px;
+	list-style: none;
+	background-color: #f8f9fa;
+	border-radius: 0;
+}
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  color: #A6A6A6;
+}
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #44bd32;
+  text-decoration: none;
+}
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #4cd137;
+  text-decoration: none;
+} 
+
+.modal-dialog {
+    margin: 12% auto;
+}
+.modal-sm {
+    max-width: 30%;
+}
+.modal i {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 auto 34px;
+    border-radius: 100%;
+    padding: 20px;
+}
+
+#slider{
+	background-color: #6ab04c; 
+}
+
+.products{
+	background-color: #fff;
+}
+.products h2 {
+	font-size: 50px;
+	margin-bottom: 40px;
+}
+.products .ti-hand-point-down {
+    font-size: 47px;
+    margin-top: 14px;
+    position: absolute;
+}
+.products .product-cover{
+	overflow: hidden;
+	padding: 0 3px 5px 2px;
+	background-color: #fcf9f3;
+	background-color: transparent;
+}
+.products .product-cover .card{
+	border: none;
+	transition: all .3s ease;
+	transform: scale(1);
+	padding-bottom: 5px;
+	background-color: #f6f9ea;
+}
+.products .product-cover .card img{
+	height: 200px;
+}
+.products .product-cover .card .card-body{
+	padding: 0.5rem 1.25rem;
+}
+.products .product-cover .card .card-body .card-title{
+	font-size: 18px;
+	color: #006266;
+	text-decoration: none;
+}
+.products .product-cover .card .card-body .card-title:hover{
+	color: #FFC312;
+}
+.products .product-cover .card .card-body .card-text{
+	font-size: 12px;
+	text-align: justify;
+	margin: 4px 0 6px;
+}
+.products .product-cover .card .card-body .card-price{
+	font-size: 25px;
+	text-align: center;
+	margin: 12px 0;
+}
+.products .product-cover:hover .card{
+	transform: scale(1.05);
+	background-color: #F8EFBA;
+}
+
+.proposal img{
+	height: 124px !important;
+}
+.proposal .card-body{
+	padding: 0.5rem 0.25rem !important;
+}
+.proposal .card-price{
+	font-size: 20px !important;
+}
+
+#footer{
+	color: #ddd;
+}
+#footer .form-control{
+	background-color: #ccc;
+}
+#footer .form-control:focus{
+	background-color: #fff;
+}
+#footer .btn-secondary{
+	padding: 8px 50px;
+}
+#footer #telegram{
+	width: 80%;
+	margin-bottom: 20px;
+}
+#footer .end{
+	margin-top: 30px;
+	padding-top: 15px;
+	border-top: 2px solid #888;
+}
+
+#Scroll_to_top { 
+display:none;
+position:fixed;
+bottom:38px;
+right:20px;
+color: #44bd32;
+font-size: 50px;
+}
+
+#Scroll_to_top:hover {
+	color: #6ef954;
+}
+
+
+@media  (max-width: 1201px) {
+	.products .product-cover .card .card-body .d-flex .btn{
+		width: 100%;
+		margin-bottom: 5px;
+		padding: 8px;
+	}
+	.products .product-cover .card img{
+		height: 165px;
+	}
+	.proposal img{
+		height: 115px !important;
+	}
+}
+
+@media  (max-width: 991px) {
+	#basket{
+		text-align: center;
+	}
+	.products h2 {
+		font-size: 35px;
+	}
+	.products .product-cover .card img{
+		height: 240px;
+	}
+	.proposal img{
+		height: 118px !important;
+	}
+}
+
+@media  (max-width: 769px) {
+	.form-inline{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	#basket{
+		margin-bottom: 10px;
+	}
+	#basket .badge-pill {
+		top: 2px;
+	}
+	.top-basket {
+		width: 22% !important;
+		padding: 3px !important;
+	}
+
+	.products .product-cover .card img{
+		height: 182px;
+	}
+	.proposal img{
+		height: 122px !important;
+	}
+}
+
+@media  (max-width: 577px) {
+	.top-basket {
+		width: 30% !important;
+	}
+	.products .product-cover .card img{
+		height: 340px;
+	}
+	.proposal img{
+		height: 175px !important;
+	}
+}
+
+@media  (max-width: 430px) {
+	top-basket {
+		width: 35% !important;
+		padding: 0 !important;
+		font-size: 15px;
+	}
+	.proposal img{
+		height: 126px !important;
+	}
+}
+
+@media  (max-width: 251px) {
+	.btn-warning{
+		top: 45px;
+		left: 33%;
+		border-radius: 4px;
+	}
+	.products .product-cover .card img{
+		height: 170px;
+	}
+}
