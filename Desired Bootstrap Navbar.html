@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fa"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Desired Bootstrap Navbar
+</title>
+
+        <!-- Fonts -->
+        <!--<link href="" rel="stylesheet" type="text/css">-->
+        <link href="Desired%20Bootstrap%20Navbar_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="Desired%20Bootstrap%20Navbar_files/bootstrap-rtl.css" rel="stylesheet" type="text/css">
+        <link href="Desired%20Bootstrap%20Navbar_files/themify-icons.css" rel="stylesheet" type="text/css">
+        <link href="Desired%20Bootstrap%20Navbar_files/vazir.css" rel="stylesheet" type="text/css">
+        <link href="Desired%20Bootstrap%20Navbar_files/styles.css" rel="stylesheet" type="text/css">
+        
+        <link href="Desired%20Bootstrap%20Navbar_files/monokai.css" rel="stylesheet">
+        <script src="Desired%20Bootstrap%20Navbar_files/highlight.js"></script>
+
+    <style>.cke{visibility:hidden;}</style></head>
+    <body class="bg-light">
+        
+        <section id="content">
+            <div class="container bg-white min-height-800px">
+    <div class="text-info text-center pt-4">
+        <h2>Desired Bootstrap Navbar</h2>
+    </div>
+    <hr>
+    
+    <div class="article mt-5">
+        <p dir="rtl">برای اینکه بتوانیم Navbar را به شکل دلخواهمان دربیاوریم مراحل زیر را باید طی کنیم:</p>
+
+<p dir="rtl">1- از صفحه <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank">bootstrap navbar</a> کد پیش فرض را برمیداریم.</p>
+
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar navbar-expand-lg navbar-light bg-light"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-brand"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Navbar<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-toggler"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"collapse"</span> <span class="hljs-attribute">data-target</span>=<span class="hljs-value">"#navbarSupportedContent"</span> <span class="hljs-attribute">aria-controls</span>=<span class="hljs-value">"navbarSupportedContent"</span> <span class="hljs-attribute">aria-expanded</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Toggle navigation"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-toggler-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"collapse navbar-collapse"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"navbarSupportedContent"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-nav mr-auto"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item active"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Home <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sr-only"</span>&gt;</span>(current)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item dropdown"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link dropdown-toggle"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"navbarDropdown"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"dropdown"</span> <span class="hljs-attribute">aria-haspopup</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">aria-expanded</span>=<span class="hljs-value">"false"</span>&gt;</span>
+          Dropdown
+        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-menu"</span> <span class="hljs-attribute">aria-labelledby</span>=<span class="hljs-value">"navbarDropdown"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link disabled"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-inline my-2 my-lg-0"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control mr-sm-2"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"search"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Search"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Search"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-outline-success my-2 my-sm-0"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></code></pre>
+
+<p dir="rtl">2- اگر میخواهیم از حالت md به پایین navbar-toggler را مشاهده کنیم کلاس navbar-expand-lg را به navbar-expand-md تغییر میدهیم.</p>
+
+<pre><code class="language-0 hljs javascript">&lt;nav <span class="hljs-keyword">class</span>=<span class="hljs-string">"navbar navbar-expand-md navbar-light bg-light"</span>&gt;</code></pre>
+
+<p dir="rtl">3- اگر بخواهیم navbar بصورت دائمی در بالای صفحه قرار داشته باشد کلاس fixed-top را به آن اضافه میکنیم.</p>
+
+<pre><code class="language-0 hljs javascript">&lt;nav <span class="hljs-keyword">class</span>=<span class="hljs-string">"navbar navbar-expand-lg fixed-top navbar-light bg-light"</span>&gt;</code></pre>
+
+<p dir="rtl">4- برای اینکه لینکها و فرم جستجو در دو طرف قرار بگیرند کلاس
+ justify-content-between را به کلاس collapse navbar-collapse اضافه 
+میکنیم.</p>
+
+<pre><code class="language-0 hljs javascript">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"collapse navbar-collapse justify-content-between"</span> id=<span class="hljs-string">"navbarSupportedContent"</span>&gt;</code></pre>
+
+<p dir="rtl">5- برای اینکه محدوده بین navbar-brand و فرم جستجو بصورت 
+کامل با لینکها پر شود، کلاس flex-fill را به کلاس navbar-nav اختصاص 
+میدهیم.</p>
+
+<pre><code class="language-0 hljs javascript">&lt;ul <span class="hljs-keyword">class</span>=<span class="hljs-string">"navbar-nav flex-fill"</span>&gt;</code></pre>
+
+<p dir="rtl">6- برای اینکه فاصله بین لینکها مساوی باشد کلاس flex-fill را به کلاسهای nav-item اختصاص میدهیم.</p>
+
+<pre><code class="language-0 hljs javascript">&lt;li <span class="hljs-keyword">class</span>=<span class="hljs-string">"flex-fill nav-item"</span>&gt;</code></pre>
+
+<p dir="rtl">7- برای اینکه dropdown-menu در موقع گرفتن کلاس show بصورت انیمیشن دربیاد، استایلهای زیر را برایش تنظیم میکنیم.</p>
+
+<pre><code class="language-0 hljs css"><span class="hljs-class">.dropdown-menu</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> hidden</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">4</span>s ease</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateY(<span class="hljs-number">45</span>deg)</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.dropdown-menu</span><span class="hljs-class">.show</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> visible</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">4</span>s ease</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateY(<span class="hljs-number">0</span>)</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+<p dir="rtl">8- استایل کلی و دلخواه navbar به این صورت خواهد بود:</p>
+
+<pre><code class="language-0 hljs css">*<span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">body</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">padding-top</span>:<span class="hljs-value"> <span class="hljs-number">60</span>px</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span>,
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:focus</span>,
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:active</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C3272B</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.navbar</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10</span>px</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">5</span>s ease</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar-brand</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding-top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">20</span>px</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> inherit</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> nowrap</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span>,
+<span class="hljs-class">.navbar-brand</span>,
+<span class="hljs-class">.dropdown-item</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">3</span>s ease</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar-brand</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-pseudo">:focus</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-pseudo">:active</span>,
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-pseudo">:hover</span>,
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-brand</span><span class="hljs-pseudo">:focus</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-brand</span><span class="hljs-pseudo">:active</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-brand</span><span class="hljs-pseudo">:hover</span>,
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.active</span> &gt; <span class="hljs-class">.nav-link</span><span class="hljs-pseudo">:hover</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-class">.active</span><span class="hljs-pseudo">:hover</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-class">.show</span><span class="hljs-pseudo">:hover</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.show</span> &gt; <span class="hljs-class">.nav-link</span><span class="hljs-pseudo">:hover</span>,
+<span class="hljs-class">.dropdown-item</span><span class="hljs-pseudo">:focus</span>, 
+<span class="hljs-class">.dropdown-item</span><span class="hljs-pseudo">:active</span>, 
+<span class="hljs-class">.dropdown-item</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#DC3023</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">3</span>s ease</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.active</span> &gt; <span class="hljs-class">.nav-link</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-class">.active</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-class">.show</span>, 
+<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.show</span> &gt; <span class="hljs-class">.nav-link</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-function">rgb(<span class="hljs-number">125</span>, <span class="hljs-number">125</span>, <span class="hljs-number">125</span>)</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.flex-fill</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span> <span class="hljs-number">1</span> auto <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.navbar</span> <span class="hljs-class">.form-inline</span> <span class="hljs-class">.form-control</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fdf1f1</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">2</span>px solid <span class="hljs-hexcolor">#dc3545</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">border-left</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">5</span>px <span class="hljs-number">5</span>px <span class="hljs-number">7</span>px <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> inherit <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">6</span>s ease</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar</span> <span class="hljs-class">.form-inline</span> <span class="hljs-class">.form-control</span><span class="hljs-pseudo">:focus</span> <span class="hljs-rules">{
+	
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span> <span class="hljs-important">!important</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fff</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">box-shadow</span>:<span class="hljs-value"> none <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">6</span>s ease</span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.navbar</span> <span class="hljs-class">.form-inline</span> <span class="hljs-class">.btn</span> <span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">6</span>px <span class="hljs-number">5</span>px <span class="hljs-number">8</span>px <span class="hljs-important">!important</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.dropdown-menu</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> hidden</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">4</span>s ease</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateY(<span class="hljs-number">45</span>deg)</span></span></span>;
+<span class="hljs-rule">}</span></span>
+<span class="hljs-class">.dropdown-menu</span><span class="hljs-class">.show</span><span class="hljs-rules">{
+	<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> visible</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">4</span>s ease</span></span>;
+	<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateY(<span class="hljs-number">0</span>)</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+
+
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">768</span>px) </span>{
+	<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-toggler</span> <span class="hljs-rules">{
+		<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#000</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> transparent</span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> transparent</span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-value"> <span class="hljs-number">8</span>px <span class="hljs-important">!important</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">5</span>s ease</span></span>;
+	<span class="hljs-rule">}</span></span>
+	<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-toggler</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+		<span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C3272B</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#C3272B</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">5</span>s ease</span></span>;
+	<span class="hljs-rule">}</span></span>
+	<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span>,
+	<span class="hljs-class">.navbar-brand</span>,
+	<span class="hljs-class">.dropdown-item</span> <span class="hljs-rules">{
+		<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">5</span>px <span class="hljs-number">10</span>px</span></span>;
+	<span class="hljs-rule">}</span></span>
+	<span class="hljs-class">.navbar-light</span> <span class="hljs-class">.navbar-nav</span> <span class="hljs-class">.nav-link</span><span class="hljs-pseudo">:hover</span>,
+	<span class="hljs-class">.dropdown-item</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
+		<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f6f6f6</span></span></span>;
+	<span class="hljs-rule">}</span></span>
+	<span class="hljs-class">.flex-fill</span> <span class="hljs-rules">{
+		<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">7</span>px <span class="hljs-number">0</span></span></span>;
+	<span class="hljs-rule">}</span></span>
+	<span class="hljs-class">.dropdown-menu</span><span class="hljs-rules">{
+		<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> none</span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> visible</span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> transparent</span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> none <span class="hljs-important">!important</span></span></span>;
+		<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> none <span class="hljs-important">!important</span></span></span>;
+	<span class="hljs-rule">}</span></span>
+
+
+}</code></pre>
+
+<p dir="rtl">9- کدهای jquery لازم برای navbar بصورت زیر خواهند بود.</p>
+
+<pre><code class="language-0 hljs javascript">$(document).ready(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+
+        <span class="hljs-comment">// Show dropdown in slide mode when whidth &lt; 768</span>
+        $(<span class="hljs-string">'.dropdown'</span>).on(<span class="hljs-string">'show.bs.dropdown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">if</span>($(window).width() &lt; <span class="hljs-number">768</span>){
+                    $(<span class="hljs-keyword">this</span>).find(<span class="hljs-string">'.dropdown-menu'</span>).first().stop(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>).slideDown();
+                }    
+        });
+        $(<span class="hljs-string">'.dropdown'</span>).on(<span class="hljs-string">'hide.bs.dropdown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">if</span>($(window).width() &lt; <span class="hljs-number">768</span>){
+                        $(<span class="hljs-keyword">this</span>).find(<span class="hljs-string">'.dropdown-menu'</span>).first().stop(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>).slideUp();
+                }    
+        });
+
+        <span class="hljs-comment">// Change navbar styles</span>
+        $(window).scroll(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-keyword">if</span>($(window).scrollTop() &gt; <span class="hljs-number">60</span>) {
+                        $(<span class="hljs-string">'.navbar'</span>).addClass(<span class="hljs-string">'py-0'</span>);
+                } <span class="hljs-keyword">else</span> {
+                        $(<span class="hljs-string">'.navbar'</span>).removeClass(<span class="hljs-string">'py-0'</span>);
+                }
+        });
+
+});</code></pre>
+
+<p>&nbsp;</p>
+    </div>
+    
+    <div class="clearfix d-flex flex-column flex-lg-row justify-content-center mb-3">
+        <div class="px-3">
+            <span>تاریخ ایجاد: </span>
+            <small class="text-muted">1398-04-29 09:13:20</small>
+        </div>
+        <div class="px-3">
+            <span>تاریخ ویرایش: </span>
+            <small class="text-muted">1398-04-29 10:26:11</small>
+        </div>
+    </div>
+    
+</div>
+        </section>
+
+
+        <script src="Desired%20Bootstrap%20Navbar_files/jquery.js"></script>
+        <script src="Desired%20Bootstrap%20Navbar_files/bootstrap.js"></script>
+        <script src="Desired%20Bootstrap%20Navbar_files/ckeditor.js"></script>
+        <script src="Desired%20Bootstrap%20Navbar_files/ckfinder.js"></script>
+        <script src="Desired%20Bootstrap%20Navbar_files/config.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+</body></html>
