@@ -34,40 +34,46 @@
 
 <p dir="rtl">1- از صفحه <a href="https://getbootstrap.com/docs/4.0/components/navbar/" target="_blank">bootstrap navbar</a> کد پیش فرض را برمیداریم.</p>
 
-<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar navbar-expand-lg navbar-light bg-light"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-brand"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Navbar<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-toggler"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"collapse"</span> <span class="hljs-attribute">data-target</span>=<span class="hljs-value">"#navbarSupportedContent"</span> <span class="hljs-attribute">aria-controls</span>=<span class="hljs-value">"navbarSupportedContent"</span> <span class="hljs-attribute">aria-expanded</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Toggle navigation"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-toggler-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<pre><code class="language-0 hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar navbar-expand-md fixed-top navbar-light bg-light"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-brand d-lg-none"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Project Name<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-toggler"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"collapse"</span> <span class="hljs-attribute">data-target</span>=<span class="hljs-value">"#navbarSupportedContent"</span> <span class="hljs-attribute">aria-controls</span>=<span class="hljs-value">"navbarSupportedContent"</span> <span class="hljs-attribute">aria-expanded</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Toggle navigation"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-toggler-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
 
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"collapse navbar-collapse"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"navbarSupportedContent"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-nav mr-auto"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item active"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Home <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sr-only"</span>&gt;</span>(current)<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item dropdown"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link dropdown-toggle"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"navbarDropdown"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"dropdown"</span> <span class="hljs-attribute">aria-haspopup</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">aria-expanded</span>=<span class="hljs-value">"false"</span>&gt;</span>
-          Dropdown
-        <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-menu"</span> <span class="hljs-attribute">aria-labelledby</span>=<span class="hljs-value">"navbarDropdown"</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-item"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link disabled"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-inline my-2 my-lg-0"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control mr-sm-2"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"search"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Search"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Search"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-outline-success my-2 my-sm-0"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"collapse navbar-collapse justify-content-between"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"navbarSupportedContent"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-nav flex-fill"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-fill nav-item active"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-fill nav-item"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-fill nav-item"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-fill nav-item"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-fill nav-item dropdown"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link dropdown-toggle"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"navbarDropdown"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"dropdown"</span> <span class="hljs-attribute">aria-haspopup</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">aria-expanded</span>=<span class="hljs-value">"false"</span>&gt;</span>
+        Dropdown
+      <span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-menu"</span> <span class="hljs-attribute">aria-labelledby</span>=<span class="hljs-value">"navbarDropdown"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"dropdown-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"flex-fill nav-item"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav-link disabled"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-inline d-lg-none my-2 my-lg-0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"form-control mr-sm-2"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"search"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Search"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Search"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-danger my-2 my-sm-0"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span></code></pre>
 
 <p dir="rtl">2- اگر میخواهیم از حالت md به پایین navbar-toggler را مشاهده کنیم کلاس navbar-expand-lg را به navbar-expand-md تغییر میدهیم.</p>
@@ -96,24 +102,93 @@
 
 <p dir="rtl">7- برای اینکه dropdown-menu در موقع گرفتن کلاس show بصورت انیمیشن دربیاد، استایلهای زیر را برایش تنظیم میکنیم.</p>
 
-<pre><code class="language-0 hljs css"><span class="hljs-class">.dropdown-menu</span><span class="hljs-rules">{
-	<span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-important">!important</span></span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> right</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> hidden</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">4</span>s ease</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateY(<span class="hljs-number">45</span>deg)</span></span></span>;
-<span class="hljs-rule">}</span></span>
-<span class="hljs-class">.dropdown-menu</span><span class="hljs-class">.show</span><span class="hljs-rules">{
-	<span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">visibility</span>:<span class="hljs-value"> visible</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> all .<span class="hljs-number">4</span>s ease</span></span>;
-	<span class="hljs-rule"><span class="hljs-attribute">transform</span>:<span class="hljs-value"> <span class="hljs-function">rotateY(<span class="hljs-number">0</span>)</span></span></span>;
-<span class="hljs-rule">}</span></span></code></pre>
+<pre><code class="language-0 hljs sql">.dropdown-menu{
+	border: 0 !important;
+	border-radius: 0 !important;
+	text-align: right;
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	transition: all .4s ease;
+	transform: rotateY(45deg);
+}
+.dropdown-menu.<span class="hljs-operator"><span class="hljs-keyword">show</span>{
+	margin: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px;</span>
+	display: block;
+	visibility: visible;
+	opacity: 1;
+	transition: all .4s ease;
+	transform: rotateY(0);
+}
+
+//<span class="hljs-comment">------------- Or ---------------------------------------</span>
+.dropdown-menu {
+    border: 0 !important;
+    border-radius: 0 !important;
+    text-align: right;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+    transform: scaleY(0.1);
+}
+
+.dropdown-menu.<span class="hljs-operator"><span class="hljs-keyword">show</span> {
+    margin: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px;</span>
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: all .4s ease;
+    transform: scaleY(1);
+}
+
+//<span class="hljs-comment">------------- oR ---------------------------------------</span>
+.dropdown-menu {
+    border: 0 !important;
+    border-radius: 0 !important;
+    text-align: right;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+    transform: rotateX(45deg) scaleX(-0.9);
+}
+
+.dropdown-menu.<span class="hljs-operator"><span class="hljs-keyword">show</span> {
+    margin: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px;</span>
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: all .4s ease;
+    transform: rotateX(0) scaleX(1);
+}
+
+//<span class="hljs-comment">------------ Or -----------------------------------------</span>
+.dropdown-menu {
+    border: 0 !important;
+    border-radius: 0 !important;
+    text-align: right;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+    transform: translate(-50%, -50%) rotateZ(10deg);
+    <span class="hljs-comment">/* transform: translate(50%, -50%); */</span>
+    <span class="hljs-comment">/* transform: translate(50%, 100%); */</span>
+    <span class="hljs-comment">/* transform: translate(50%); */</span>
+}
+
+.dropdown-menu.<span class="hljs-operator"><span class="hljs-keyword">show</span> {
+    margin: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> -<span class="hljs-number">55</span>px;</span>
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: all .4s ease;
+    transform: translate(0) rotateZ(0);
+    <span class="hljs-comment">/* transform: translate(0); */</span>
+    <span class="hljs-comment">/* transform: translate(0); */</span>
+    <span class="hljs-comment">/* transform: translate(0); */</span>
+}</code></pre>
 
 <p dir="rtl">8- استایل کلی و دلخواه navbar به این صورت خواهد بود:</p>
 
@@ -303,7 +378,7 @@
         </div>
         <div class="px-3">
             <span>تاریخ ویرایش: </span>
-            <small class="text-muted">1398-04-29 10:26:11</small>
+            <small class="text-muted">1398-04-30 13:16:39</small>
         </div>
     </div>
     
