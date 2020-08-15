@@ -1,0 +1,199 @@
+* {
+    font-family: IRANSans, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    position: relative;
+    background-color: #fff;
+    /* font-family: IRANSans, Arial, Helvetica, sans-serif; */
+}
+
+a {
+    color: #555;
+}
+
+a:hover,
+.navbar-light .navbar-brand:hover {
+    background-color: #2ed573;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: IRANSans, Arial, Helvetica, sans-serif;
+}
+
+.dir-ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+.bg-click {
+    background-color: #feca57 !important;
+}
+
+.digit {
+    font-family: zar;
+    letter-spacing: 4px;
+}
+
+.digit-bold {
+    font-family: zar;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 0;
+    justify-content: start;
+}
+
+.navbar a,
+.navbar .navbar-brand {
+    color: #555;
+}
+
+.navbar a:hover,
+.navbar .navbar-brand:hover {
+    color: #fff;
+    background-color: #2e86de;
+}
+
+.navbar .navbar-brand {
+    margin: 0;
+    padding: 7px 15px;
+    font-weight: bold;
+}
+
+#sidebar-toggler {
+    padding: 12px 15px 8px;
+    display: block;
+}
+
+#main {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+#sidebar {
+    position: relative;
+    background-color: #2e86de;
+    color: white;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+#sidebar .list-group-item:first-child,
+#sidebar .list-group-item:last-child {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+#sidebar .list-group-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    color: inherit;
+    background-color: inherit;
+    border: 0;
+}
+
+#sidebar .list-group-item:hover {
+    color: #dcdde1;
+}
+
+#sidebar .list-group-item:focus {
+    color: #2e86de;
+    background-color: white;
+}
+
+#sidebar .list-group-item.active,
+#sidebar .list-group-item.active:hover {
+    background-color: rgba(0, 0, 255, .2);
+    color: #fff;
+    cursor: no-drop;
+}
+
+#sidebar .fa-caret-left {
+    font-size: 24px;
+    transition: transform .3s ease;
+    transform: rotateZ(-90deg);
+    -webkit-transform: rotateZ(-90deg);
+    -moz-transform: rotateZ(-90deg);
+    -ms-transform: rotateZ(-90deg);
+    -o-transform: rotateZ(-90deg);
+}
+
+#sidebar .collapsed .fa-caret-left {
+    transform: rotateZ(0);
+    -webkit-transform: rotateZ(0);
+    -moz-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+}
+
+#content {
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+@media screen and (min-width: 992px) {
+    #main {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    #sidebar {
+        position: fixed;
+        top: 44px;
+        right: 0;
+        z-index: 1030;
+    }
+    #sidebar.collapse {
+        height: calc(100vh - 44px) !important;
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+    }
+    #sidebar.collapse.show {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+    #sidebar.collapsing {
+        height: calc(100vh - 44px) !important;
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+    }
+    #content {
+        margin-right: 0;
+    }
+    #content.col-lg-9 {
+        margin-right: 25%;
+    }
+}
+
+@media screen and (max-width: 575px) {}

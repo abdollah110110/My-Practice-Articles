@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>وراثت</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+body {margin:0;padding:0;background:#009fff;font-family:Tahoma;font-size:16px;}
+.container {padding:10px 20px;background:#eee;margin:0 auto;width:80%;}
+.learning {background:#fff;padding:5px;border-radius:5px;font-size:1.3rem;line-height:2.3rem;}
+.codes {padding:5px;background:#efe;border-radius:5px;margin:10px 0;overflow:auto;font-size:1.2rem;line-height:.8rem;}
+.output {padding:5px;background:#cfcfcf;border-radius:5px;margin:10px 0;overflow:auto;}
+.ltr {direction:ltr;text-align:left;}
+.rtl {direction:rtl;text-align:right;}
+.text-center {text-align:center;}
+
+</style></head><body>
+<div class="container rtl">
+<h2 class="text-center">وراثت</h2>
+
+<div class="learning">
+<p>
+<b>ارث بری فیلدها و متدها: </b><br>
+<span>فیلدها و متدهای private به ارث برده نمیشوند، از بیرون از کلاس قابل دسترسی نسیتند</span><br>
+<span>فیلدها و متدهای public و protected به ارث برده میشوند.</span><br>
+<span>فیلدها و متدهای protected به ارث برده میشوند اما از بیرون از کلاس قابل دسترسی نیستند، برای حفظ امنیت.</span><br>
+<span>فیلدها و متدهای public هم به ارث برده میشوند و هم از بیرون کلاس قابل دسترسی هستند.</span><br>
+</p>
+<p>
+<b>extends: </b><br>
+<span>با استفاده از این کلمه یک کلاس از کلاس دیگر به ارث برده میشود و در واقع فرزند ان کلاس میشود.</span>
+</p>
+<p>
+<b>parent: </b><br>
+<span>با استفاده از این کلمه متدی که در کلاس والد هست را در متدی با همان نام در کلاس فرزند فراخوانی و اجرا میکنیم.</span><br>
+<span>تغییر دادن رفتار متدهای کلاس والد توسط متدهایی در کلاس فرزند را چندریختی کردن میگویند.</span>
+</p>
+<p>
+<b>final: </b><br>
+<span>اگر در ابتدای متد نوشته شود یعنی نمیتوان آن متد را در کلاس فرزند تغییر داد و در واقع قابل چندریخته شدن نیست.</span>
+</p>
+<p>
+<b>instanceof: </b><br>
+<span>چک میکند که آیا شیء از نوع کلاس گفته شده است یا نه؟</span>
+</p>
+<b>get_class: </b><br>
+<span>نام کلاسی که شیء از آن ساخته شده است را برمیگرداند.</span>
+<span>اگر get_class در کلاس والد باشد و ما از طریق شیء فرزند متد مربوط 
+به آن را صدا بزنیم باید پارامتر this$ را به آن ارسال کنیم تا نام کلاس 
+فرزند برگردانده شود.</span>
+<pre class="ltr">public function getClassName(){
+	return get_class($this);
+}
+</pre>
+<p></p>
+</div><!-- End learning -->
+
+<h3>مثال:</h3>
+<pre class="codes ltr"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;
+<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Father
+<br></span><span style="color: #007700">{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;function&nbsp;</span><span style="color: #0000BB">getRandomNumber</span><span style="color: #007700">()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">rand</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">randomNumber</span><span style="color: #007700">()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&nbsp;style="color:red;"&gt;Father&nbsp;random&nbsp;number:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRandomNumber</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">'&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">rangeNumber</span><span style="color: #007700">(){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">implode</span><span style="color: #007700">(</span><span style="color: #DD0000">'&nbsp;-&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">));
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Father&nbsp;range&nbsp;numbers:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">getClassName</span><span style="color: #007700">(){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Class&nbsp;name:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br>
+<br>class&nbsp;</span><span style="color: #0000BB">Child&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Father
+<br></span><span style="color: #007700">{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">randomNumber</span><span style="color: #007700">()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">parent</span><span style="color: #007700">::</span><span style="color: #0000BB">randomNumber</span><span style="color: #007700">();
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;hr&nbsp;/&gt;&lt;p&nbsp;style="color:green;"&gt;Child&nbsp;random&nbsp;number:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRandomNumber</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">'&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}
+<br>
+<br></span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Child</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$numbers</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">randomNumber</span><span style="color: #007700">();
+<br>if(</span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">Child</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$numbers</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rangeNumber</span><span style="color: #007700">();
+<br>}
+<br></span><span style="color: #0000BB">$numbers</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getClassName</span><span style="color: #007700">();
+<br></span><span style="color: #0000BB">?&gt;
+<br></span>
+</span>
+</code></pre>
+
+<h3>خروجی مثال بالا:</h3>
+<div class="output ltr">
+<p style="color:red;">Father random number: 68</p>
+<hr><p style="color:green;">Child random number: 28</p>
+<p>Father range numbers: 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10</p>
+<p>Class name: Child</p>
+</div>
+
+</div>
+</body></html>

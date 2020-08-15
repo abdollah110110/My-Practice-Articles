@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>spl_autoload_register</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+body {margin:0;padding:0;background:#009fff;font-family:Tahoma;font-size:16px;}
+.container {padding:10px 20px;background:#eee;margin:0 auto;width:80%;}
+.learning {background:#fff;padding:5px;border-radius:5px;font-size:1.3rem;line-height:2.3rem;}
+.codes {padding:5px;background:#efe;border-radius:5px;margin:10px 0;overflow:auto;font-size:1.2rem;line-height:.8rem;}
+.output {padding:5px;background:#cfcfcf;border-radius:5px;margin:10px 0;overflow:auto;}
+.ltr {direction:ltr;text-align:left;}
+.rtl {direction:rtl;text-align:right;}
+.text-center {text-align:center;}
+
+</style></head><body>
+<div class="container rtl">
+<h2 class="text-center">spl_autoload_register</h2>
+
+<div class="learning">
+<p>
+<b>spl_autoload_register: </b><br>
+<span>وقتی به شیئی میرسد که از کلاس خاصی استفاده کرده در همان لحظه آن کلاس را لود میکند.</span>
+</p>
+</div><!-- End learning -->
+
+<h3>مثال:</h3>
+<pre class="codes ltr"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;
+<br>spl_autoload_register</span><span style="color: #007700">(function(</span><span style="color: #0000BB">$class</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;require_once&nbsp;</span><span style="color: #DD0000">'includes\class.'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">strtolower</span><span style="color: #007700">(</span><span style="color: #0000BB">$class</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'.php'</span><span style="color: #007700">;&nbsp;
+<br>});
+<br>
+<br></span><span style="color: #0000BB">$points&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Point2d</span><span style="color: #007700">;
+<br>
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">105</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">406</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">display</span><span style="color: #007700">();
+<br>unset(</span><span style="color: #0000BB">$points</span><span style="color: #007700">);
+<br></span><span style="color: #0000BB">?&gt;
+<br></span>
+</span>
+</code></pre>
+
+<h3>خروجی مثال بالا:</h3>
+<div class="output ltr">
+<p style="color:green;">Class Point2d constructed.</p>
+<p>point X: 105px<br>
+ point Y: 406px</p>
+<p style="color:red;">Class Point2d destroyed.</p>
+</div>
+
+</div>
+</body></html>

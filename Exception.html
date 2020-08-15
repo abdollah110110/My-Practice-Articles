@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Exception</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+body {margin:0;padding:0;background:#009fff;font-family:Tahoma;font-size:16px;}
+.container {padding:10px 20px;background:#eee;margin:0 auto;width:80%;}
+.learning {background:#fff;padding:5px;border-radius:5px;font-size:1.3rem;line-height:2.3rem;}
+.codes {padding:5px;background:#efe;border-radius:5px;margin:10px 0;overflow:auto;font-size:1.2rem;line-height:.8rem;}
+.output {padding:5px;background:#cfcfcf;border-radius:5px;margin:10px 0;overflow:auto;}
+.ltr {direction:ltr;text-align:left;}
+.rtl {direction:rtl;text-align:right;}
+.text-center {text-align:center;}
+
+</style></head><body>
+<div class="container rtl">
+<h2 class="text-center">Exception</h2>
+
+<div class="learning">
+<p>
+<span>خطاهای بوجود آمده در متدهای کلاسها را مدیریت میکند.</span>
+</p>
+
+</div><!-- End learning -->
+
+<h3>مثال:</h3>
+<pre class="codes ltr"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;
+<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Math</span><span style="color: #007700">{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">sqrtval</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Exception</span><span style="color: #007700">(</span><span style="color: #DD0000">"Can't&nbsp;(value&nbsp;&lt;&nbsp;0)."</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">400</span><span style="color: #007700">);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;Value:&nbsp;'</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">sqrt</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">'&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>}&nbsp;
+<br>
+<br>try{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Math</span><span style="color: #007700">::</span><span style="color: #0000BB">sqrtVal</span><span style="color: #007700">(-</span><span style="color: #0000BB">36</span><span style="color: #007700">);
+<br>}
+<br>catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;&lt;b&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCode</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">':&nbsp;&lt;/b&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">'&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;&nbsp;
+<br>}
+<br>finally{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;کدی&nbsp;که&nbsp;به&nbsp;هر&nbsp;حال&nbsp;باید&nbsp;اجرا&nbsp;شود&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>}
+<br></span><span style="color: #0000BB">?&gt;
+<br></span>
+</span>
+</code></pre>
+
+<h3>خروجی مثال بالا:</h3>
+<div class="output ltr">
+<p><b>400: </b>Can't (value &lt; 0).</p>
+<p>کدی که به هر حال باید اجرا شود</p>
+</div>
+
+</div>
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>دستیابهای جادویی Magic Methods</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+body {margin:0;padding:0;background:#009fff;font-family:Tahoma;font-size:16px;}
+.container {padding:10px 20px;background:#eee;margin:0 auto;width:80%;}
+.learning {background:#fff;padding:5px;border-radius:5px;font-size:1.3rem;line-height:2.3rem;}
+.codes {padding:5px;background:#efe;border-radius:5px;margin:10px 0;overflow:auto;font-size:1.2rem;line-height:.8rem;}
+.output {padding:5px;background:#cfcfcf;border-radius:5px;margin:10px 0;overflow:auto;}
+.ltr {direction:ltr;text-align:left;}
+.rtl {direction:rtl;text-align:right;}
+.text-center {text-align:center;}
+
+</style></head><body>
+<div class="container rtl">
+<h2 class="text-center">دستیابهای جادویی Magic Methods</h2>
+
+<div class="learning">
+<p>
+<b>__set($field, $value): </b><br>
+<span>$field را در بین فیلدهای private از کلاس جستجو میکند و مقدار $value را در آن فیلد قرار میدهد.</span>
+</p>
+<p>
+<b>__get($filed):</b><br>
+<span>$field را در بین فیلدهای private از کلاس جستجو میکند و مقدارش را برمیگرداند.</span>
+</p>
+<p>
+<b>__construct: </b><br>
+<span>اگر بخواهیم کدهایی حین ایجاد کلاس اجرا شوند آنها را در این متد مینویسیم.</span>
+</p>
+<p>
+<b>__destruct: </b><br>
+<span>اگر بخواهیم کدهایی با از بین رفتن شیء اجرا شوند آنها را در این متد مینویسیم.</span>
+</p>
+</div><!-- End learning -->
+
+<h3>مثال:</h3>
+<pre class="codes ltr"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;
+<br></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Point2d
+<br></span><span style="color: #007700">{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$x</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$maxX</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;</span><span style="color: #0000BB">$maxY</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">maxX&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">800</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">maxY&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">600</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&nbsp;style="color:green;"&gt;Class&nbsp;Point2d&nbsp;constructed.&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__set</span><span style="color: #007700">(</span><span style="color: #0000BB">$field</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$field&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtolower</span><span style="color: #007700">(</span><span style="color: #0000BB">$field</span><span style="color: #007700">);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(isset(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">$field</span><span style="color: #007700">})){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">$field</span><span style="color: #007700">}&nbsp;=&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__get</span><span style="color: #007700">(</span><span style="color: #0000BB">$field</span><span style="color: #007700">)
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$field&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtolower</span><span style="color: #007700">(</span><span style="color: #0000BB">$field</span><span style="color: #007700">);
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(isset(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">$field</span><span style="color: #007700">})){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">$field</span><span style="color: #007700">};
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">display</span><span style="color: #007700">()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">maxX</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">maxX</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Can't&nbsp;:&nbsp;(&nbsp;x&nbsp;&gt;&nbsp;maxX&nbsp;)&nbsp;&lt;br&nbsp;/&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Can't&nbsp;:&nbsp;(&nbsp;x&nbsp;&lt;&nbsp;0&nbsp;)&nbsp;&lt;br&nbsp;/&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">maxY</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">maxY</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Can't&nbsp;:&nbsp;(&nbsp;y&nbsp;&gt;&nbsp;maxY&nbsp;)&nbsp;&lt;br&nbsp;/&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">){
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Can't&nbsp;:&nbsp;(&nbsp;y&nbsp;&lt;&nbsp;0&nbsp;)&nbsp;&lt;br&nbsp;/&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&gt;point&nbsp;X:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'px&lt;br&nbsp;/&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'&nbsp;point&nbsp;Y:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'px&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__destruct</span><span style="color: #007700">()
+<br>&nbsp;&nbsp;&nbsp;&nbsp;{
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;p&nbsp;style="color:red;"&gt;Class&nbsp;Point2d&nbsp;destroyed.&lt;/p&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;
+<br>}
+<br>
+<br></span><span style="color: #0000BB">$points&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Point2d</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">950</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">820</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">display</span><span style="color: #007700">();
+<br>unset(</span><span style="color: #0000BB">$points</span><span style="color: #007700">);
+<br>
+<br>echo&nbsp;</span><span style="color: #DD0000">'&lt;hr&nbsp;/&gt;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;
+<br>
+<br></span><span style="color: #0000BB">$points&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Point2d</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x&nbsp;</span><span style="color: #007700">=&nbsp;-</span><span style="color: #0000BB">550</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">y&nbsp;</span><span style="color: #007700">=&nbsp;-</span><span style="color: #0000BB">168</span><span style="color: #007700">;
+<br></span><span style="color: #0000BB">$points</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">display</span><span style="color: #007700">();
+<br>unset(</span><span style="color: #0000BB">$points</span><span style="color: #007700">);
+<br></span><span style="color: #0000BB">?&gt;
+<br></span>
+</span>
+</code></pre>
+
+<h3>خروجی مثال بالا:</h3>
+<div class="output ltr">
+<p style="color:green;">Class Point2d constructed.</p>
+Can't : ( x &gt; maxX ) <br>
+Can't : ( y &gt; maxY ) <br>
+<p>point X: 800px<br>
+ point Y: 600px</p>
+<p style="color:red;">Class Point2d destroyed.</p>
+<hr>
+<p style="color:green;">Class Point2d constructed.</p>
+Can't : ( x &lt; 0 ) <br>
+Can't : ( y &lt; 0 ) <br>
+<p>point X: 0px<br>
+ point Y: 0px</p>
+<p style="color:red;">Class Point2d destroyed.</p>
+</div>
+
+</div>
+</body></html>

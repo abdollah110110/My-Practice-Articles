@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'zar';
+    src: url('../fonts/zar/zar.eot');
+    src: url('../fonts/zar/zar.eot?#iefix') format('embedded-opentype'), url('../fonts/zar/zar.woff2') format('woff2'), url('../fonts/zar/zar.woff') format('woff'), url('../fonts/zar/zar.ttf') format('truetype');
+    font-weight: normal;
+}
