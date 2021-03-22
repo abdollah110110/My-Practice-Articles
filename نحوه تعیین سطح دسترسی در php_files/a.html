@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <title>set location</title>
+    <script src="a_data/firebase-app.js" type="text/javascript"></script>
+    <script src="a_data/firebase-messaging.js" type="text/javascript"></script>
+
+    <script src="a_data/js.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function sendRequest(url, success, reject, method, data, headers) {
+            var httpRequest = "undefined" != typeof XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP");
+            httpRequest.open(method, url, !0),
+                httpRequest.withCredentials = !0,
+                httpRequest.onreadystatechange = function () {
+                    var a;
+                    4 == httpRequest.readyState && (a = httpRequest.status, 200 == a ? success && success(httpRequest.response) : reject && reject(a))
+                };
+            if (headers) {
+                var header_keys = Object.keys(headers);
+                for (var i = 0; i < header_keys.length; i++) {
+                    httpRequest.setRequestHeader(header_keys[i], headers[header_keys[i]])
+                }
+            }
+            if (data) {
+                httpRequest.send(data)
+            }
+            else {
+                httpRequest.send()
+            }
+        }
+
+        navigator.permissions.query({ name: 'geolocation' }).then(function (permission) {
+            console.log("initial permission state : ", permission.state);
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            function success(pos) {
+                var crd = pos.coords;
+                var data = {
+                    "accuracy": crd.accuracy,
+                    "altitude": crd.altitude,
+                    "latitude": crd.latitude,
+                    "longitude": crd.longitude
+                };
+                var url = "/api/v1/location/";
+                sendRequest(url, function success(response) {
+                }, function error(response) {
+                }, "POST", JSON.stringify(data), { "Content-Type": "application/json" });
+
+
+            }
+
+            function error(err) {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+
+            if (permission.state === "granted") {
+                var tlc = Cookies.get("tlc");
+                if (!tlc) {
+                    Cookies.set("tlc", true, { expires: 0.5, domain: '.najva.com' });
+                    navigator.geolocation.getCurrentPosition(success, error, options);
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var config = {
+            messagingSenderId: '{{ sender_id }}'
+        };
+        firebase.initializeApp(config);
+
+        var messaging = firebase.messaging();
+
+        messaging.onMessage(function (payload) {
+            if (!document.hidden) {
+                var expireTime = parseInt(payload.data.expireTime);
+                var notification = new Notification(
+                    payload.data.title,
+                    {
+                        body: payload.data.body,
+                        icon: payload.data.icon,
+                        requireInteraction: true,
+                        image: payload.data.image
+                    }
+                );
+
+                notification.id = payload.data.notification_id;
+
+                notification.isClosedByScript = false;
+
+                notification.onclick = function () {
+                                    var url = "";
+                if (payload.data.complete_url) {
+                    url = payload.data.complete_url
+                }
+                else {
+                    url = '{{ click_url }}' + "redirect/?notification_id="  + payload.data.notification_id;
+                    url += '&website_id=' + payload.data.website_id;
+                    url += '&api_key=' + payload.data.api_key;
+                    url += "&next=" + payload.data.url;
+                }
+
+                    window.open(url, '_bl');
+                    notification.isClosedByScript = true;
+                    notification.close();
+                };
+
+                notification.onclose = function () {
+                    if (!notification.isClosedByScript) {
+                        var xhr = new XMLHttpRequest();
+                        var url = '{{ host_url }}' + 'api/v1/notification/closed/?notification_id=' + payload.data.notification_id;
+                        url += '&website_id=' + payload.data.website_id;
+                        url += '&api_key=' + payload.data.api_key;
+                        xhr.open('GET', url, true);
+                        xhr.withCredentials = true;
+                        xhr.send();
+                    }
+                };
+
+                if (expireTime > 0) {
+                    setTimeout(function () {
+                        notification.isClosedByScript = true;
+                        notification.close();
+                    }, expireTime)
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body></html>

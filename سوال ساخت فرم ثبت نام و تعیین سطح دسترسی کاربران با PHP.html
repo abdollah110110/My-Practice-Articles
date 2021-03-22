@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl" id="vbulletin_html" lang="fa-IR"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="https://barnamenevis.org">
+<!-- base href="https://barnamenevis.org/" --><!--[if IE]></base><![endif]-->
+<meta name="generator" content="vBulletin 4.2.5">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<link rel="Shortcut Icon" href="https://barnamenevis.org/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+	
+		<script type="text/javascript" async="" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/ga.js"></script><script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/yuiloader-dom-event.js"></script>
+	
+
+<script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=425"><\/script>');
+		document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=425"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'https://ajax.googleapis.com/ajax/libs/yui/2.9.0/build';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/yui/2.9.0/build/connection/connection-min.js?v=425"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "425";
+	var BBURL = "https://barnamenevis.org";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "showthread.php?395414-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D8%B1%D9%85-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%88-%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%B3%D8%B7%D8%AD-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-PHP";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "https://barnamenevis.org/";
+// -->
+</script><script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/connection-min.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/vbulletin-core.js"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="برنامه نویس RSS Feed" href="https://barnamenevis.org/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="برنامه نویس - PHP - RSS Feed" href="https://barnamenevis.org/external.php?type=RSS2&amp;forumids=30">
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/main-rollup.css">
+        
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/popupmenu-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/vbulletin-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/vbulletin-chrome-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/vbulletin-formcontrols-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/editor-ie.css?d=1598689690" />
+	<![endif]-->
+
+
+<!-- Mehdi - SyntaxHilighter -->
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shCore.js"></script>
+
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushPlain.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushCpp.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushCSharp.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushCss.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushDelphi.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushJava.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushSql.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushVb.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushXml.js"></script>
+<script type="text/javascript" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shBrushPhp.js"></script>
+
+<link href="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shCore.css" rel="stylesheet" type="text/css">
+<link href="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/shThemeDefault.css" rel="stylesheet" type="text/css">
+<!-- Mehdi - SyntaxHilighter , End -->
+
+<!-- Persian Fonts -->
+<link href="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/FontIran.css" rel="stylesheet" type="text/css">
+	<meta name="keywords" content="سوال:, نام, ثبت, به, با, صورت, دسترسی, کاربران, سطح, این, کنه, توی, مشاهده, دانلود, یک, صفحه, لینک, رو, میشه؟, توضیح, بدین, ممنون, تئوری, کلا, کد, نویسی, نتونه, چه, تا, رابطه, آنها, سوالاتی, داشتم, در, سلام, فرم, تعیین, که, خواستم, ساخت, وقتی, کاربری, میخوام, بگیرم, از, دوستان, کمک, نکرده">
+	<meta name="description" content="سلام. 
+در رابطه با ثبت نام کاربران و سطح دسترسی آنها سوالاتی داشتم که خواستم از دوستان کمک بگیرم. میخوام تا وقتی کاربری ثبت نام نکرده نتونه توی یک صفحه لینک دانلود رو مشاهده کنه. این به چه صورت کد نویسی میشه؟ کلا به صورت تئوری توضیح بدین ممنون">
+
+	<title>سوال: ساخت فرم ثبت نام و تعیین سطح دسترسی کاربران با PHP</title>
+	<link rel="canonical" href="https://barnamenevis.org/showthread.php?395414-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D8%B1%D9%85-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%88-%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%B3%D8%B7%D8%AD-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-PHP">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/showthread-rollup.css">
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/toolsmenu-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/postlist-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/showthread-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/postbit-ie.css?d=1598689690" />
+	<link rel="stylesheet" type="text/css" href="clientscript/vbulletin_css/style00029r/poll-ie.css?d=1598689690" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/additional.css">
+
+</head>
+
+<body>
+
+<!-- closing div for above_body -->
+
+<div class="body_wrapper">
+
+
+ 
+
+
+
+	<form action="profile.php?do=dismissnotice" method="post" id="notices" class="notices">
+		<input type="hidden" name="do" value="dismissnotice">
+		<input type="hidden" name="s" value="">
+		<input type="hidden" name="securitytoken" value="guest">
+		<input type="hidden" id="dismiss_notice_hidden" name="dismiss_noticeid" value="">
+		<input type="hidden" name="url" value="">
+		<ol>
+			
+		</ol>
+	</form>
+
+
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+		<div id="pagination_top" class="pagination_top">
+		
+			<div id="postpagestats_above" class="postpagestats">
+				نمایش نتایج 1 تا 4 از 4
+			</div>
+		</div>
+	</div>
+	
+	
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			
+<li class="postbitlegacy postbitim postcontainer old" id="post_1753988">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">جمعه 06 اردیبهشت 1392,&nbsp;<span class="time">08:07 صبح</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1753988" href="https://barnamenevis.org/showthread.php?395414-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D8%B1%D9%85-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%88-%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%B3%D8%B7%D8%AD-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-PHP&amp;p=1753988&amp;viewfull=1#post1753988" class="postcounter">#1</a><a id="postcount1753988" name="1"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen10">
+	<a class="username offline popupctrl" href="https://barnamenevis.org/member.php?110117-abbas3zaar" title="abbas3zaar آفلاین است" id="yui-gen12"><strong>abbas3zaar</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen11">
+		<li class="left">
+			<a href="https://barnamenevis.org/member.php?110117-abbas3zaar" class="siteicon_profile">
+				مشاهده پروفایل
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/search.php?do=finduser&amp;userid=110117&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				پست های ارسال شده
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://barnamenevis.org/private.php?do=newpm&amp;u=110117" class="siteicon_message" rel="nofollow">
+				پیام خصوصی
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="left">
+			<a href="http://abbasmasrour.ir/" class="siteicon_homepage">
+				وب سایت شخصی
+			</a>
+		</li>
+		
+		
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/list.php?author/110117-abbas3zaar" class="siteicon_article" rel="nofollow">
+				مشاهده مقالات
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+				<img class="inlineimg onlinestatus" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/user-offline.png" alt="abbas3zaar آفلاین است" title="abbas3zaar آفلاین است" border="0">
+
+			
+			</div>
+			<span class="usertitle">
+				کاربر دائمی
+			</span>
+			
+				<span class="rank"><img src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/star0300.gif" alt="" border=""></span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://barnamenevis.org/member.php?110117-abbas3zaar" title="abbas3zaar آفلاین است">
+				<img src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/image.jpg" alt="آواتار abbas3zaar" title="آواتار abbas3zaar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>تاریخ عضویت</dt> <dd>تیر 1388</dd>
+					<dt>محل زندگی</dt> <dd>گیلان</dd>
+					<dt>سن</dt> <dd>30</dd>
+					<dt>پست</dt> <dd>311</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					ساخت فرم ثبت نام و تعیین سطح دسترسی کاربران با PHP
+				</h2>
+				
+
+
+						
+							
+							
+						
+						
+				<div class="content">
+					<div id="post_message_1753988">
+						<blockquote class="postcontent restore ">
+							سلام.<br>
+در رابطه با ثبت نام کاربران و سطح دسترسی آنها سوالاتی داشتم که خواستم از
+ دوستان کمک بگیرم. میخوام تا وقتی کاربری ثبت نام نکرده نتونه توی یک صفحه
+ لینک دانلود رو مشاهده کنه. این به چه صورت کد نویسی میشه؟ کلا به صورت 
+تئوری توضیح بدین ممنون
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1753988" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1753988" class="newreply" href="https://barnamenevis.org/newreply.php?do=newreply&amp;p=1753988" rel="nofollow" title="پاسخ با نقل قول"><img id="quoteimg_1753988" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/clear.gif" alt="پاسخ با نقل قول" title="پاسخ با نقل قول">  پاسخ با نقل قول</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+<center>
+<!-- Revive Adserver Asynchronous JS Tag - Generated with Revive Adserver v5.0.4 -->
+
+<script async="" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/asyncjs.php"></script>
+</center>
+<br>
+<li class="postbitlegacy postbitim postcontainer old" id="post_1753995">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">جمعه 06 اردیبهشت 1392,&nbsp;<span class="time">08:22 صبح</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1753995" href="https://barnamenevis.org/showthread.php?395414-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D8%B1%D9%85-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%88-%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%B3%D8%B7%D8%AD-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-PHP&amp;p=1753995&amp;viewfull=1#post1753995" class="postcounter">#2</a><a id="postcount1753995" name="2"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen13">
+	<a class="username offline popupctrl" href="https://barnamenevis.org/member.php?221530-lordofphp" title="lordofphp آفلاین است" id="yui-gen15"><strong>lordofphp</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen14">
+		<li class="left">
+			<a href="https://barnamenevis.org/member.php?221530-lordofphp" class="siteicon_profile">
+				مشاهده پروفایل
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/search.php?do=finduser&amp;userid=221530&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				پست های ارسال شده
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://barnamenevis.org/private.php?do=newpm&amp;u=221530" class="siteicon_message" rel="nofollow">
+				پیام خصوصی
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/list.php?author/221530-lordofphp" class="siteicon_article" rel="nofollow">
+				مشاهده مقالات
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+				<img class="inlineimg onlinestatus" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/user-offline.png" alt="lordofphp آفلاین است" title="lordofphp آفلاین است" border="0">
+
+			
+			</div>
+			<span class="usertitle">
+				کاربر دائمی
+			</span>
+			
+				<span class="rank"><img src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/star0200.gif" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>تاریخ عضویت</dt> <dd>شهریور 1390</dd>
+					<dt>محل زندگی</dt> <dd>ساری</dd>
+					
+					<dt>پست</dt> <dd>209</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					نقل قول: ساخت فرم ثبت نام و تعیین سطح دسترسی کاربران با PHP
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_1753995">
+						<blockquote class="postcontent restore ">
+							سلام <br>
+خوب هستین؟<br>
+خوب یه راه  اینه که چاپ لینک دانلود توی if با استفاده از سشن انجام بدید مثلا<br>
+<br>
+<div><div id="highlighter_938880" class="syntaxhighlighter  php"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php</code></div><div class="line number2 index1 alt1"><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$_SESSION</code><code class="php plain">[</code><code class="php string">'valid_users'</code><code class="php plain">])</code></div><div class="line number3 index2 alt2"><code class="php functions">echo</code> <code class="php variable">$dbquery</code><code class="php plain">[</code><code class="php string">'downloadlink'</code><code class="php plain">];</code></div><div class="line number4 index3 alt1"><code class="php keyword">else</code></div><div class="line number5 index4 alt2"><code class="php functions">echo</code><code class="php string">'لطفا برای مشاهده لینک دانلود ثبت نام بفرمائید'</code><code class="php plain">;</code></div><div class="line number6 index5 alt1"><code class="php plain">?&gt;</code></div></div></td></tr></tbody></table></div></div><br>
+$dbquery همون متغییری که باهاش اطلاعات از پایگاه داده میگیریم حالا با fetch_assoc و یا ...<br>
+ان شاء الله که مشکلتون حل میشه<br>
+درپناه وراه ایزدمنان پیروزو پایدارباشید
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1753995" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1753995" class="newreply" href="https://barnamenevis.org/newreply.php?do=newreply&amp;p=1753995" rel="nofollow" title="پاسخ با نقل قول"><img id="quoteimg_1753995" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/clear.gif" alt="پاسخ با نقل قول" title="پاسخ با نقل قول">  پاسخ با نقل قول</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_1757396">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">سه شنبه 10 اردیبهشت 1392,&nbsp;<span class="time">21:52 عصر</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1757396" href="https://barnamenevis.org/showthread.php?395414-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D8%B1%D9%85-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%88-%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%B3%D8%B7%D8%AD-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-PHP&amp;p=1757396&amp;viewfull=1#post1757396" class="postcounter">#3</a><a id="postcount1757396" name="3"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen16">
+	<a class="username offline popupctrl" href="https://barnamenevis.org/member.php?110117-abbas3zaar" title="abbas3zaar آفلاین است" id="yui-gen18"><strong>abbas3zaar</strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen17">
+		<li class="left">
+			<a href="https://barnamenevis.org/member.php?110117-abbas3zaar" class="siteicon_profile">
+				مشاهده پروفایل
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/search.php?do=finduser&amp;userid=110117&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				پست های ارسال شده
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://barnamenevis.org/private.php?do=newpm&amp;u=110117" class="siteicon_message" rel="nofollow">
+				پیام خصوصی
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		<li class="left">
+			<a href="http://abbasmasrour.ir/" class="siteicon_homepage">
+				وب سایت شخصی
+			</a>
+		</li>
+		
+		
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/list.php?author/110117-abbas3zaar" class="siteicon_article" rel="nofollow">
+				مشاهده مقالات
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+				<img class="inlineimg onlinestatus" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/user-offline.png" alt="abbas3zaar آفلاین است" title="abbas3zaar آفلاین است" border="0">
+
+			
+			</div>
+			<span class="usertitle">
+				کاربر دائمی
+			</span>
+			
+				<span class="rank"><img src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/star0300.gif" alt="" border=""></span>
+			
+			
+			
+			
+			<a class="postuseravatar" href="https://barnamenevis.org/member.php?110117-abbas3zaar" title="abbas3zaar آفلاین است">
+				<img src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/image.jpg" alt="آواتار abbas3zaar" title="آواتار abbas3zaar">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>تاریخ عضویت</dt> <dd>تیر 1388</dd>
+					<dt>محل زندگی</dt> <dd>گیلان</dd>
+					<dt>سن</dt> <dd>30</dd>
+					<dt>پست</dt> <dd>311</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					نقل قول: ساخت فرم ثبت نام و تعیین سطح دسترسی کاربران با PHP
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_1757396">
+						<blockquote class="postcontent restore ">
+							درود.<br>
+یه سوال دیگه داشتم.<br>
+در مورد Role ها میشه توضیح بدین که چجوری پیاده سازی میشه.. مثلا یک فیلد 
+permission در جدول کاربران بزاریم وقتی مقدارش 0 باشه کاربر معمولی باشه. 
+وقتی 1 باشه مدیر باشه و بتونه وارد پنل بشه و مطلب ارسال کنه و البته سطح 
+دسترسی به بعضی از بخش های مدیریت رو نداشته باشه مثلا بخش قالب و ... فقط 
+بتونه مطلب ارسال کنه
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1757396" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1757396" class="newreply" href="https://barnamenevis.org/newreply.php?do=newreply&amp;p=1757396" rel="nofollow" title="پاسخ با نقل قول"><img id="quoteimg_1757396" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/clear.gif" alt="پاسخ با نقل قول" title="پاسخ با نقل قول">  پاسخ با نقل قول</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_1758357">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead">
+			<span class="postdate old">
+				
+					<span class="date">پنج شنبه 12 اردیبهشت 1392,&nbsp;<span class="time">10:07 صبح</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post1758357" href="https://barnamenevis.org/showthread.php?395414-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%81%D8%B1%D9%85-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%88-%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%B3%D8%B7%D8%AD-%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-PHP&amp;p=1758357&amp;viewfull=1#post1758357" class="postcounter">#4</a><a id="postcount1758357" name="4"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails">
+		<div class="userinfo">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen19">
+	<a class="username offline popupctrl" href="https://barnamenevis.org/member.php?94030-siavashsay" title="siavashsay آفلاین است" id="yui-gen21"><strong><font color="#d07a1a">siavashsay</font></strong></a>
+	<ul class="popupbody memberaction_body" id="yui-gen20">
+		<li class="left">
+			<a href="https://barnamenevis.org/member.php?94030-siavashsay" class="siteicon_profile">
+				مشاهده پروفایل
+			</a>
+		</li>
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/search.php?do=finduser&amp;userid=94030&amp;contenttype=vBForum_Post&amp;showposts=1" class="siteicon_forum" rel="nofollow">
+				پست های ارسال شده
+			</a>
+		</li>
+		
+		
+		<li class="left">
+			<a href="https://barnamenevis.org/private.php?do=newpm&amp;u=94030" class="siteicon_message" rel="nofollow">
+				پیام خصوصی
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		<li class="right">
+			<a href="https://barnamenevis.org/list.php?author/94030-siavashsay" class="siteicon_article" rel="nofollow">
+				مشاهده مقالات
+			</a>
+		</li>
+		
+
+		
+
+		
+		
+	</ul>
+</div>
+				<img class="inlineimg onlinestatus" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/user-offline.png" alt="siavashsay آفلاین است" title="siavashsay آفلاین است" border="0">
+
+			
+			</div>
+			<span class="usertitle">
+				منتظر تایید آدرس ایمیل
+			</span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<dt>تاریخ عضویت</dt> <dd>بهمن 1387</dd>
+					
+					<dt>سن</dt> <dd>33</dd>
+					<dt>پست</dt> <dd>732</dd>	
+					
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					نقل قول: ساخت فرم ثبت نام و تعیین سطح دسترسی کاربران با PHP
+				</h2>
+				
+
+
+						
+						
+							
+						
+				<div class="content">
+					<div id="post_message_1758357">
+						<blockquote class="postcontent restore ">
+							<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				<div class="bbcode_postedby">
+					<img src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/quote_icon.png" alt="نقل قول" title="نقل قول"> نوشته شده توسط <strong>abbas3zaar</strong>
+					<a href="https://barnamenevis.org/showthread.php?p=1757396#post1757396" rel="nofollow"><img class="inlineimg" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/viewpost-left.png" alt="مشاهده تاپیک" title="مشاهده تاپیک"></a>
+				</div>
+				<div class="message">درود.<br>
+یه سوال دیگه داشتم.<br>
+در مورد Role ها میشه توضیح بدین که چجوری پیاده سازی میشه.. مثلا یک فیلد 
+permission در جدول کاربران بزاریم وقتی مقدارش 0 باشه کاربر معمولی باشه. 
+وقتی 1 باشه مدیر باشه و بتونه وارد پنل بشه و مطلب ارسال کنه و البته سطح 
+دسترسی به بعضی از بخش های مدیریت رو نداشته باشه مثلا بخش قالب و ... فقط 
+بتونه مطلب ارسال کنه</div>
+			
+		</div>
+	</div>
+</div> این کاری نداره !<br>
+این عملیات رو باید توی صفحات مورد نیاز انجام بدید ! <br>
+فرض بگیریم 2 تا صفحه داریم : <br>
+1- صفحه user_post.php  ( که کاربران عادی با سطح دسترسی 0 میتونن از داخل اون پست بذارن )<br>
+2- صفحه admin_post.php ( مثل همون صفحه قبل اما کسانی که مدیر هستن با سطح دسترسی 1 میتونن پست خاصی بذارن )<br>
+حالا کد هر صفحه خیلی راحت هست - مثلا :<br>
+صفحه user_post.php که نیازی نداره ( البته منظور من اینه که هم کاربر 
+معمولی و هم مدیر میتونه توش پست بذاره پس نیازی به عملیات خاص ( جلوگیری 
+نیست )<br>
+اما صفحه admin_post.php<br>
+<div><div id="highlighter_416211" class="syntaxhighlighter  php"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php comments">//db connect and other data</code></div><div class="line number2 index1 alt1"><code class="php variable">$username</code><code class="php plain">=</code><code class="php variable">$_SESSION</code><code class="php plain">[</code><code class="php string">'username'</code><code class="php plain">];</code></div><div class="line number3 index2 alt2"><code class="php variable">$sql</code><code class="php plain">=mysql_query(</code><code class="php string">"SELECT `perm` FROM `users` WHERE `username`='$username'"</code><code class="php plain">);</code></div><div class="line number4 index3 alt1"><code class="php variable">$obj</code><code class="php plain">=mysql_fetch_object(</code><code class="php variable">$sql</code><code class="php plain">);</code></div><div class="line number5 index4 alt2"><code class="php variable">$perm</code><code class="php plain">=</code><code class="php variable">$obj</code><code class="php plain">-&gt;perm;</code></div><div class="line number6 index5 alt1"><code class="php comments">//</code></div><div class="line number7 index6 alt2"><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$perm</code><code class="php plain">==</code><code class="php string">"0"</code><code class="php plain">){</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">header(</code><code class="php string">"Location:index.php?msgid=1"</code><code class="php plain">);</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">exit</code><code class="php plain">;</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number11 index10 alt2"><code class="php comments">// other code</code></div></div></td></tr></tbody></table></div></div><br>
+در اینجا میایم و سطح دسترسی کاربر فعال رو چک میکنید ! اگر 0 بود ( کاربر 
+معمولی ) به صفحه دیگه ای ریدایرکت میشه و اون متغیر GET هم واسه اینه که 
+یک هندل باشه واسه نمایش پیغام مناسب توی صفحه مورد نظر<br>
+مثلا : <br>
+<div><div id="highlighter_303180" class="syntaxhighlighter  php"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php keyword">if</code><code class="php plain">(isset(</code><code class="php variable">$_GET</code><code class="php plain">[</code><code class="php string">'msgid'</code><code class="php plain">]) &amp;&amp; </code><code class="php variable">$_GET</code><code class="php plain">[</code><code class="php string">'msgid'</code><code class="php plain">]==1)){</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"You dont have Admin Permission to Write any post"</code><code class="php plain">;</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div></div></td></tr></tbody></table></div></div><br>
+امیدوارم موثر باشه !<br>
+موفق باشید :)
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_1758357" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_1758357" class="newreply" href="https://barnamenevis.org/newreply.php?do=newreply&amp;p=1758357" rel="nofollow" title="پاسخ با نقل قول"><img id="quoteimg_1758357" src="%D8%B3%D9%88%D8%A7%D9%84%20%D8%B3%D8%A7%D8%AE%D8%AA%20%D9%81%D8%B1%D9%85%20%D8%AB%D8%A8%D8%AA%20%D9%86%D8%A7%D9%85%20%D9%88%20%D8%AA%D8%B9%DB%8C%DB%8C%D9%86%20%D8%B3%D8%B7%D8%AD%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86%20%D8%A8%D8%A7%20PHP_files/clear.gif" alt="پاسخ با نقل قول" title="پاسخ با نقل قول">  پاسخ با نقل قول</a> 
+					
+					
+					
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	
+
+
+	
+	
+	
+	
+	<div class="options_block_container">
+		
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- closing div for body_wrapper -->
+
+
+
+<!-- Mehdi -->
+<script type="text/javascript">
+    SyntaxHighlighter.config.stripBrs = true;
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all()
+</script>
+
+
+</body></html>

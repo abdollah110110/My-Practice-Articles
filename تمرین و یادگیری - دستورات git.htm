@@ -24,19 +24,40 @@
             body{
                 padding-top: 1.5rem;
             }
+			a {
+				color: #0040ff;
+			}
+			a:hover {
+				color: red;
+				text-decoration: none;
+			}
         </style>
         
     </head>
     <body>
 
         <div id="content"><div class="container">
-    <div class="d-flex justify-content-between align-items-center">
-        <h2>دستورات git</h2>
-        <a href="http://localhost:8000/articles" class="btn btn-primary">صفحه اصلی مقالات</a>
+    <div id="links" style="background:#25b6fd;margin:1rem 0;padding:1rem;font-size:1.4rem;">
+    <h2>فهرست مطالب</h2>
+	<hr>
+    <a href="#installAndStart">نصب git و شروع کار</a><br>
+	<a href="#config">تنظیمات یا config</a><br>
+	<a href="#files">مشاهده فایلها و فولدرهای جدید یا تغییر کرده</a><br>
+	<a href="#nofollow">جلوگیری از دنبال شدن فایلها و فولدرها در گیت</a><br>
+	<a href="#saveOnRipository">قرار دادن تغییرات فایلها و فولدرها در ریپازیتوری</a><br>
+	<a href="#commits">کامیت ها</a><br>
+	<a href="#branch">شاخه بندی پروژه و سوئیچ کردن( branch )</a><br>
+	<a href="#merge">تغییرات انجام شده در شاخه ها را به پروژه اصلی اعمال کنیم (merge)</a><br>
+	<a href="#stash">ذخیره سازی موقت تغییرات( stash )</a><br>
+	<a href="#register">عضویت در گیت هاب</a><br>
+	<a href="#project">ایجاد پروژه در گیت هاپ</a><br>
+	<a href="#upload">آپلود و دانلود پروژه از ویندوز به گیت هاپ</a><br>
+	<a href="#remote">پیام خطای remote</a><br>
+	<a href="#site">کار با گیت در روی سایت گیت هاب</a><br>
+	<a href="#download">دانلود یک پروژه از گیت هاب روی ویندوز</a><br>
     </div>
-    <hr>
 
-    <h2 dir="rtl">نصب git و شروع کار</h2>
+    <h2 dir="rtl" id="installAndStart">نصب git و شروع کار</h2>
 
 <p dir="rtl">برای استفاده از گیت ابتدا آن را از <a class="text-info" href="https://git-scm.com/downloads" target="_blank">این سایت</a>
  دانلود میکنیم. بعد با زدن چند next براحتی نصب میشود. حالا وارد فولدر 
@@ -44,35 +65,35 @@
 فرمان شدیم نیاز هست که برای پروژه یک ریپازیتوری ایجاد کنیم که توسط دستور
  زیر انجام میشود:</p>
 
-<pre><code class=" hljs ">git init</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git init</code></pre>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">تنظیمات یا config</h2>
+<h2 dir="rtl" id="config">تنظیمات یا config</h2>
 
 <p dir="rtl">برای وارد کردن نام و ایمیل در گیت میتوانیم از دستور config به دو صورت زیر استفاده کنیم:</p>
 
-<pre><code class=" hljs php"><span class="hljs-comment">// کانفیق برای پروژه فعلی</span>
+<pre><code class=" hljs php hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// کانفیق برای پروژه فعلی</span></span></span></span></span></span></span></span></span>
 
-git config user.name <span class="hljs-string">"username"</span>
-git config user.email <span class="hljs-string">"email"</span>
+git config user.name <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"username"</span></span></span></span></span></span></span></span></span>
+git config user.email <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"email"</span></span></span></span></span></span></span></span></span>
 
-git config user.name <span class="hljs-string">"Ali"</span>
-git config user.name <span class="hljs-string">"Ali_sam@yahoo.com"</span>
+git config user.name <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Ali"</span></span></span></span></span></span></span></span></span>
+git config user.name <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Ali_sam@yahoo.com"</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-comment">//-----------------------------------------------</span>
+<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">//-----------------------------------------------</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-comment">// کانفیق برای تمام پروژه ها</span>
+<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// کانفیق برای تمام پروژه ها</span></span></span></span></span></span></span></span></span>
 
-git --<span class="hljs-keyword">global</span> config user.name <span class="hljs-string">"username"</span>
-git --<span class="hljs-keyword">global</span> config user.email <span class="hljs-string">"email"</span>
+git --<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span></span></span></span></span></span></span></span> config user.name <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"username"</span></span></span></span></span></span></span></span></span>
+git --<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span></span></span></span></span></span></span></span> config user.email <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"email"</span></span></span></span></span></span></span></span></span>
 
-git --<span class="hljs-keyword">global</span> config user.name <span class="hljs-string">"Ali"</span>
-git --<span class="hljs-keyword">global</span> config user.name <span class="hljs-string">"Ali_sam@yahoo.com"</span></code></pre>
+git --<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span></span></span></span></span></span></span></span> config user.name <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Ali"</span></span></span></span></span></span></span></span></span>
+git --<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">global</span></span></span></span></span></span></span></span></span> config user.name <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Ali_sam@yahoo.com"</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">با دستور config -l میتوانیم کل تنظیمات را مشاهده کنیم:</p>
 
-<pre><code class=" hljs bash">git config <span class="hljs-operator">-l</span> // لیست تنظیمات</code></pre>
+<pre><code class=" hljs bash hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git config <span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator">-l</span></span></span></span></span></span></span></span></span> // لیست تنظیمات</code></pre>
 
 <ul dir="rtl">
 	<li><span style="font-size:16px"><span style="background:#f7dbf7 none repeat scroll 0% 0%; color:#c131e0; padding:1px 3px">بهتر است برای هر پروژه خاص از تنظیمات بدون global-- استفاده کنیم و از تنظیمات عمومی استفاده نکنیم.</span></span></li>
@@ -80,11 +101,11 @@ git --<span class="hljs-keyword">global</span> config user.name <span class="hlj
 
 <p>&nbsp;</p>
 
-<h2 dir="rtl">مشاهده فایلها و فولدرهای جدید یا تغییر کرده</h2>
+<h2 dir="rtl" id="files">مشاهده فایلها و فولدرهای جدید یا تغییر کرده</h2>
 
 <p dir="rtl">برای مشاهده فایلها و فولدرهای جدید یا تغییر کرده ای که در ریپازیتوری وجود دارند از دستور زیر استفاده میکنیم:</p>
 
-<pre><code class=" hljs ">git status</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git status</code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-status.jpg" target="_blank"><img alt="git status picture" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-status.jpg" style="width:100%"></a></p>
 
@@ -92,39 +113,39 @@ git --<span class="hljs-keyword">global</span> config user.name <span class="hlj
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">جلوگیری از دنبال شدن فایلها و فولدرها در گیت</h2>
+<h2 dir="rtl" id="nofollow">جلوگیری از دنبال شدن فایلها و فولدرها در گیت</h2>
 
 <p dir="rtl">برای این کار از ignore به شکل زیر استفاده میکنیم تا فایل مربوطه اش در داخل پروژه ساخته شود:</p>
 
-<pre><code class=" hljs ">touch .gitignore</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">touch .gitignore</code></pre>
 
 <p dir="rtl">در داخل فایل gitignore. فولدرها و فایلهایی که میخواهیم دنبال نشوند را مشخص میکنیم:</p>
 
-<pre><code class=" hljs ">modules/
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">modules/
 *.txt</code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/gitignore.jpg" target="_blank"><img alt="gitignore.jpg" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/gitignore.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">اگر نیاز باشد فایلی با پسوند خاص را متمایز شده و دنبال شود آن را با استفاده از علامت <span style="background:#f7dbf7; color:#c131e0; padding:1px 3px">!</span> مشخص میکنیم( مثلا فایل e.txt را از بین همه فایلهای txt متمایز میکنیم ):</p>
 
-<pre><code class=" hljs diff">modules/
+<pre><code class=" hljs diff hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">modules/
 *.txt
-<span class="hljs-change">!e.txt</span></code></pre>
+<span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change">!e.txt</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">اگر بخواهیم فولدر یا فایلی که قبلا دنبال میشد، از این به 
 بعد دنبال نشود، ابتدا آنها را در فایل gitignore. مشخص میکنیم و بعد دستور
  rm --cached -r رو وارد میکنیم( مثلا فولدر js ):</p>
 
-<pre><code class=" hljs diff">modules/
+<pre><code class=" hljs diff hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">modules/
 *.txt
-<span class="hljs-change">!e.txt</span>
+<span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change"><span class="hljs-change">!e.txt</span></span></span></span></span></span></span></span></span>
 js/</code></pre>
 
-<pre><code class=" hljs sql">git rm <span class="hljs-comment">--cached -r .</span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git rm <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--cached -r .</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">حالا اگر git status بگیریم خواهیم دید که فولدر js دنبال نشده است و در نهایت دستورات add و commit را اجرا میکنیم.</p>
 
-<h2 dir="rtl"><br>
+<h2 id="saveOnRipository" dir="rtl"><br>
 قرار دادن تغییرات فایلها و فولدرها در ریپازیتوری</h2>
 
 <p dir="rtl">وقتی برای اولین بار میخواهیم فولدرها و فایلها را در 
@@ -135,21 +156,21 @@ js/</code></pre>
 
 <p dir="rtl">دستور add بصورت زیر استفاده میشود:</p>
 
-<pre><code class=" hljs cs">git add . <span class="hljs-comment">// نقطه به معنی تمام فولدرها و فایلهای موجود هست</span></code></pre>
+<pre><code class=" hljs cs hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git add . <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// نقطه به معنی تمام فولدرها و فایلهای موجود هست</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-add.jpg" target="_blank"><img alt="git add image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-add.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">اگر بخواهیم یکی از فایلها یا فولدرهای اضافه شده به ایستیج را حذف کنیم از دستور rm به شکل زیر استفاده میکنیم:</p>
 
-<pre><code class=" hljs sql">git rm <span class="hljs-comment">--cached folder/fileName.fileExtention</span>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git rm <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--cached folder/fileName.fileExtention</span></span></span></span></span></span></span></span></span>
 
-git rm <span class="hljs-comment">--cached js/script.js</span></code></pre>
+git rm <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--cached js/script.js</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-rm.jpg" target="_blank"><img alt="git rm image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-rm.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">اگر بخواهیم همه فولدرها و فایلهای موجود در ایستیج را حذف کنیم از دستور rm به شکل زیر استفاده میکنیم:</p>
 
-<pre><code class=" hljs sql">git rm <span class="hljs-comment">--cached -r .</span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git rm <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--cached -r .</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-rm-all.jpg" target="_blank"><img alt="git rm all image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-rm-all.jpg" style="width:100%"></a></p>
 
@@ -157,7 +178,7 @@ git rm <span class="hljs-comment">--cached js/script.js</span></code></pre>
 قرار میدیم و بعد با استفاده از دستور commit آنها را در گیت(ریپازیتوری) 
 قرار میدهیم:</p>
 
-<pre><code class=" hljs sql">git <span class="hljs-operator"><span class="hljs-keyword">commit</span> -m <span class="hljs-string">"Add this project to git"</span></span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword">commit</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"> -m </span></span></span></span></span></span></span></span><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string"><span class="hljs-operator"><span class="hljs-string">"Add this project to git"</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-commit.jpg" target="_blank"><img alt="git commit image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-commit.jpg" style="width:100%"></a></p>
 
@@ -165,51 +186,51 @@ git rm <span class="hljs-comment">--cached js/script.js</span></code></pre>
 استفاده از دستور add در ریپازیتوری درج کنیم از دستور کامیت به شکل زیر 
 استفاده میکنیم:</p>
 
-<pre><code class=" hljs bash">git commit <span class="hljs-operator">-a</span> -m <span class="hljs-string">"Add new paragraph to about.html"</span></code></pre>
+<pre><code class=" hljs bash hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git commit <span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator">-a</span></span></span></span></span></span></span></span></span> -m <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Add new paragraph to about.html"</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-commit-add.jpg" target="_blank"><img alt="git commit-add imamge" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-commit-add.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">برای مشاهده جزئیات تغییرات انجام شده از دستور diff استفاده میکنیم:</p>
 
-<pre><code class=" hljs ">git diff</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git diff</code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-diff.jpg" target="_blank"><img alt="git diff image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-diff.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">دستورات کار با کامیتها</h2>
+<h2 id="commits" dir="rtl">دستورات کار با کامیتها</h2>
 
 <p dir="rtl">برای مشاهده کامیتهای انجام شده روی ریپازیتوری از دستور log استفاده میکنیم( کامیتها را به ترتیب از آخر به اول نشان میدهد ):</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">log</span></code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">log</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-log.jpg" target="_blank"><img alt="git log image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-log.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">برای مشاهده کامیتهای انجام شده بصورت خطی از دستور log --oneline استفاده میکنیم:</p>
 
-<pre><code class=" hljs sql">git log <span class="hljs-comment">--oneline</span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git log <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--oneline</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای مشاهده کامیتهای انجام شده بصورت خطی و به تعداد مشخص از دستور log -[count line] --oneline استفاده میکنیم:</p>
 
-<pre><code class=" hljs sql">git log -2 <span class="hljs-comment">--oneline</span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git log -2 <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--oneline</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-log-oneline.jpg" target="_blank"><img alt="git log oneline image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-log-oneline.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">برای مشاهده جزئیات تغییرات انجام شده و ثبت شده در کامیت از دستور log -p استفاده میکنیم:</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">log</span> -p</code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">log</span></span></span></span></span></span></span></span></span> -p</code></pre>
 
 <p dir="rtl">برای مشاهده موارد بیشتری از دستور log از دستور log -help استفاده میکنیم:</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">log</span> -help</code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">log</span></span></span></span></span></span></span></span></span> -help</code></pre>
 
 <p dir="rtl">برای برگرداندن فایلها به حالت قبل از تغییرات جدید در شاخه 
 کاری( مثلا کدهای جدیدی که نوشتیم بیفایده است ) از دستور checkout استفاده
  میکنیم:</p>
 
-<pre><code class=" hljs cs">git checkout -- index.html <span class="hljs-comment">// از فایلهای داخل شاخه کاری فقط فایل مشخص شده را به حالت قبل برمیگرداند</span>
+<pre><code class=" hljs cs hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git checkout -- index.html <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// از فایلهای داخل شاخه کاری فقط فایل مشخص شده را به حالت قبل برمیگرداند</span></span></span></span></span></span></span></span></span>
 
-git checkout -- . <span class="hljs-comment">// همه فایلهای داخل شاخه کاری را به حالت قبل برمیگرداند</span></code></pre>
+git checkout -- . <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// همه فایلهای داخل شاخه کاری را به حالت قبل برمیگرداند</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-checkout.jpg" target="_blank"><img alt="git checkout image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-checkout.jpg" style="width:100%"></a></p>
 
@@ -217,11 +238,11 @@ git checkout -- . <span class="hljs-comment">// همه فایلهای داخل �
 
 <p dir="rtl">برای برگرداندن فایلها از ایستیج به شاخه کاری از دستور reset استفاده میکنیم:</p>
 
-<pre><code class=" hljs cs">git reset Head about.html <span class="hljs-comment">// فایل مشخص شده را از ایستیج به شاخه کاری برمیگرداند</span>
+<pre><code class=" hljs cs hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git reset Head about.html <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// فایل مشخص شده را از ایستیج به شاخه کاری برمیگرداند</span></span></span></span></span></span></span></span></span>
 
-git reset Head . <span class="hljs-comment">// همه فایلهای مشخص شده را از ایستیج به شاخه کاری برمیگرداند</span></code></pre>
+git reset Head . <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// همه فایلهای مشخص شده را از ایستیج به شاخه کاری برمیگرداند</span></span></span></span></span></span></span></span></span></code></pre>
 
-<p><a href="http://localhost:8000/uploads/images/git%20reset.jpg" target="_blank"><img alt="git reset image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git%2520reset.jpg" style="width:100%"></a></p>
+<p><a href="http://localhost:8000/uploads/images/git%20reset.jpg" target="_blank"><img alt="git reset image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git20reset.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">برای برگرداندن کامیتها به مراحل قبل، از دستور reset به صورتهای زیر استفاده میکنیم:</p>
 
@@ -232,7 +253,7 @@ git reset Head . <span class="hljs-comment">// همه فایلهای مشخص ش
 اضافه کنیم( دستوراتی که قبلا یاد گرفتیم اینجا در صورت نیاز به هر کدام 
 استفاده میشوند ).</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">reset</span> f03d5fd545s2r</code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">reset</span></span></span></span></span></span></span></span></span> f03d5fd545s2r</code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-reset-comit-id.jpg" target="_blank"><img alt="git reset comit id image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-reset-comit-id.jpg" style="width:100%"></a></p>
 
@@ -241,7 +262,7 @@ git reset Head . <span class="hljs-comment">// همه فایلهای مشخص ش
 reset --hard&nbsp; و آیدی کامیت استفاده میکنیم. در این روش کامیتهای بعدی
  و همه فایلهای جدید و تغییر یافته بعد از کامیت مورد نظر، حذف میشوند.</p>
 
-<pre><code class=" hljs sql">git reset <span class="hljs-comment">--hard f0d23r5ec5d5</span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git reset <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--hard f0d23r5ec5d5</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-reset-hard.jpg" target="_blank"><img alt="git reset hard image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-reset-hard.jpg" style="width:100%"></a></p>
 
@@ -250,41 +271,41 @@ reset --hard&nbsp; و آیدی کامیت استفاده میکنیم. در ای
 کامیت را ذخیره کنیم و بعد با استفاده از همان آیدی و نوشتن آن در مقابل 
 دستور ریست فایلها برگردانده میشوند.</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">reset</span> gf3h5hd56hgkj76h5kgj2fgh342fgh5j</code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">reset</span></span></span></span></span></span></span></span></span> gf3h5hd56hgkj76h5kgj2fgh342fgh5j</code></pre>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">شاخه بندی پروژه و سوئیچ کردن( branch )</h2>
+<h2 id="branch" dir="rtl">شاخه بندی پروژه و سوئیچ کردن( branch )</h2>
 
 <p dir="rtl">در شاخه بندیها نام شاخه اصلی master است و برای ایجاد شاخه های جدید از دستور branch استفاده میکنیم:</p>
 
-<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">branch</span> <span class="hljs-attr_selector">[branchName]</span>
+<pre><code class=" hljs css hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">branch</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[branchName]</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-tag">git</span> <span class="hljs-tag">branch</span> <span class="hljs-tag">dev</span></code></pre>
+<span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">branch</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">dev</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای مشاهده شاخه های موجود از دستور branch -a استفاده میکنیم:</p>
 
-<pre><code class=" hljs bash">git branch <span class="hljs-operator">-a</span></code></pre>
+<pre><code class=" hljs bash hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git branch <span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator">-a</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای سوئیچ کردن( رفتن به ) شاخه مورد نظر از دستور checkout استفاده میکنیم:</p>
 
-<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-attr_selector">[branchName]</span>
+<pre><code class=" hljs css hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">checkout</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[branchName]</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-tag">dev</span></code></pre>
+<span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">checkout</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">dev</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای حذف شاخه مورد نظر از دستور branch -d استفاده میکنیم:</p>
 
-<pre><code class=" hljs bash">git branch <span class="hljs-operator">-d</span> [branchName]
+<pre><code class=" hljs bash hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git branch <span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator">-d</span></span></span></span></span></span></span></span></span> [branchName]
 
-git branch <span class="hljs-operator">-d</span> dev</code></pre>
+git branch <span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator">-d</span></span></span></span></span></span></span></span></span> dev</code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-branch.jpg" target="_blank"><img alt="git branch image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-branch.jpg" style="width:100%"></a></p>
 
 <p dir="rtl">برای اینکه بتوانیم به محض ایجاد شاخه به آن سوئیچ کنیم از دستور checkout -b استفاده میکنیم:</p>
 
-<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-tag">-b</span> <span class="hljs-attr_selector">[branchName]</span>
+<pre><code class=" hljs css hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">checkout</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">-b</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[branchName]</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-tag">git</span> <span class="hljs-tag">checkout</span> <span class="hljs-tag">-b</span> <span class="hljs-tag">dev</span></code></pre>
+<span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">checkout</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">-b</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">dev</span></span></span></span></span></span></span></span></span></code></pre>
 
 <ul dir="rtl">
 	<li>
@@ -294,13 +315,16 @@ git branch <span class="hljs-operator">-d</span> dev</code></pre>
 	</li>
 </ul>
 
-<p dir="rtl">برای اینکه بتوانیم تغییرات انجام شده در شاخه ها را به پروژه
+<p id="merge" dir="rtl">
+</p><br><h3>تغییرات انجام شده در شاخه ها را به پروژه
+ اصلی اعمال کنیم (merge)</h3>
+  برای اینکه بتوانیم تغییرات انجام شده در شاخه ها را به پروژه
  اصلی اعمال کنیم&nbsp;ابتدا باید به شاخه master سوئیچ کنیم و بعد از 
-دستور merge استفاده کنیم:</p>
+دستور merge استفاده کنیم:<p></p>
 
-<pre><code class=" hljs sql">git <span class="hljs-operator"><span class="hljs-keyword">merge</span> [branchName]
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword">merge</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"> [branchName]
 
-git <span class="hljs-keyword">merge</span> dev</span></code></pre>
+git </span></span></span></span></span></span></span></span><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword">merge</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"> dev</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl"><a href="http://localhost:8000/uploads/images/git-merge.jpg" target="_blank"><img alt="git merge image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git-merge.jpg" style="width:100%"></a></p>
 
@@ -318,7 +342,7 @@ git <span class="hljs-keyword">merge</span> dev</span></code></pre>
 
 <p dir="rtl">اگر در موقع تناقض از merge کردن منصرف بشویم میتوانیم از دستور merge --abort استفاده کنیم:</p>
 
-<pre><code class=" hljs sql">git <span class="hljs-operator"><span class="hljs-keyword">merge</span> --abort</span></code></pre>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword"><span class="hljs-operator"><span class="hljs-keyword">merge</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"><span class="hljs-operator"> --abort</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">اگر موقع تناقض بخواهیم merge را انجام دهیم به فایل مشخص شده
  میرویم و هر کدام از قسمتهای مشخص شده در فایل را که بخواهیم پاک میکنیم و
@@ -336,38 +360,38 @@ add&nbsp; و commit را برای فایلها اجرا میکنیم. با اج�
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">ذخیره سازی موقت تغییرات( stash )</h2>
+<h2 id="stash" dir="rtl">ذخیره سازی موقت تغییرات( stash )</h2>
 
 <p dir="rtl">وقتی در یک برنچ خاص قرار داریم و در پروژه تغییراتی داده ایم
  اگر قبل از کامیت کردن این تغییرات به برنچ دیگه ای سوئیچ کنیم همان 
 تغییرات به برنچ دیگه منتقل میشوند. برای حل این مشکل از دستور stash 
 استفاده میکنیم و تغییرات را بصورت موقت در جایی ذخیره میکنیم.</p>
 
-<pre><code class=" hljs ">git stash</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git stash</code></pre>
 
 <p dir="rtl">برای مشاهده لیست استشها از stash list استفاده میکنیم:</p>
 
-<pre><code class=" hljs php">git stash <span class="hljs-keyword">list</span></code></pre>
+<pre><code class=" hljs php hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git stash <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">list</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای مشاهده آپشنهای استش، از stash --help و stash -h استفاده میکنیم:</p>
 
-<pre><code class=" hljs sql">git stash <span class="hljs-comment">--help</span>
+<pre><code class=" hljs sql hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git stash <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">--help</span></span></span></span></span></span></span></span></span>
 
 git stash -h</code></pre>
 
 <p dir="rtl">برای حذف یک استش از دستور stash drop استفاده میکنیم:</p>
 
-<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">drop</span> <span class="hljs-attr_selector">[stashId]</span>
+<pre><code class=" hljs css hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">stash</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">drop</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[stashId]</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">drop</span> <span class="hljs-tag">stash</span><span class="hljs-at_rule">@<span class="hljs-keyword">{0}</span></span></code></pre>
+<span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">stash</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">drop</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">stash</span></span></span></span></span></span></span></span></span><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule"><span class="hljs-at_rule">@</span></span></span></span></span></span></span></span><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword"><span class="hljs-at_rule"><span class="hljs-keyword">{0}</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای اینکه بتوانیم توضیح مختصری را به استش اعمال کنیم از stash save در موقع ایجاد استش استفاده میکنیم:</p>
 
-<pre><code class=" hljs bash">git stash save <span class="hljs-string">"commit"</span></code></pre>
+<pre><code class=" hljs bash hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git stash save <span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"commit"</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای مشاهده جزئیات یک استش خاص از دستور stash show -p استفاده میکنیم:</p>
 
-<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">show</span> <span class="hljs-tag">-p</span> <span class="hljs-attr_selector">[stashId]</span></code></pre>
+<pre><code class=" hljs css hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">stash</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">show</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">-p</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[stashId]</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای اعمال کردن تغییرات داخل استش به شاخه کاری( در هر کدام 
 از برنچها ) از دو دستور stash pop و stash apply استفاده میکنیم. تفاوت 
@@ -376,9 +400,9 @@ git stash -h</code></pre>
 stash list بگیریم میبینیم که هنوز وجود دارد. پس وقتی که بخواهیم استش 
 مورد نظر بلافاصله بعد از اعمال حذف شود از stash pop استفاده میکنیم.</p>
 
-<pre><code class=" hljs css"><span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">apply</span> <span class="hljs-attr_selector">[stashId]</span>
+<pre><code class=" hljs css hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs "><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">stash</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">apply</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[stashId]</span></span></span></span></span></span></span></span></span>
 
-<span class="hljs-tag">git</span> <span class="hljs-tag">stash</span> <span class="hljs-tag">pop</span> <span class="hljs-attr_selector">[stashId]</span></code></pre>
+<span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">git</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">stash</span></span></span></span></span></span></span></span></span> <span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag"><span class="hljs-tag">pop</span></span></span></span></span></span></span></span></span> <span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector"><span class="hljs-attr_selector">[stashId]</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">&nbsp;</p>
 
@@ -386,13 +410,13 @@ stash list بگیریم میبینیم که هنوز وجود دارد. پس و�
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">عضویت در گیت هاب</h2>
+<h2 id="register" dir="rtl">عضویت در گیت هاب</h2>
 
 <p dir="rtl">برای عضویت در گیت هاب به <a href="https://github.com/join" target="_blank">این صفحه</a> میرویم. مراحل ثبت نام را انجام میدهیم. بعد اکانتمان را فعال کنیم تا ایمیلمان تایید شود.</p>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">ایجاد پروژه در گیت هاپ</h2>
+<h2 id="project" dir="rtl">ایجاد پروژه در گیت هاپ</h2>
 
 <p dir="rtl">برای ایجاد ریپازیتوری در گیت هاپ به صفحه <a href="https://github.com/new" target="_blank">Create a new repository</a>
  میرویم و یک نام برای ریپازیتوری تعیین میکنیم و روی create repository 
@@ -403,23 +427,23 @@ stash list بگیریم میبینیم که هنوز وجود دارد. پس و�
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">آپلود و دانلود پروژه از ویندوز به گیت هاپ</h2>
+<h2 id="upload" dir="rtl">آپلود و دانلود پروژه از ویندوز به گیت هاپ</h2>
 
 <p dir="rtl">برای این کار وارد پروژه در ویندوز میشویم و Git Bash Here رو
  کلیک میکنیم. بعد دستور زیر را در خط فرمان وارد میکنیم تا یک ریموت 
 برایمان ایجاد شود:</p>
 
-<pre><code class=" hljs cs">git remote add origin https:<span class="hljs-comment">//github.com/abdollah110110/Practice_project.git</span></code></pre>
+<pre><code class=" hljs cs hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git remote add origin https:<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">//github.com/abdollah110110/Practice_project.git</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">برای مشاهده ریموت از دستور زیر استفاده میکنیم:</p>
 
-<pre><code class=" hljs ">git remote</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git remote</code></pre>
 
 <p dir="rtl">حالا با استفاده از دستور push -u پروژه را به گیت هاب آپلود 
 میکنیم( با همین دستور میتوانیم برنچهای دیگر را هم آپلود کنیم فقط بجای 
 maser نام برنچ مورد نظرمان را مینویسیم ):</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">push</span> -u origin master</code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">push</span></span></span></span></span></span></span></span></span> -u origin master</code></pre>
 
 <p dir="rtl">پس از وارد کردن دستور بالا، نام کاربری و پسورد گیت هاب را سوال میکند که باید وارد کنیم، به صورت تصویر زیر:</p>
 
@@ -431,25 +455,24 @@ maser نام برنچ مورد نظرمان را مینویسیم ):</p>
 
 <p dir="rtl">اگر کامیتهای جدیدی در پروژه اضافه کرده باشیم با دستور push آنها را به گیت و origin آپلود میکنیم.</p>
 
-<pre><code class=" hljs perl">git <span class="hljs-keyword">push</span></code></pre>
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">push</span></span></span></span></span></span></span></span></span></code></pre>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">پیام خطای remote</h2>
+<h2 id="remote" dir="rtl">پیام خطای remote</h2>
 
 <p dir="rtl">اگر ریموت از قبل وجود دارد و پیام خطا صادر میشود آن را با دستور rm پاک میکنیم و بعد ریموت جدید را ایجاد میکنیم:</p>
 
-<pre>
-<code class=" hljs perl">
+<pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">
 git remote rm origin
-git remote add origin https://github.com/abdollah110110/samaei-web.git
-git push -u origin master
+git remote add origin https:<span class="hljs-regexp"><span class="hljs-regexp"><span class="hljs-regexp"><span class="hljs-regexp"><span class="hljs-regexp"><span class="hljs-regexp"><span class="hljs-regexp"><span class="hljs-regexp">//github</span></span></span></span></span></span></span></span>.com/abdollah11011<span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number">0</span></span></span></span></span></span></span></span>/samaei-web.git
+git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">push</span></span></span></span></span></span></span></span> -u origin master
 </code>
 </pre>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">کار با گیت در روی سایت گیت هاب</h2>
+<h2 id="site" dir="rtl">کار با گیت در روی سایت گیت هاب</h2>
 
 <p dir="rtl">اگر بخواهیم روی گیت هاب کدهای یکی از فایلها را تغییر دهیم 
 روی آن فایل کلیک میکنیم و در صفحه باز شده روی Edit this file کلیک 
@@ -463,11 +486,11 @@ git push -u origin master
 
 <p dir="rtl">برای اینکه بتوانیم این تغییرات را به پروژه روی ویندوز و دانلود کنیم از دستور pull استفاده میکنیم:</p>
 
-<pre><code class=" hljs ">git pull</code></pre>
+<pre><code class=" hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git pull</code></pre>
 
 <p dir="rtl">&nbsp;</p>
 
-<h2 dir="rtl">دانلود یک پروژه از گیت هاب روی ویندوز</h2>
+<h2 id="download" dir="rtl">دانلود یک پروژه از گیت هاب روی ویندوز</h2>
 
 <p dir="rtl">برای دانلود یک پروژه در صفحه پروژه روی Clone or download 
 کلیک میکنیم و کینک نشان داده شده را برمیداریم( کپی میکنیم ) یا بصورت 
@@ -477,14 +500,18 @@ git push -u origin master
 
 <p dir="rtl">بعد در جایی مثل desktop راست کلیک کرده و Git Bash Here رو کلیک میکنیم در خط فرمان دستور clone را بصورت زیر وارد میکنیم:</p>
 
-<pre><code class=" hljs php">git <span class="hljs-keyword">clone</span> [<span class="hljs-keyword">clone</span> link]
+<pre><code class=" hljs php hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">clone</span></span></span></span></span></span></span></span></span> [<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">clone</span></span></span></span></span></span></span></span></span> link]
 
-git clone https://github.com/abdollah110110/My-Practice-Articles.git</code></pre>
+git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">clone</span></span></span></span></span></span></span></span> https:<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">//github.com/abdollah110110/My-Practice-Articles.git</span></span></span></span></span></span></span></span></code></pre>
 
-<p dir="rtl">برای دانلود کل پروژه به محیط ویندوز از دستور clone استفاده میکنیم و برای دانلود تغییرات انجام شده روی پروژه در گیت هاب توسط خودمان یا دیگر کاربرات از دستور pull استفاده میکنیم.</p>
+<p dir="rtl">برای دانلود کل پروژه به محیط ویندوز از دستور clone استفاده 
+میکنیم و برای دانلود تغییرات انجام شده روی پروژه در گیت هاب توسط خودمان 
+یا دیگر کاربرات از دستور pull استفاده میکنیم.</p>
     
 </div>
 </div>
+
+<a href="#links" style="position:fixed;bottom:1rem;right:1rem;background:#d5d5d5;padding: 0.5rem;">فهرست</a>
         
         
         <script src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/jquery.js"></script>
