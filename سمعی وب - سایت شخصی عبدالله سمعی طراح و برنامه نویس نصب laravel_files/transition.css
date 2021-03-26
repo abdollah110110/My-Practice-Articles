@@ -1,0 +1,127 @@
+
+.container-transition{
+	width: 100%;
+	height: 400px;
+	position: relative;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+.item {
+    background-color: #087b46;
+    color: #61f863;
+    font-size: 0;
+    text-align: center;
+    top: -10px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 12px #61f863 solid;
+    padding-top: 2%;
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    transition:  all 1s ease;
+    -webkit-transition:  all 1s ease;
+    -moz-transition:  all 1s ease;
+    -o-transition:  all 1s ease;
+
+    transform: rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+}
+.item-trans{
+	top: 6%;
+	left: 8%;
+	width: 78%;
+	height: 80%;
+	font-size: 115%;
+
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+
+	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+
+	transform: scaleZ(-3);
+	-webkit-transform: scaleZ(-3);
+	-moz-transform: scaleZ(-3);
+}
+
+#icons{
+    position: relative;
+}
+#icons li{
+    display: inline;
+    list-style: none;
+    padding: 10px 25px 1px 41px;
+}
+#icons li a{
+    position: absolute;
+    transition:  all 1s ease;
+    -webkit-transition:  all 1s ease;
+    -moz-transition:  all 1s ease;
+    -o-transition:  all 1s ease;
+
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+}
+#icons li a:hover{
+    transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+}
+
+@media screen and (max-width: 1170px) {
+    .jumbotron .item{
+        font-size: 110%;
+    }
+    .jumbotron .item-left{
+        padding-top: 17%;
+    }
+}
+
+
+@media screen and (max-width: 970px){
+    .jumbotron .item-right{
+        width: 50%;
+        margin-left: 30%;
+    }
+    .jumbotron .item-left{
+        padding-top: 88px;
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width:750px){
+    .jumbotron .item{
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -o-border-radius: 0;
+    }
+}
+
+
+@media screen and (max-width:360px){
+    .jumbotron .item {
+        width: 80%;
+        margin-left: 2%;
+        font-size: 105%;
+    }
+    .jumbotron .item-right {
+        padding-top: 4%;
+    }
+    .jumbotron .item-left {
+        padding-top: 60px;
+    }
+}
