@@ -47,6 +47,7 @@
 	<a href="#saveOnRipository">قرار دادن تغییرات فایلها و فولدرها در ریپازیتوری</a><br>
 	<a href="#commits">کامیت ها</a><br>
 	<a href="#back">برگرداندن فایلها به حالت قبل از تغییرات جدید در شاخه کاری</a><br>
+	<a href="#back_commit">برگرداندن کامیتها به مراحل قبل</a><br>
 	<a href="#branch">شاخه بندی پروژه و سوئیچ کردن( branch )</a><br>
 	<a href="#merge">تغییرات انجام شده در شاخه ها را به پروژه اصلی اعمال کنیم (merge)</a><br>
 	<a href="#stash">ذخیره سازی موقت تغییرات( stash )</a><br>
@@ -54,6 +55,7 @@
 	<a href="#project">ایجاد پروژه در گیت هاپ</a><br>
 	<a href="#upload">آپلود و دانلود پروژه از ویندوز به گیت هاپ</a><br>
 	<a href="#remote">پیام خطای remote</a><br>
+	<a href="#remote-settings">تنظیمات جدید remote</a><br>
 	<a href="#site">کار با گیت در روی سایت گیت هاب</a><br>
 	<a href="#download">دانلود یک پروژه از گیت هاب روی ویندوز</a><br>
     </div>
@@ -247,7 +249,9 @@ git reset Head . <span class="hljs-comment"><span class="hljs-comment"><span cla
 
 <p><a href="http://localhost:8000/uploads/images/git%20reset.jpg" target="_blank"><img alt="git reset image" src="%D8%AA%D9%85%D8%B1%DB%8C%D9%86%20%D9%88%20%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C%20-%20%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA%20git_files/git20reset.jpg" style="width:100%"></a></p>
 
-<p dir="rtl">برای برگرداندن کامیتها به مراحل قبل، از دستور reset به صورتهای زیر استفاده میکنیم:</p>
+<br></br><p dir="rtl" id="back_commit">
+<h2>برگرداندن کامیتها به مراحل قبل</h2>
+برای برگرداندن کامیتها به مراحل قبل، از دستور reset به صورتهای زیر استفاده میکنیم:</p>
 
 <p dir="rtl">1- بخشی از آیدی کامیت مورد نظر را برای دستور reset وارد 
 میکنیم که در نتیجه فایلهایی بصورت تغییر یافته در شاخه کاری قرار میگیرند و
@@ -459,6 +463,19 @@ maser نام برنچ مورد نظرمان را مینویسیم ):</p>
 <p dir="rtl">اگر کامیتهای جدیدی در پروژه اضافه کرده باشیم با دستور push آنها را به گیت و origin آپلود میکنیم.</p>
 
 <pre><code class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">git <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">push</span></span></span></span></span></span></span></span></span></code></pre>
+
+<p dir="rtl">&nbsp;</p>
+
+<h2 id="remote-settings" dir="rtl">تنظیمات جدید remote</h2>
+
+<p dir="ltr">From August 13, 2021, GitHub is no longer accepting account passwords when authenticating Git operations. You need to add a PAT (Personal Access Token) instead, and you can follow the below method to add a PAT on your system.<br>From your GitHub account, go to:</br></p>
+
+<p dir="ltr" class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">
+<strong>Settings</strong> =&gt; <strong>Developer Settings</strong> =&gt; <strong>Personal Access Token</strong> =&gt;  <strong>Generate New Token</strong> (Give your password) =&gt; <strong>Fillup the form</strong> =&gt; click <strong>Generate token</strong> =&gt; <strong>Copy the generated Token</strong>, it will be something like <code>ghp_sFhFsSHhTzMDreGRLjmks4Tzuzgthdvfsrta</code>
+</p>
+
+<p dir="ltr" class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">Go to <strong>Credential Manager</strong> from <strong>Control Panel</strong> =&gt; <strong>Windows Credentials</strong> =&gt; find <code>git:https://github.com</code> =&gt; <strong>Edit</strong> =&gt; On Password replace with with your <strong>GitHub Personal Access Token</strong> =&gt; You are Done</p>
+<p dir="ltr" class=" hljs perl hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs  hljs ">If you don’t find <code>git:https://github.com</code> =&gt; Click on <strong>Add a generic credential</strong> =&gt; Internet address will be <code>git:https://github.com</code> and you need to type in your username and password will be your <strong>GitHub Personal Access Token</strong> =&gt; Click Ok and you are done</p>
 
 <p dir="rtl">&nbsp;</p>
 
